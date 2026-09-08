@@ -36,3 +36,9 @@
   50%     { margin-left: 38px; }
 }
 
+/* Mobile-only affiliate sticky. Hidden on tablet+ where the nav CTA and
+   the in-page CTAs are already reachable without scroll. */
+@media (min-width: 780px) {
+  .acl-mobile-sticky { display: none !important; }
+}
+

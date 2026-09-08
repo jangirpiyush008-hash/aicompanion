@@ -5,6 +5,9 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import FloatingBackground from '@/components/FloatingBackground'
 import { posts, getPost, relatedPosts, type Block } from '@/lib/blog'
+import { getCharacter, characterCover } from '@/lib/characters'
+import { REVIEWS } from '@/lib/reviews'
+import { COMPARISONS } from '@/lib/comparisons'
 import { SITE, SECRET_DESIRES_AFFILIATE_URL } from '@/lib/site'
 
 export function generateStaticParams() {
@@ -62,7 +65,7 @@ export default async function BlogPostPage(props: {
     description: p.description,
     url,
     datePublished: p.date,
-    dateModified: p.date,
+    dateModified: p.lastUpdated ?? p.date,
     author: { '@type': 'Organization', name: p.author },
     publisher: {
       '@type': 'Organization',
@@ -127,6 +130,47 @@ export default async function BlogPostPage(props: {
           <span>{p.readMin} min read</span>
         </div>
       </header>
+
+      {/* Quick Answer + Key Takeaways (both optional). GEO-friendly: puts a
+          fact-dense, extractable summary above the article body. */}
+      {(p.quickAnswer || p.keyTakeaways?.length) && (
+        <section style={{ maxWidth: 900, margin: '0 auto', padding: '0 40px 24px' }}>
+          <div style={{ maxWidth: '68ch', display: 'flex', flexDirection: 'column', gap: 14 }}>
+            {p.quickAnswer && (
+              <div style={{
+                background: 'linear-gradient(160deg, #fde8f0, #fbd0e0)',
+                border: '1px solid #f6d3e1',
+                borderRadius: 14,
+                padding: '18px 22px',
+              }}>
+                <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#c2255c', marginBottom: 6 }}>
+                  Quick Answer
+                </div>
+                <p style={{ fontSize: 15.5, lineHeight: 1.7, color: '#331523', margin: 0 }}>
+                  {p.quickAnswer}
+                </p>
+              </div>
+            )}
+            {p.keyTakeaways?.length ? (
+              <div style={{
+                background: '#fff',
+                border: '1px solid #f6d3e1',
+                borderRadius: 14,
+                padding: '18px 22px',
+              }}>
+                <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#a61e4d', marginBottom: 8 }}>
+                  Key takeaways
+                </div>
+                <ul style={{ margin: 0, paddingLeft: 20 }}>
+                  {p.keyTakeaways.map((t, i) => (
+                    <li key={i} style={{ fontSize: 15, lineHeight: 1.65, color: '#4a3040', marginBottom: 6 }}>{t}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </div>
+        </section>
+      )}
 
       {/* Article body */}
       <article style={{ maxWidth: 900, margin: '0 auto', padding: '0 40px 40px' }}>
@@ -197,6 +241,72 @@ export default async function BlogPostPage(props: {
         </div>
       </section>
 
+      {/* Related characters / reviews / comparisons (all optional) */}
+      {(p.relatedCharacters?.length || p.relatedReviews?.length || p.relatedComparisons?.length) && (
+        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '10px 40px 30px' }}>
+          {p.relatedCharacters?.length ? (
+            <div style={{ marginBottom: 20 }}>
+              <h3 style={sideHeading}>Meet the characters</h3>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: 12 }}>
+                {p.relatedCharacters.map((s) => {
+                  const c = getCharacter(s)
+                  if (!c) return null
+                  return (
+                    <Link key={c.slug} href={`/characters/${c.slug}/`} style={{
+                      position: 'relative', display: 'block',
+                      borderRadius: 14, overflow: 'hidden',
+                      border: '3px solid #fff',
+                      boxShadow: '0 6px 20px rgba(120,30,70,0.12)',
+                      color: '#fff', textDecoration: 'none',
+                    }}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={characterCover(c)} alt={c.name}
+                        style={{ width: '100%', aspectRatio: '3/4', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
+                      <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top,rgba(43,15,29,0.82),rgba(43,15,29,0.1) 55%,transparent 75%)' }}/>
+                      <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: 12 }}>
+                        <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 17, fontWeight: 700 }}>{c.name}</div>
+                      </div>
+                    </Link>
+                  )
+                })}
+              </div>
+            </div>
+          ) : null}
+          {p.relatedReviews?.length ? (
+            <div style={{ marginBottom: 20 }}>
+              <h3 style={sideHeading}>Related reviews</h3>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+                {p.relatedReviews.map((s) => {
+                  const r = REVIEWS.find((x) => x.slug === s)
+                  if (!r) return null
+                  return (
+                    <Link key={r.slug} href={`/reviews/${r.slug}/`} style={relPill}>
+                      {r.name}{r.overall != null ? ` · ${r.overall}/10` : ''} →
+                    </Link>
+                  )
+                })}
+              </div>
+            </div>
+          ) : null}
+          {p.relatedComparisons?.length ? (
+            <div style={{ marginBottom: 20 }}>
+              <h3 style={sideHeading}>Related comparisons</h3>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+                {p.relatedComparisons.map((s) => {
+                  const c = COMPARISONS.find((x) => x.slug === s)
+                  if (!c) return null
+                  return (
+                    <Link key={c.slug} href={`/comparisons/${c.slug}/`} style={relPill}>
+                      {c.a.name} vs {c.b.name} →
+                    </Link>
+                  )
+                })}
+              </div>
+            </div>
+          ) : null}
+        </section>
+      )}
+
       {/* Related posts */}
       {related.length > 0 && (
         <section style={{ maxWidth: 1200, margin: '0 auto', padding: '20px 40px 80px' }}>
@@ -237,6 +347,17 @@ export default async function BlogPostPage(props: {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
     </>
   )
+}
+
+const sideHeading: React.CSSProperties = {
+  fontFamily: 'Playfair Display, serif',
+  fontSize: 20, margin: '0 0 12px',
+  fontWeight: 700, color: '#2b0f1d',
+}
+const relPill: React.CSSProperties = {
+  padding: '9px 16px', borderRadius: 999,
+  background: '#fff', border: '1px solid #f0a3c2',
+  color: '#a61e4d', fontSize: 13, fontWeight: 700, textDecoration: 'none',
 }
 
 function BlockRender({ b }: { b: Block }) {

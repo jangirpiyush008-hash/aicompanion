@@ -7,6 +7,9 @@ import HeroShowcase from '@/components/HeroShowcase'
 import CategoryIcon from '@/components/CategoryIcon'
 import { characters, characterCover } from '@/lib/characters'
 import { posts } from '@/lib/blog'
+import { REVIEWS } from '@/lib/reviews'
+import { COMPARISONS } from '@/lib/comparisons'
+import ImageHubGrid from '@/components/ImageHubGrid'
 import {
   CATEGORIES, FAQS, LAB_TESTS, PLATFORMS, SECRET_DESIRES_AFFILIATE_URL, SITE,
 } from '@/lib/site'
@@ -373,34 +376,135 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─────────── LATEST REVIEWS ─────────── */}
+      <section id="latest-reviews" style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '80px 40px 0' }}>
+        <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 20, flexWrap: 'wrap', marginBottom: 24 }}>
+          <div>
+            <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#d6336c', marginBottom: 6 }}>
+              Reviews
+            </div>
+            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 34, margin: 0, fontWeight: 700, color: '#2b0f1d' }}>
+              Latest platform reviews
+            </h2>
+          </div>
+          <Link href="/reviews/" style={{ fontSize: 14, fontWeight: 700, color: '#a61e4d', textDecoration: 'none' }}>
+            All reviews →
+          </Link>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 14 }}>
+          {REVIEWS.slice(0, 6).map((r) => {
+            const isPub = r.status === 'published'
+            return (
+              <Link key={r.slug} href={`/reviews/${r.slug}/`} style={{
+                display: 'flex', flexDirection: 'column', gap: 8,
+                background: '#fff', border: '1px solid #f6d3e1', borderRadius: 16,
+                padding: '18px 20px', textDecoration: 'none', color: '#331523',
+                boxShadow: '0 2px 10px rgba(214,51,108,0.05)',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 8 }}>
+                  <span style={{ fontFamily: 'Playfair Display, serif', fontSize: 20, fontWeight: 700, color: '#2b0f1d' }}>{r.name}</span>
+                  {isPub && r.overall != null ? (
+                    <span style={{ fontSize: 11, fontWeight: 800, padding: '3px 8px', borderRadius: 999, background: '#fde8f0', color: '#a61e4d' }}>{r.overall}/10</span>
+                  ) : (
+                    <span style={{ fontSize: 10.5, fontWeight: 800, padding: '3px 8px', borderRadius: 999, background: '#f6d3e1', color: '#7c1236' }}>Untested</span>
+                  )}
+                </div>
+                <div style={{ fontSize: 13.5, color: '#6f4a5d', lineHeight: 1.55 }}>{r.tagline}</div>
+                <div style={{ fontSize: 13, color: '#d6336c', fontWeight: 700, marginTop: 'auto' }}>Read {isPub ? 'review' : 'more'} →</div>
+              </Link>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* ─────────── LATEST COMPARISONS ─────────── */}
+      <section id="latest-comparisons" style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '80px 40px 0' }}>
+        <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 20, flexWrap: 'wrap', marginBottom: 24 }}>
+          <div>
+            <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#d6336c', marginBottom: 6 }}>
+              Comparisons
+            </div>
+            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 34, margin: 0, fontWeight: 700, color: '#2b0f1d' }}>
+              Head-to-head comparisons
+            </h2>
+          </div>
+          <Link href="/comparisons/" style={{ fontSize: 14, fontWeight: 700, color: '#a61e4d', textDecoration: 'none' }}>
+            All comparisons →
+          </Link>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: 14 }}>
+          {COMPARISONS.map((c) => (
+            <Link key={c.slug} href={`/comparisons/${c.slug}/`} style={{
+              display: 'flex', flexDirection: 'column', gap: 8,
+              background: '#fff', border: '1px solid #f6d3e1', borderRadius: 16,
+              padding: '18px 20px', textDecoration: 'none', color: '#331523',
+              boxShadow: '0 2px 10px rgba(214,51,108,0.05)',
+            }}>
+              <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 20, fontWeight: 700, color: '#2b0f1d' }}>
+                {c.a.name} vs {c.b.name}
+              </div>
+              <div style={{ fontSize: 13.5, color: '#6f4a5d', lineHeight: 1.55 }}>{c.quickVerdict.slice(0, 130)}…</div>
+              <div style={{ fontSize: 13, color: '#d6336c', fontWeight: 700, marginTop: 'auto' }}>Read comparison →</div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ─────────── LATEST AI COMPANION IMAGES ─────────── */}
+      <section id="latest-images" style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '80px 40px 0' }}>
+        <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 20, flexWrap: 'wrap', marginBottom: 24 }}>
+          <div>
+            <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#d6336c', marginBottom: 6 }}>
+              Gallery
+            </div>
+            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 34, margin: 0, fontWeight: 700, color: '#2b0f1d' }}>
+              Latest AI companion images
+            </h2>
+          </div>
+          <Link href="/ai-companion-images/" style={{ fontSize: 14, fontWeight: 700, color: '#a61e4d', textDecoration: 'none' }}>
+            Explore gallery →
+          </Link>
+        </div>
+        <ImageHubGrid limit={12} />
+      </section>
+
       {/* ─────────── LAB ─────────── */}
       <section id="lab" style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '80px 40px 0' }}>
         <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 20, flexWrap: 'wrap', marginBottom: 28 }}>
           <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 34, margin: 0, fontWeight: 700, color: '#2b0f1d' }}>
-            What We&apos;re Testing This Week
+            AI Companions Lab
           </h2>
           <span style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#d6336c' }}>
-            AI Companions Labs Lab
+            Published · Testing · Planned
           </span>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(230px,1fr))', gap: 16 }}>
-          {LAB_TESTS.map((t) => (
-            <div
-              key={t.name}
-              style={{
-                display: 'flex', flexDirection: 'column', gap: 10,
-                background: '#fff', border: '1px solid #f6d3e1', borderRadius: 16, padding: 24,
-              }}
-            >
-              <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: t.statusColor }}>
-                {t.status}
-              </div>
-              <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 19, fontWeight: 600, color: '#2b0f1d', lineHeight: 1.3 }}>
-                {t.name}
-              </div>
-              <div style={{ fontSize: 13, color: '#8a6274', lineHeight: 1.55 }}>{t.desc}</div>
-            </div>
-          ))}
+          {LAB_TESTS.map((t) => {
+            const inner = (
+              <>
+                <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: t.statusColor }}>
+                  {t.status}
+                </div>
+                <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 19, fontWeight: 600, color: '#2b0f1d', lineHeight: 1.3 }}>
+                  {t.name}
+                </div>
+                <div style={{ fontSize: 13, color: '#8a6274', lineHeight: 1.55 }}>{t.desc}</div>
+                {t.href && (
+                  <div style={{ fontSize: 13, color: '#d6336c', fontWeight: 700, marginTop: 'auto' }}>Read →</div>
+                )}
+              </>
+            )
+            const style: React.CSSProperties = {
+              display: 'flex', flexDirection: 'column', gap: 10,
+              background: '#fff', border: '1px solid #f6d3e1', borderRadius: 16, padding: 24,
+              color: '#331523', textDecoration: 'none',
+            }
+            return t.href ? (
+              <Link key={t.name} href={t.href} style={style}>{inner}</Link>
+            ) : (
+              <div key={t.name} style={style}>{inner}</div>
+            )
+          })}
         </div>
       </section>
 

@@ -26,6 +26,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE.url}/ai-boyfriends/`,         lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${SITE.url}/ai-companions/`,         lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${SITE.url}/ai-characters/`,         lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${SITE.url}/ai-girlfriend-images/`,  lastModified: now, changeFrequency: 'weekly',  priority: 0.85 },
+    { url: `${SITE.url}/ai-companion-images/`,   lastModified: now, changeFrequency: 'weekly',  priority: 0.85 },
+    { url: `${SITE.url}/ai-girlfriend-videos/`,  lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${SITE.url}/ai-companion-videos/`,   lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
 
     // Best-of pages
     { url: `${SITE.url}/best-ai-girlfriends/`,               lastModified: now, changeFrequency: 'monthly', priority: 0.85 },

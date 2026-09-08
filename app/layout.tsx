@@ -3,6 +3,7 @@ import { Playfair_Display, Manrope } from 'next/font/google'
 import Script from 'next/script'
 import { SITE } from '@/lib/site'
 import AgeGate from '@/components/AgeGate'
+import MobileStickyCTA from '@/components/MobileStickyCTA'
 import './globals.css'
 
 // GA4 property — configure once. Loaded via next/script with the 'afterInteractive'
@@ -67,6 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <AgeGate />
+        <MobileStickyCTA />
 
         {/* Google Analytics 4 — loads asynchronously after the page becomes interactive. */}
         <Script

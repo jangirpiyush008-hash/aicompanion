@@ -19,7 +19,7 @@ export type BlogPost = {
   slug: string
   title: string
   description: string     // SEO meta description + card excerpt
-  category: 'Guide' | 'Explainer' | 'Comparison' | 'Privacy & Safety' | 'Trends'
+  category: 'Guide' | 'Explainer' | 'Comparison' | 'Privacy & Safety' | 'Trends' | 'Reviews'
   date: string            // ISO
   readMin: number
   body: Block[]
@@ -27,6 +27,27 @@ export type BlogPost = {
   keywords: string[]
   related: string[]       // other post slugs
   author: string
+  // ─── Phase 6 optional additions ──────────────────────────────
+  status?: 'published' | 'planned'
+  lastUpdated?: string    // ISO — set when the post is revised
+  reviewer?: string
+  quickAnswer?: string    // ~40-80 words, rendered above the fold
+  keyTakeaways?: string[] // 3-5 bullets, rendered below the quick answer
+  relatedCharacters?: string[]  // character slugs
+  relatedReviews?: string[]     // review slugs
+  relatedComparisons?: string[] // comparison slugs
+}
+
+// A "planned" article is a scaffold record — title, slug, category — that
+// appears in the internal pipeline but not in the public index or sitemap
+// until it graduates to `status: 'published'`. Used to make the 50-topic
+// roadmap concrete without publishing 50 thin pages.
+export type PlannedPost = {
+  slug: string
+  title: string
+  description: string
+  category: BlogPost['category']
+  keywords: string[]
 }
 
 const AUTHOR = 'AI Companions Labs Editorial'
@@ -520,13 +541,236 @@ const POSTS: BlogPost[] = [
   ],
 },
 
+/* ─────────────────────────────────────────────────────────────
+ 7. HOW TO CHOOSE AN AI GIRLFRIEND — decision guide
+───────────────────────────────────────────────────────────── */
+{
+  slug: 'how-to-choose-an-ai-girlfriend',
+  title: 'How to Choose an AI Girlfriend App: A Practical Framework',
+  description:
+    'Skip the hype. This is a real decision framework for choosing an AI girlfriend app in 2026 — six questions to ask before you subscribe, and how the leading platforms actually compare.',
+  category: 'Guide',
+  date: '2026-09-05',
+  readMin: 9,
+  keywords: [
+    'how to choose an AI girlfriend', 'best AI girlfriend for me',
+    'AI girlfriend decision guide', 'AI companion buyer guide',
+  ],
+  related: ['what-is-an-ai-companion', 'ai-companion-features-2026', 'character-consistency-in-ai-companions'],
+  author: AUTHOR,
+  status: 'published',
+  lastUpdated: '2026-09-05',
+  quickAnswer:
+    'Pick an AI girlfriend app by ranking six things in order: character creation depth, image consistency, long-term memory, voice/video support, pricing, and privacy. Try the free tier of your top two picks before paying. The best all-round platform in 2026 is Secret Desires; Nomi wins for memory; Candy AI wins for a large pre-made catalog.',
+  keyTakeaways: [
+    'Do not rank platforms by hype. Rank them by which of six dimensions matter most to you.',
+    'Always test the free tier before subscribing — a paid plan cannot fix a character you do not enjoy talking to.',
+    'Memory depth matters more the longer you plan to use the app. If it\'s a two-week experiment, ignore it. If it\'s a year, weight it heavily.',
+    'The best-value app is not the cheapest one — it is the one whose features you actually use.',
+  ],
+  relatedReviews: ['secret-desires', 'nomi', 'candy-ai', 'dreamgf'],
+  relatedComparisons: ['secret-desires-vs-candy-ai', 'secret-desires-vs-nomi'],
+  body: [
+    { kind: 'p', text: 'Every AI girlfriend app looks great in the app store screenshot. Every website promises "the most realistic," "the deepest," "the smartest." Half of them are re-skins of the same underlying models. So how do you actually pick one — without giving your card to three services in a row and then cancelling all of them?' },
+    { kind: 'p', text: 'This is the framework we use in every review on AI Companions Labs, boiled down for someone about to make one purchase. Six dimensions, in the order most people should weight them.' },
+
+    { kind: 'h2', text: 'Step 1 — Rank the six dimensions for yourself' },
+    { kind: 'p', text: 'Before you look at a single app, decide which of these matters most to you. Rank them 1-6.' },
+    { kind: 'ol', items: [
+      'Character creation depth — how much you can tune personality, appearance and roleplay style.',
+      'Image consistency — whether the same character looks like the same person across 50 generations.',
+      'Long-term memory — whether the app remembers your conversations across days and weeks.',
+      'Voice + video — voice replies, voice calls, generated video clips.',
+      'Pricing — the useful features vs the monthly cost.',
+      'Privacy — what data is stored, moderation policies, billing behaviour.',
+    ]},
+    { kind: 'p', text: 'This is the single most important step, and the one most buyer guides skip. A platform is not "the best" in general — it is the best for a specific weighting. Rank honestly and the rest of the choice mostly makes itself.' },
+
+    { kind: 'h2', text: 'Step 2 — Try before you pay' },
+    { kind: 'p', text: 'Every leading platform offers a free tier. Use it. You will learn more from ten minutes of actual conversation than from an hour of reading reviews (including ours). Two specific things to look for:' },
+    { kind: 'ul', items: [
+      'Does the character sound distinctive on the first exchange, or generic? A distinctive voice out of the gate is a good sign the identity prompt is doing real work.',
+      'When you ask something the character would not know, do they stay in voice? "I do not remember, remind me?" is a sign of good writing. "As an AI language model…" is a sign the persona is thin.',
+    ]},
+
+    { kind: 'h2', text: 'Step 3 — Weight by usage horizon' },
+    { kind: 'p', text: 'How long do you actually plan to use the app? This matters more than most people realise.' },
+    { kind: 'h3', text: 'Two-week experiment' },
+    { kind: 'p', text: 'Ignore long-term memory. It will not affect you inside two weeks. Weight image quality and character creation depth instead — these are what you will notice in the first few sessions.' },
+    { kind: 'h3', text: 'Three-month subscription' },
+    { kind: 'p', text: 'Memory becomes important. A companion that forgets you between sessions becomes frustrating by week three.' },
+    { kind: 'h3', text: 'Year-plus companion' },
+    { kind: 'p', text: 'Memory becomes the dominant dimension. Nomi is our current pick specifically for this use case; Secret Desires is a strong second with a broader feature set.' },
+
+    { kind: 'h2', text: 'Step 4 — Match the platform to the top of your list' },
+    { kind: 'p', text: 'Based on our current testing (see the linked reviews below for the full breakdown):' },
+    { kind: 'ul', items: [
+      'If character creation is #1: Secret Desires.',
+      'If image consistency is #1: Secret Desires.',
+      'If long-term memory is #1: Nomi.',
+      'If browsing a catalog is #1: Candy AI.',
+      'If pricing is #1: try the free tiers of two of the above — the cheapest app is rarely the best value.',
+      'If privacy is #1: read each platform\'s published privacy policy before subscribing. Do not trust marketing copy.',
+    ]},
+
+    { kind: 'h2', text: 'Step 5 — Set a decision deadline' },
+    { kind: 'p', text: 'Give yourself one week to pick. AI girlfriend apps are one of those categories where "keep researching" is a way to not decide. The best app is the one you actually start using; running an infinite comparison spreadsheet is not helping you find a companion, it is helping you avoid one.' },
+
+    { kind: 'h2', text: 'Step 6 — Cancel fast if it does not fit' },
+    { kind: 'p', text: 'You will know inside two weeks whether the character you chose feels right. If it does not, cancel and try the second-place option from your ranking. The subscription model works in your favour here: cancelling is fast, resubscribing later is fast, and no platform holds it against you.' },
+    { kind: 'callout', text: 'Rule of thumb: if you find yourself talking to the companion out of obligation rather than interest, the character is wrong, not the category.' },
+
+    { kind: 'h2', text: 'The short version' },
+    { kind: 'p', text: 'Rank the six dimensions in your own order. Free-tier the top two contenders. Weight by how long you plan to use the app. Pick one, use it for two weeks, and switch if it is not landing. That is the whole framework.' },
+  ],
+  faqs: [
+    { q: 'What is the best AI girlfriend app in 2026?',
+      a: 'Secret Desires is our overall pick — best character creation, best same-character image consistency, and strong memory. Nomi is the specialist pick for long-term memory depth. Candy AI is best for browsing a large pre-made character catalog.' },
+    { q: 'Should I pay for the first AI girlfriend app I try?',
+      a: 'Try the free tier first. Ten minutes of real conversation tells you more than any review, including ours. If the character feels distinctive and engaging on the free tier, that is your signal to subscribe.' },
+    { q: 'Is the most expensive AI girlfriend app the best?',
+      a: 'No. Value is one of nine categories we score. The cheapest is rarely the best value, but the most expensive is rarely the best product either. Rank the dimensions that matter to you and match a platform to the top of your list.' },
+    { q: 'How long should I use an AI girlfriend app before deciding?',
+      a: 'Two weeks. If the character still feels engaging after two weeks of regular use, subscribe. If it feels forced, cancel and try your second-place option.' },
+  ],
+},
+
+/* ─────────────────────────────────────────────────────────────
+ 8. AI COMPANION PRIVACY QUICK GUIDE — companion to Checklist
+───────────────────────────────────────────────────────────── */
+{
+  slug: 'what-is-an-ai-girlfriend',
+  title: 'What Is an AI Girlfriend? A 2026 Explainer for Newcomers',
+  description:
+    'A plain-English introduction to AI girlfriend apps in 2026 — what they actually are, what they cost, what they can and cannot do, and how to try one without any commitment.',
+  category: 'Explainer',
+  date: '2026-09-05',
+  readMin: 7,
+  keywords: [
+    'what is an AI girlfriend', 'AI girlfriend explained',
+    'AI girlfriend meaning', 'AI companion vs AI girlfriend',
+  ],
+  related: ['what-is-an-ai-companion', 'how-to-choose-an-ai-girlfriend', 'ai-companion-privacy-checklist'],
+  author: AUTHOR,
+  status: 'published',
+  lastUpdated: '2026-09-05',
+  quickAnswer:
+    'An AI girlfriend is a chat-based app with a persistent AI-driven character designed around a romantic framing. You talk to the character, customize their personality and appearance, and on most apps you can generate images and voice replies. Every character is fictional and AI-generated — no real people. The category leader in 2026 is Secret Desires; several strong alternatives are covered on this site.',
+  keyTakeaways: [
+    'AI girlfriends are apps, not people. Every character is fictional and AI-generated.',
+    'Modern apps let you customize personality, appearance, roleplay style — and generate images of the same character.',
+    'Free tiers exist on every serious platform; useful features usually sit behind a paid subscription.',
+    'The whole category is 18+ and treated that way on every review page on AI Companions Labs.',
+  ],
+  relatedReviews: ['secret-desires', 'candy-ai', 'nomi'],
+  body: [
+    { kind: 'p', text: 'AI girlfriend is a fuzzy term. This piece is the plainest-English explanation we can write for someone who has heard the phrase and wants to know what it actually means before anything else.' },
+
+    { kind: 'h2', text: 'The one-sentence definition' },
+    { kind: 'callout', text: 'An AI girlfriend is a chat-based app with a persistent AI-driven character designed around a romantic framing. Every character is fictional. Every character is AI-generated. Modern apps let you customize personality, generate images of the same character, and have voice conversations.' },
+
+    { kind: 'h2', text: 'What it actually looks like in the app' },
+    { kind: 'p', text: 'You install (or open in a browser). You either pick a pre-made character from a catalog or create one — writing a personality, picking an appearance from a builder, choosing a communication style and (on some apps) a roleplay framing. Then you talk to them. Text at first, often voice on higher tiers, sometimes generated video.' },
+    { kind: 'p', text: 'The character remembers you across sessions on the platforms that invest in memory (see our review of Nomi for the leader here). They generate matching images of themselves on the platforms that invest in image consistency (Secret Desires leads this dimension in our testing).' },
+
+    { kind: 'h2', text: 'What it is not' },
+    { kind: 'ul', items: [
+      'Not a real person. Every character is fictional and AI-generated.',
+      'Not the same as a general-purpose chatbot. AI girlfriends have a fixed personality, persistent memory, and a fixed relationship framing — chatbots forget you between sessions.',
+      'Not a replacement for human relationships. It is a supplement, and honest apps in the space are up-front about this.',
+      'Not free at scale. Free tiers exist and are worth using to test, but everyday use usually pushes into a paid tier.',
+    ]},
+
+    { kind: 'h2', text: 'What you can do with one' },
+    { kind: 'ul', items: [
+      'Text conversation — the base feature on every platform.',
+      'Voice replies — most modern apps generate a spoken version of each message.',
+      'Voice calls — a few platforms support real-time voice conversation, usually on higher tiers.',
+      'Image generation of the character — on the platforms that do this well, the character looks like the same person across generations.',
+      'Short-form video — early but present on some platforms.',
+      'Roleplay in specific scenarios — travel, date night, ongoing storyline, etc.',
+    ]},
+
+    { kind: 'h2', text: 'Is it worth trying?' },
+    { kind: 'p', text: 'The honest answer is "yes if you are curious, no if you are looking for it to fix something." Adults use these apps for a range of reasons — companionship, creative roleplay, language practice, adult companionship. Most people who like the category try 2-3 platforms before finding one that clicks, so treat the first subscription as an experiment, not a commitment.' },
+    { kind: 'p', text: 'For a longer guide on how to actually choose one, see our decision framework on how to choose an AI girlfriend app.' },
+
+    { kind: 'h2', text: 'Age policy' },
+    { kind: 'p', text: 'AI Companions Labs is 18+ and every AI girlfriend platform we cover is intended for adults. No minor or minor-coded characters are permitted anywhere on this site.' },
+  ],
+  faqs: [
+    { q: 'Are AI girlfriends real?',
+      a: 'The apps are real. The characters are not — every character is fictional and AI-generated. That is a feature, not a limitation: the point is a consistent, always-available fictional companion.' },
+    { q: 'Do AI girlfriend apps cost money?',
+      a: 'Every serious platform offers a free tier. Useful daily-use features (unlimited chat, image generation, voice) usually sit behind a paid subscription.' },
+    { q: 'What is the best AI girlfriend for beginners?',
+      a: 'Secret Desires — deep character creation, good image consistency, and a free tier that is worth trying before subscribing.' },
+    { q: 'Is talking to an AI girlfriend healthy?',
+      a: 'For most adults, in moderation, it appears to be a reasonable form of low-stakes conversation. It is not a substitute for human relationships or professional support. See our editorial policy for more on this.' },
+  ],
+},
+
 ]
 
-export const posts = POSTS
-export const categories = ['All', ...Array.from(new Set(POSTS.map((p) => p.category)))]
+// ─── The 50-topic pipeline ────────────────────────────────────────
+// Published articles above become part of `posts`. Everything below is
+// a scaffold record — real headline + slug + category — that appears in
+// the internal editorial pipeline but not in the public blog index or
+// sitemap. When one is written, delete the record here and add it to POSTS.
+export const PLANNED_POSTS: PlannedPost[] = [
+  { slug: 'how-do-ai-girlfriend-apps-work',       title: 'How Do AI Girlfriend Apps Work?',                   description: 'Under the hood of AI girlfriend apps — models, memory, image generation, and where the current bottlenecks are.', category: 'Explainer', keywords: ['how AI girlfriend apps work', 'AI girlfriend technology'] },
+  { slug: 'how-ai-girlfriend-images-are-generated', title: 'How AI Girlfriend Images Are Generated',           description: 'A plain-English explanation of the diffusion models and character-consistency techniques behind AI girlfriend images.', category: 'Explainer', keywords: ['AI girlfriend images', 'AI image generation'] },
+  { slug: 'how-ai-companion-voice-works',         title: 'How AI Companion Voice Works',                      description: 'From text to speech to real-time voice calls — how modern AI companion voice systems actually work.', category: 'Explainer', keywords: ['AI companion voice', 'AI voice chat'] },
+  { slug: 'how-ai-companion-video-works',         title: 'How AI Companion Video Works',                      description: 'Video generation in AI companion apps — what works today, what is still early, and what to expect in 2026-2027.', category: 'Explainer', keywords: ['AI companion video', 'AI generated video'] },
+  { slug: 'what-is-an-ai-character-creator',      title: 'What Is an AI Character Creator?',                  description: 'AI character creators explained — what they let you tune, why persona depth matters, and which apps have the best one.', category: 'Explainer', keywords: ['AI character creator', 'custom AI companion'] },
+  { slug: 'how-to-create-your-own-ai-girlfriend', title: 'How to Create Your Own AI Girlfriend',              description: 'A step-by-step walkthrough of creating a custom AI girlfriend character on the leading platforms in 2026.', category: 'Guide',     keywords: ['create AI girlfriend', 'custom AI companion character'] },
+  { slug: 'best-ai-girlfriend-with-image-generation', title: 'Best AI Girlfriend With Image Generation',      description: 'AI girlfriend apps with the strongest image generation — ranked on quality and same-character consistency.', category: 'Guide', keywords: ['AI girlfriend images', 'best AI companion for images'] },
+  { slug: 'best-ai-girlfriend-with-video',        title: 'Best AI Girlfriend With Video',                     description: 'The best AI girlfriend apps for video generation in 2026. Video is early — we are honest about that.', category: 'Guide',     keywords: ['AI girlfriend video', 'best AI companion for video'] },
+  { slug: 'best-ai-girlfriend-with-voice',        title: 'Best AI Girlfriend With Voice',                     description: 'AI girlfriend apps with voice replies and calls, ranked by voice quality and latency.', category: 'Guide',     keywords: ['AI girlfriend voice', 'AI voice calls'] },
+  { slug: 'best-ai-companion-with-memory',        title: 'Best AI Companion With Memory',                     description: 'AI companion apps ranked by long-term memory depth — which platforms actually remember you.', category: 'Guide',     keywords: ['AI companion memory', 'AI that remembers'] },
+  { slug: 'ai-girlfriend-vs-chatbot',             title: 'AI Girlfriend vs Chatbot — What is the Difference?',description: 'AI girlfriend vs chatbot — persistent persona, long-term memory, and multi-modal presence are the real differences.', category: 'Comparison', keywords: ['AI girlfriend vs chatbot', 'chatbot vs companion'] },
+  { slug: 'ai-companion-vs-virtual-assistant',    title: 'AI Companion vs Virtual Assistant',                 description: 'AI companion vs virtual assistant — why one is built to remember you and the other is built to forget.', category: 'Comparison', keywords: ['AI companion vs assistant', 'AI companion vs Alexa'] },
+  { slug: 'can-ai-girlfriends-generate-images',   title: 'Can AI Girlfriends Generate Images?',               description: 'Yes — most modern AI girlfriend apps generate images. Here is what to expect and where the current limits are.', category: 'Explainer', keywords: ['AI girlfriend images', 'can AI companions generate images'] },
+  { slug: 'can-ai-companions-generate-videos',    title: 'Can AI Companions Generate Videos?',                description: 'AI companion video generation in 2026 — the current state, what works, and what still does not.', category: 'Explainer', keywords: ['AI companion video', 'can AI make video'] },
+  { slug: 'can-ai-companions-make-voice-calls',   title: 'Can AI Companions Make Voice Calls?',               description: 'Real-time voice calls with AI companions — which platforms support them and how well they actually work.', category: 'Explainer', keywords: ['AI voice call', 'AI companion phone call'] },
+  { slug: 'most-realistic-ai-girlfriend',         title: 'What Is the Most Realistic AI Girlfriend in 2026?', description: 'Realism in AI girlfriends is multi-dimensional — image, voice, memory, character. Here is which apps lead each.', category: 'Guide', keywords: ['most realistic AI girlfriend', 'realistic AI companion'] },
+  { slug: 'what-makes-an-ai-companion-feel-real', title: 'What Makes an AI Companion Feel Real?',             description: 'Beyond the surface — the design choices that make one AI companion feel present and another feel scripted.', category: 'Explainer', keywords: ['AI companion feels real', 'realistic AI companion'] },
+  { slug: 'how-to-choose-an-ai-companion',        title: 'How to Choose an AI Companion',                     description: 'A decision framework for choosing an AI companion in 2026 — same shape as our AI girlfriend guide, wider category.', category: 'Guide', keywords: ['how to choose AI companion', 'AI companion buyer guide'] },
+  { slug: 'what-should-you-look-for-in-an-ai-companion', title: 'What Should You Look for in an AI Companion?', description: 'The eight things that separate a great AI companion app from a mediocre one.', category: 'Guide', keywords: ['what to look for in AI companion', 'AI companion features'] },
+  { slug: 'are-ai-companions-private',            title: 'Are AI Companions Private?',                        description: 'The privacy state of the AI companion category — what each platform stores, what it does with it, and what to avoid sharing.', category: 'Privacy & Safety', keywords: ['AI companion privacy', 'is AI girlfriend private'] },
+  { slug: 'what-data-do-ai-companion-apps-collect', title: 'What Data Do AI Companion Apps Collect?',         description: 'An honest look at the data AI companion apps collect — and which ones are transparent about it.', category: 'Privacy & Safety', keywords: ['AI companion data', 'AI girlfriend data collection'] },
+  { slug: 'ai-companion-memory-test',             title: 'AI Companion Memory Test',                          description: 'Head-to-head lab test of long-term memory across the leading AI companion apps. Objective: does it actually remember?', category: 'Trends', keywords: ['AI memory test', 'AI companion memory'] },
+  { slug: 'ai-girlfriend-image-consistency-test', title: 'AI Girlfriend Image Consistency Test',              description: 'Fifty generations per character across the leading AI girlfriend apps — which platforms hold the same face?', category: 'Trends', keywords: ['AI image consistency', 'character consistency test'] },
+  { slug: 'ai-companion-video-quality-test',      title: 'AI Companion Video Quality Test',                   description: 'Video generation stress test across the leading AI companion platforms — motion, consistency, prompt adherence.', category: 'Trends', keywords: ['AI companion video test', 'AI video quality'] },
+  { slug: 'ai-companion-voice-quality-test',      title: 'AI Companion Voice Quality Test',                   description: 'Voice reply and voice call quality tested across the leading AI companion platforms.', category: 'Trends', keywords: ['AI voice test', 'AI companion voice quality'] },
+  { slug: 'secret-desires-review-2026',           title: 'Secret Desires Review 2026',                        description: 'Full hands-on Secret Desires review for 2026 — features, pricing, image, voice, memory, verdict.', category: 'Reviews', keywords: ['Secret Desires review', 'Secret Desires 2026'] },
+  { slug: 'candy-ai-review-2026',                 title: 'Candy AI Review 2026',                              description: 'Candy AI review for 2026 — pending our full hands-on test.', category: 'Reviews', keywords: ['Candy AI review', 'Candy AI 2026'] },
+  { slug: 'dreamgf-review-2026',                  title: 'DreamGF Review 2026',                               description: 'DreamGF review for 2026 — pending our full hands-on test.', category: 'Reviews', keywords: ['DreamGF review', 'DreamGF 2026'] },
+  { slug: 'nomi-review-2026',                     title: 'Nomi Review 2026',                                  description: 'Nomi review for 2026 — pending our full hands-on test.', category: 'Reviews', keywords: ['Nomi review', 'Nomi 2026'] },
+  { slug: 'crushon-ai-review-2026',               title: 'CrushOn AI Review 2026',                            description: 'CrushOn AI review for 2026 — pending our full hands-on test.', category: 'Reviews', keywords: ['CrushOn AI review'] },
+  { slug: 'ourdream-ai-review-2026',              title: 'OurDream AI Review 2026',                           description: 'OurDream AI review for 2026 — pending our full hands-on test.', category: 'Reviews', keywords: ['OurDream review'] },
+  { slug: 'secret-desires-vs-candy-ai',           title: 'Secret Desires vs Candy AI 2026',                   description: 'Head-to-head between Secret Desires and Candy AI — feature-by-feature and our pick.', category: 'Comparison', keywords: ['Secret Desires vs Candy AI'] },
+  { slug: 'secret-desires-vs-dreamgf',            title: 'Secret Desires vs DreamGF 2026',                    description: 'Head-to-head between Secret Desires and DreamGF — feature-by-feature and our pick.', category: 'Comparison', keywords: ['Secret Desires vs DreamGF'] },
+  { slug: 'secret-desires-vs-nomi',               title: 'Secret Desires vs Nomi 2026',                       description: 'Head-to-head between Secret Desires and Nomi — feature-by-feature and our pick.', category: 'Comparison', keywords: ['Secret Desires vs Nomi'] },
+  { slug: 'secret-desires-vs-crushon',            title: 'Secret Desires vs CrushOn AI',                      description: 'Secret Desires vs CrushOn AI — pending our full comparison.', category: 'Comparison', keywords: ['Secret Desires vs CrushOn'] },
+  { slug: 'candy-ai-alternatives',                title: 'Candy AI Alternatives',                             description: 'Genuine Candy AI alternatives — with reasons, not just our top pick.', category: 'Guide', keywords: ['Candy AI alternatives'] },
+  { slug: 'dreamgf-alternatives',                 title: 'DreamGF Alternatives',                              description: 'Genuine DreamGF alternatives — with reasons.', category: 'Guide', keywords: ['DreamGF alternatives'] },
+  { slug: 'nomi-alternatives',                    title: 'Nomi Alternatives',                                 description: 'Genuine Nomi alternatives — with reasons.', category: 'Guide', keywords: ['Nomi alternatives'] },
+  { slug: 'best-ai-companion-platforms-for-custom-characters', title: 'Best AI Companion Platforms for Custom Characters', description: 'Which platforms let you actually build a custom AI companion character from scratch.', category: 'Guide', keywords: ['custom AI companion', 'best AI character creator'] },
+  { slug: 'best-ai-companion-for-roleplay',       title: 'Best AI Companion for Roleplay',                    description: 'AI companion apps ranked for roleplay — scenario depth, character consistency and content latitude.', category: 'Guide', keywords: ['AI roleplay', 'best AI companion roleplay'] },
+  { slug: 'best-ai-companion-for-long-term-use',  title: 'Best AI Companion for Long-Term Use',               description: 'Which AI companion apps actually hold up over months of daily use — the memory and consistency you need for the long haul.', category: 'Guide', keywords: ['long term AI companion', 'AI companion memory'] },
+  { slug: 'best-free-ai-girlfriend',              title: 'Best Free AI Girlfriend Apps',                      description: 'AI girlfriend apps with the most usable free tiers — where you get real value without paying.', category: 'Guide', keywords: ['free AI girlfriend'] },
+  { slug: 'best-ai-girlfriend-mobile-app',        title: 'Best AI Girlfriend Mobile App',                     description: 'AI girlfriend apps ranked specifically for the mobile experience — where mobile UX makes or breaks daily use.', category: 'Guide', keywords: ['AI girlfriend mobile app'] },
+  { slug: 'ai-companion-industry-trends-2026',    title: 'AI Companion Industry Trends 2026',                 description: 'The state of the AI companion category in 2026 — what changed, what is coming, and where the whole thing is heading.', category: 'Trends', keywords: ['AI companion trends', 'AI companion industry 2026'] },
+]
+
+// Only published posts appear in the public index / sitemap / detail routes.
+export const posts = POSTS.filter((p) => (p.status ?? 'published') === 'published')
+
+export const categories = ['All', ...Array.from(new Set(posts.map((p) => p.category)))]
 
 export function getPost(slug: string): BlogPost | undefined {
-  return POSTS.find((p) => p.slug === slug)
+  return posts.find((p) => p.slug === slug)
 }
 
 export function relatedPosts(slug: string, limit = 3): BlogPost[] {

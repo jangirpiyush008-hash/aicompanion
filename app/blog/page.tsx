@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import FloatingBackground from '@/components/FloatingBackground'
-import { posts, categories } from '@/lib/blog'
+import { posts, categories, PLANNED_POSTS } from '@/lib/blog'
 import { SITE } from '@/lib/site'
 
 export const metadata: Metadata = {
@@ -157,6 +157,38 @@ export default function BlogIndex() {
               </div>
               <div style={{ fontSize: 13.5, color: '#d6336c', fontWeight: 700, marginTop: 4 }}>Read →</div>
             </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Editorial pipeline — titles we plan to publish. Not linked (there is
+          no article yet); shown so readers see the roadmap and can email if
+          a specific topic matters to them right now. */}
+      <section style={{ maxWidth: 1200, margin: '32px auto 0', padding: '0 40px 60px' }}>
+        <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 28, margin: '0 0 8px', fontWeight: 700, color: '#2b0f1d' }}>
+          Coming next
+        </h2>
+        <p style={{ fontSize: 14.5, color: '#6f4a5d', margin: '0 0 20px', maxWidth: '68ch' }}>
+          The editorial pipeline for the next few months. If one of these matters to you right now,
+          email <a href="mailto:stackpicks.dev@gmail.com" style={{ color: '#c2185b', fontWeight: 700 }}>stackpicks.dev@gmail.com</a> and we&apos;ll bump it up.
+        </p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 10 }}>
+          {PLANNED_POSTS.map((p) => (
+            <div key={p.slug} style={{
+              padding: '14px 16px',
+              background: '#fff',
+              border: '1px dashed #f0a3c2',
+              borderRadius: 12,
+              opacity: 0.85,
+              display: 'flex', flexDirection: 'column', gap: 4,
+            }}>
+              <div style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#a3818f' }}>
+                {p.category} · Planned
+              </div>
+              <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 15.5, fontWeight: 700, color: '#331523', lineHeight: 1.3 }}>
+                {p.title}
+              </div>
+            </div>
           ))}
         </div>
       </section>

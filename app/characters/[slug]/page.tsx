@@ -108,6 +108,23 @@ export default async function CharacterPage(props: {
     mainEntityOfPage: canonical,
   }
 
+  // ImageGallery schema — one ImageObject per gallery image. Each carries
+  // credit + creator so aggregators can attribute the AI-generated origin.
+  const galleryLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ImageGallery',
+    name: `${c.name} — AI companion character gallery`,
+    url: canonical,
+    image: c.gallery.map((g) => ({
+      '@type': 'ImageObject',
+      contentUrl: `${SITE.url}${g.src}`,
+      caption: g.alt,
+      creditText: 'AI Companions Labs',
+      creator: { '@type': 'Organization', name: SITE.name },
+      copyrightNotice: '© AI Companions Labs',
+    })),
+  }
+
   return (
     <>
       <FloatingBackground density={12} />
@@ -491,6 +508,10 @@ export default async function CharacterPage(props: {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(galleryLd) }}
       />
     </>
   )

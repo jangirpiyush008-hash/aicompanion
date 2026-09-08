@@ -29,6 +29,7 @@ export const NAV = [
   { label: 'Comparisons',         href: '/comparisons/' },
   { label: 'Best of',             href: '/best-ai-girlfriends/' },
   { label: 'Blog',                href: '/blog/' },
+  { label: 'Search',              href: '/search/' },
 ] as const
 
 // icon is a semantic keyword resolved by <CategoryIcon /> into an inline SVG.
@@ -62,11 +63,14 @@ export const PLATFORMS = [
   { rank: 4, name: 'Nomi',      rating: 'Score pending hands-on test', bestFor: 'Long-term AI companionship and memory.',                  href: '/#reviews', cta: 'Review coming', btnBg: '#b98ba0' },
 ] as const
 
+// Standardised statuses: Published (linked to a real page), Testing (work in
+// progress), Planned (on the roadmap). Never invent "hands-on tested" here —
+// only "Published" entries should link to a real /reviews/ or /lab/ page.
 export const LAB_TESTS = [
-  { status: 'In progress', statusColor: '#e8590c', name: 'Secret Desires Image Consistency Test', desc: 'Can one character keep the same face across 50 generations?' },
-  { status: 'Up next',     statusColor: '#d6336c', name: 'Best AI Girlfriend Apps 2026',           desc: 'Head-to-head ranking across 9 weighted categories.' },
-  { status: 'Up next',     statusColor: '#d6336c', name: 'AI Companion Memory Test',               desc: 'Which platforms actually remember week-old conversations?' },
-  { status: 'Planned',     statusColor: '#a3818f', name: 'AI Video Generation Comparison',         desc: 'Testing motion quality and character consistency in video.' },
+  { status: 'Published', statusColor: '#0b6e30', name: 'Secret Desires Review 2026',             desc: 'Full hands-on review, scored across 9 weighted categories.',              href: '/reviews/secret-desires/' },
+  { status: 'Published', statusColor: '#0b6e30', name: 'Best AI Girlfriends 2026',               desc: 'Head-to-head ranking of every platform we\'ve tested.',                  href: '/best-ai-girlfriends/' },
+  { status: 'Testing',   statusColor: '#e8590c', name: 'Image Consistency Test',                 desc: 'Same-character consistency across 50 generations, four platforms.',      href: undefined },
+  { status: 'Planned',   statusColor: '#a3818f', name: 'Long-Term Memory Test',                  desc: 'Does the companion still remember you after 30 days offline?',           href: undefined },
 ] as const
 
 export const FAQS = [
