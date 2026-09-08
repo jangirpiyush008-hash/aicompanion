@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="AI Companions Labs">
+  <defs>
+    <linearGradient id="acl-apple-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f0417e"/>
+      <stop offset="1" stop-color="#7c1236"/>
+    </linearGradient>
+  </defs>
+  <!-- Full-bleed plate (Apple touch icons should have no transparent padding) -->
+  <rect x="0" y="0" width="180" height="180" fill="url(#acl-apple-g)"/>
+  <!-- White heart mark -->
+  <path
+    d="M90 140
+       C 55 116, 40 96, 40 74
+       C 40 60, 51 50, 63 50
+       C 74 50, 84 57, 90 68
+       C 96 57, 106 50, 117 50
+       C 129 50, 140 60, 140 74
+       C 140 96, 125 116, 90 140 Z"
+    fill="#ffffff"
+  />
+  <path d="M110 92 v18 h18" stroke="#c2255c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -23,6 +24,7 @@ export async function generateMetadata(props: {
   const p = getPost(slug)
   if (!p) return { title: 'Post not found' }
   const url = `${SITE.url}/blog/${p.slug}/`
+  const image = p.heroImage ? `${SITE.url}${p.heroImage}` : undefined
   return {
     title: p.title,
     description: p.description,
@@ -36,11 +38,13 @@ export async function generateMetadata(props: {
       publishedTime: p.date,
       authors: [p.author],
       tags: p.keywords,
+      ...(image && { images: [{ url: image, width: 1200, height: 630 }] }),
     },
     twitter: {
       card: 'summary_large_image',
       title: p.title,
       description: p.description,
+      ...(image && { images: [image] }),
     },
   }
 }
@@ -130,6 +134,36 @@ export default async function BlogPostPage(props: {
           <span>{p.readMin} min read</span>
         </div>
       </header>
+
+      {/* Hero image */}
+      {p.heroImage && (
+        <section style={{ maxWidth: 900, margin: '0 auto', padding: '0 40px 28px' }}>
+          <figure style={{ margin: 0 }}>
+            <div style={{
+              position: 'relative',
+              width: '100%',
+              aspectRatio: '16/9',
+              borderRadius: 18,
+              overflow: 'hidden',
+              boxShadow: '0 16px 40px rgba(120,30,70,0.16)',
+            }}>
+              <Image
+                src={p.heroImage}
+                alt={p.heroImageAlt || p.title}
+                fill
+                sizes="(max-width: 1000px) 100vw, 900px"
+                style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
+                priority
+              />
+            </div>
+            {p.heroImageCredit && (
+              <figcaption style={{ marginTop: 8, fontSize: 12, color: '#8a6274', textAlign: 'right' }}>
+                {p.heroImageCredit}
+              </figcaption>
+            )}
+          </figure>
+        </section>
+      )}
 
       {/* Quick Answer + Key Takeaways (both optional). GEO-friendly: puts a
           fact-dense, extractable summary above the article body. */}

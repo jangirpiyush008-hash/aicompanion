@@ -36,6 +36,11 @@ export type BlogPost = {
   relatedCharacters?: string[]  // character slugs
   relatedReviews?: string[]     // review slugs
   relatedComparisons?: string[] // comparison slugs
+  // Hero image — path under /public. Character portraits by default (site-
+  // owned, on-brand); replace with an original diagram/screenshot later.
+  heroImage?: string
+  heroImageAlt?: string
+  heroImageCredit?: string  // e.g. "Original AI Companions Labs artwork"
 }
 
 // A "planned" article is a scaffold record — title, slug, category — that
@@ -59,6 +64,9 @@ const POSTS: BlogPost[] = [
 ───────────────────────────────────────────────────────────── */
 {
   slug: 'what-is-an-ai-companion',
+  heroImage: '/characters/karley/1.webp',
+  heroImageAlt: 'Karley — an original AI companion character on AI Companions Labs',
+  heroImageCredit: 'Original AI Companions Labs artwork',
   title: 'What Is an AI Companion? A Plain-English Guide for 2026',
   description:
     'AI companions are chat-based apps that hold a consistent character over time. Here is what the category actually is, how it differs from a chatbot, what the honest use cases are, and what to be careful about.',
@@ -146,6 +154,9 @@ const POSTS: BlogPost[] = [
 ───────────────────────────────────────────────────────────── */
 {
   slug: 'how-ai-companion-memory-works',
+  heroImage: '/characters/aj-parker/1.webp',
+  heroImageAlt: 'AJ Parker — an original AI companion character on AI Companions Labs',
+  heroImageCredit: 'Original AI Companions Labs artwork',
   title: 'How AI Companion Memory Actually Works: LLMs, Context Windows, and Long-Term Recall',
   description:
     'AI companions "remember" you using a mix of context windows, summarization, and vector databases. This is the plain-English version of what is really happening — and why some apps feel like they remember and others do not.',
@@ -223,6 +234,9 @@ const POSTS: BlogPost[] = [
 ───────────────────────────────────────────────────────────── */
 {
   slug: 'ai-companion-privacy-checklist',
+  heroImage: '/characters/tiffany/1.webp',
+  heroImageAlt: 'Tiffany — an original AI companion character on AI Companions Labs',
+  heroImageCredit: 'Original AI Companions Labs artwork',
   title: 'AI Companion Privacy Checklist: What to Ask Before You Sign Up',
   description:
     'AI companion apps see very personal conversations. This is a plain-language privacy checklist covering training-data opt-out, encryption, retention, jurisdiction, and what to test before you trust an app with anything sensitive.',
@@ -312,6 +326,9 @@ const POSTS: BlogPost[] = [
 ───────────────────────────────────────────────────────────── */
 {
   slug: 'ai-companion-vs-chatbot-vs-assistant',
+  heroImage: '/characters/ami-tan/1.webp',
+  heroImageAlt: 'Ami Tan — an original AI companion character on AI Companions Labs',
+  heroImageCredit: 'Original AI Companions Labs artwork',
   title: 'AI Companion vs Chatbot vs Assistant: What Is Actually Different?',
   description:
     'Three products, three different jobs. This is the clearest breakdown of when a category calls itself an AI companion, a chatbot, or an assistant — and why the distinctions matter for what you should pay for.',
@@ -390,6 +407,9 @@ const POSTS: BlogPost[] = [
 ───────────────────────────────────────────────────────────── */
 {
   slug: 'ai-companion-features-2026',
+  heroImage: '/characters/agnieszka-kolczyk/1.webp',
+  heroImageAlt: 'Agnieszka Kolczyk — an original AI companion character on AI Companions Labs',
+  heroImageCredit: 'Original AI Companions Labs artwork',
   title: 'The 2026 AI Companion Feature Landscape: Voice, Video, Memory, and Beyond',
   description:
     'What features are actually shipping in AI companion apps in 2026, which of them work, and which of them are marketing. A guided tour of the current feature stack — voice, images, video, memory, personalisation.',
@@ -466,6 +486,9 @@ const POSTS: BlogPost[] = [
 ───────────────────────────────────────────────────────────── */
 {
   slug: 'character-consistency-in-ai-companions',
+  heroImage: '/characters/yumiko-fujii/1.webp',
+  heroImageAlt: 'Yumiko Fujii — an original AI companion character on AI Companions Labs',
+  heroImageCredit: 'Original AI Companions Labs artwork',
   title: 'Character Consistency in AI Companions: How Personas Stay Stable Across Sessions',
   description:
     'A stable AI companion character has the same personality, voice, and taste on day 1 and day 100 — that is engineering, not luck. Here is what platforms actually do to keep a persona from drifting.',
@@ -546,6 +569,9 @@ const POSTS: BlogPost[] = [
 ───────────────────────────────────────────────────────────── */
 {
   slug: 'how-to-choose-an-ai-girlfriend',
+  heroImage: '/characters/jenny-tanaka/1.webp',
+  heroImageAlt: 'Jenny Tanaka — an original AI companion character on AI Companions Labs',
+  heroImageCredit: 'Original AI Companions Labs artwork',
   title: 'How to Choose an AI Girlfriend App: A Practical Framework',
   description:
     'Skip the hype. This is a real decision framework for choosing an AI girlfriend app in 2026 — six questions to ask before you subscribe, and how the leading platforms actually compare.',
@@ -640,6 +666,9 @@ const POSTS: BlogPost[] = [
 ───────────────────────────────────────────────────────────── */
 {
   slug: 'what-is-an-ai-girlfriend',
+  heroImage: '/characters/natalie-craven/1.webp',
+  heroImageAlt: 'Natalie Craven — an original AI companion character on AI Companions Labs',
+  heroImageCredit: 'Original AI Companions Labs artwork',
   title: 'What Is an AI Girlfriend? A 2026 Explainer for Newcomers',
   description:
     'A plain-English introduction to AI girlfriend apps in 2026 — what they actually are, what they cost, what they can and cannot do, and how to try one without any commitment.',

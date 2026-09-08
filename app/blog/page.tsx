@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import FloatingBackground from '@/components/FloatingBackground'
-import { posts, categories, PLANNED_POSTS } from '@/lib/blog'
+import { posts, categories } from '@/lib/blog'
 import { SITE } from '@/lib/site'
 
 export const metadata: Metadata = {
@@ -80,32 +81,46 @@ export default function BlogIndex() {
           href={`/blog/${featured.slug}/`}
           style={{
             display: 'grid',
-            gridTemplateColumns: 'minmax(0,1fr)',
+            gridTemplateColumns: featured.heroImage ? 'minmax(0,1.4fr) minmax(0,1fr)' : 'minmax(0,1fr)',
+            gap: 0,
             background: '#fff', border: '1.5px solid #f2b8cf', borderRadius: 20,
             overflow: 'hidden',
             boxShadow: '0 16px 60px rgba(214,51,108,0.22)',
             textDecoration: 'none', color: '#331523',
-            padding: '36px 40px',
           }}
         >
-          <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#e8590c', marginBottom: 10 }}>
-            ★ Editor&apos;s Pick
+          <div style={{ padding: '36px 40px', display: 'flex', flexDirection: 'column', gap: 4 }}>
+            <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#e8590c', marginBottom: 10 }}>
+              ★ Editor&apos;s Pick
+            </div>
+            <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(24px,3vw,32px)', fontWeight: 700, color: '#2b0f1d', lineHeight: 1.2 }}>
+              {featured.title}
+            </div>
+            <p style={{ margin: '10px 0 12px', color: '#6f4a5d', fontSize: 15.5, lineHeight: 1.65 }}>
+              {featured.description}
+            </p>
+            <div style={{ fontSize: 13, color: '#8a6274', display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center' }}>
+              <span style={{ color: '#d6336c', fontWeight: 700 }}>{featured.category}</span>
+              <span aria-hidden="true">·</span>
+              <span>{new Date(featured.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+              <span aria-hidden="true">·</span>
+              <span>{featured.readMin} min read</span>
+              <span aria-hidden="true">·</span>
+              <span style={{ color: '#a61e4d', fontWeight: 700 }}>Read the guide →</span>
+            </div>
           </div>
-          <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(24px,3vw,32px)', fontWeight: 700, color: '#2b0f1d', lineHeight: 1.2 }}>
-            {featured.title}
-          </div>
-          <p style={{ margin: '10px 0 12px', color: '#6f4a5d', fontSize: 15.5, lineHeight: 1.65 }}>
-            {featured.description}
-          </p>
-          <div style={{ fontSize: 13, color: '#8a6274', display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center' }}>
-            <span style={{ color: '#d6336c', fontWeight: 700 }}>{featured.category}</span>
-            <span aria-hidden="true">·</span>
-            <span>{new Date(featured.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-            <span aria-hidden="true">·</span>
-            <span>{featured.readMin} min read</span>
-            <span aria-hidden="true">·</span>
-            <span style={{ color: '#a61e4d', fontWeight: 700 }}>Read the guide →</span>
-          </div>
+          {featured.heroImage && (
+            <div style={{ position: 'relative', minHeight: 260 }}>
+              <Image
+                src={featured.heroImage}
+                alt={featured.heroImageAlt || featured.title}
+                fill
+                sizes="(max-width: 780px) 100vw, 500px"
+                style={{ objectFit: 'cover', objectPosition: 'top' }}
+                priority
+              />
+            </div>
+          )}
         </Link>
       </section>
 
@@ -135,60 +150,42 @@ export default function BlogIndex() {
               key={p.slug}
               href={`/blog/${p.slug}/`}
               style={{
-                display: 'flex', flexDirection: 'column', gap: 10,
+                display: 'flex', flexDirection: 'column',
                 background: '#fff', border: '1px solid #f6d3e1', borderRadius: 16,
-                padding: 24, textDecoration: 'none', color: '#331523',
+                overflow: 'hidden',
+                textDecoration: 'none', color: '#331523',
                 boxShadow: '0 2px 10px rgba(214,51,108,0.05)',
               }}
             >
-              <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#d6336c' }}>
-                {p.category}
+              {p.heroImage && (
+                <div style={{ position: 'relative', aspectRatio: '16/10', width: '100%' }}>
+                  <Image
+                    src={p.heroImage}
+                    alt={p.heroImageAlt || p.title}
+                    fill
+                    sizes="(max-width: 780px) 100vw, 400px"
+                    style={{ objectFit: 'cover', objectPosition: 'top' }}
+                  />
+                </div>
+              )}
+              <div style={{ padding: 20, display: 'flex', flexDirection: 'column', gap: 8, flex: 1 }}>
+                <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#d6336c' }}>
+                  {p.category}
+                </div>
+                <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 20, fontWeight: 700, color: '#2b0f1d', lineHeight: 1.25 }}>
+                  {p.title}
+                </div>
+                <div style={{ fontSize: 14, color: '#6f4a5d', lineHeight: 1.6, marginBottom: 4 }}>
+                  {p.description}
+                </div>
+                <div style={{ fontSize: 12.5, color: '#8a6274', display: 'flex', gap: 8, marginTop: 'auto', flexWrap: 'wrap' }}>
+                  <span>{new Date(p.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                  <span aria-hidden="true">·</span>
+                  <span>{p.readMin} min read</span>
+                </div>
+                <div style={{ fontSize: 13.5, color: '#d6336c', fontWeight: 700, marginTop: 4 }}>Read →</div>
               </div>
-              <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 21, fontWeight: 700, color: '#2b0f1d', lineHeight: 1.25 }}>
-                {p.title}
-              </div>
-              <div style={{ fontSize: 14, color: '#6f4a5d', lineHeight: 1.6, marginBottom: 4 }}>
-                {p.description}
-              </div>
-              <div style={{ fontSize: 12.5, color: '#8a6274', display: 'flex', gap: 8, marginTop: 'auto', flexWrap: 'wrap' }}>
-                <span>{new Date(p.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
-                <span aria-hidden="true">·</span>
-                <span>{p.readMin} min read</span>
-              </div>
-              <div style={{ fontSize: 13.5, color: '#d6336c', fontWeight: 700, marginTop: 4 }}>Read →</div>
             </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Editorial pipeline — titles we plan to publish. Not linked (there is
-          no article yet); shown so readers see the roadmap and can email if
-          a specific topic matters to them right now. */}
-      <section style={{ maxWidth: 1200, margin: '32px auto 0', padding: '0 40px 60px' }}>
-        <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 28, margin: '0 0 8px', fontWeight: 700, color: '#2b0f1d' }}>
-          Coming next
-        </h2>
-        <p style={{ fontSize: 14.5, color: '#6f4a5d', margin: '0 0 20px', maxWidth: '68ch' }}>
-          The editorial pipeline for the next few months. If one of these matters to you right now,
-          email <a href="mailto:stackpicks.dev@gmail.com" style={{ color: '#c2185b', fontWeight: 700 }}>stackpicks.dev@gmail.com</a> and we&apos;ll bump it up.
-        </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 10 }}>
-          {PLANNED_POSTS.map((p) => (
-            <div key={p.slug} style={{
-              padding: '14px 16px',
-              background: '#fff',
-              border: '1px dashed #f0a3c2',
-              borderRadius: 12,
-              opacity: 0.85,
-              display: 'flex', flexDirection: 'column', gap: 4,
-            }}>
-              <div style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#a3818f' }}>
-                {p.category} · Planned
-              </div>
-              <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 15.5, fontWeight: 700, color: '#331523', lineHeight: 1.3 }}>
-                {p.title}
-              </div>
-            </div>
           ))}
         </div>
       </section>
