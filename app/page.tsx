@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import FloatingBackground from '@/components/FloatingBackground'
+import EditorsPickShowcase from '@/components/EditorsPickShowcase'
+import CategoryIcon from '@/components/CategoryIcon'
 import { characters, characterCover } from '@/lib/characters'
 import { posts } from '@/lib/blog'
 import {
@@ -185,17 +187,12 @@ export default function Home() {
           </div>
           <div
             style={{
-              background:
-                'radial-gradient(400px 300px at 70% 40%,#fbd6e5,transparent),linear-gradient(160deg,#fde8f0,#fbd0e0)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 200,
+              position: 'relative',
+              background: 'linear-gradient(160deg,#fde8f0,#fbd0e0)',
+              minHeight: 320,
             }}
           >
-            <div style={{ textAlign: 'center', padding: 24 }}>
-              <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 52, color: '#c2255c' }}>SD</div>
-              <div style={{ fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#a3818f', fontFamily: 'monospace' }}>
-                Featured Partner
-              </div>
-            </div>
+            <EditorsPickShowcase />
           </div>
         </div>
       </section>
@@ -223,7 +220,21 @@ export default function Home() {
                 textDecoration: 'none',
               }}
             >
-              <div style={{ fontSize: 22 }}>{cat.icon}</div>
+              <div
+                style={{
+                  width: 44,
+                  height: 44,
+                  borderRadius: 12,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  background: 'linear-gradient(135deg, #fde8f0, #fbd0e0)',
+                  color: '#c2185b',
+                  marginBottom: 4,
+                }}
+              >
+                <CategoryIcon name={cat.icon} />
+              </div>
               <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 20, fontWeight: 600 }}>{cat.name}</div>
               <div style={{ fontSize: 13.5, color: '#8a6274', lineHeight: 1.5 }}>{cat.desc}</div>
               <div style={{ fontSize: 13, color: '#d6336c', fontWeight: 700, marginTop: 'auto' }}>Explore →</div>

@@ -53,6 +53,19 @@ export default async function CharacterPage(props: {
   const cover = characterCover(c)
   const canonical = `${SITE.url}/characters/${c.slug}/`
 
+  // Per-character CTA URL — real Secret Desires profile link where we have one,
+  // generic affiliate URL otherwise.
+  const ctaUrl = c.sdaiProfileUrl ?? SECRET_DESIRES_AFFILIATE_URL
+
+  // Gallery split: first 2 images unlocked, rest render as locked previews
+  // that click through to the character's Secret Desires profile.
+  const UNLOCKED = 2
+  const unlockedImages = c.gallery.slice(0, UNLOCKED)
+  const lockedImages = c.gallery.slice(UNLOCKED)
+  // If the character has 0-1 locked images from their gallery, add a few
+  // "premium tease" slots so the paywall UX is visible on every character.
+  const teaseCount = Math.max(0, 4 - lockedImages.length)
+
   // Breadcrumb JSON-LD
   const breadcrumbLd = {
     '@context': 'https://schema.org',
@@ -163,7 +176,7 @@ export default async function CharacterPage(props: {
 
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', alignItems: 'center', marginTop: 6 }}>
             <a
-              href={SECRET_DESIRES_AFFILIATE_URL}
+              href={ctaUrl}
               rel="sponsored noopener nofollow"
               target="_blank"
               style={{
@@ -223,18 +236,21 @@ export default async function CharacterPage(props: {
         </div>
       </section>
 
-      {/* Gallery */}
+      {/* Gallery — first 2 images unlocked, rest render as locked previews
+           that click through to the character's Secret Desires profile. */}
       <section id="gallery" style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '0 40px 56px' }}>
         <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap', marginBottom: 20 }}>
           <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 30, margin: 0, fontWeight: 700, color: '#2b0f1d' }}>
             {c.name} Gallery
           </h2>
           <span style={{ fontSize: 13, color: '#a3818f' }}>
-            All images AI-generated · New images added as they arrive
+            All images AI-generated · Unlock the full set on Secret Desires
           </span>
         </div>
+
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(240px,1fr))', gap: 14 }}>
-          {c.gallery.map((g, i) => (
+          {/* Unlocked previews (first 2) */}
+          {unlockedImages.map((g, i) => (
             <Image
               key={g.src}
               src={g.src}
@@ -250,24 +266,118 @@ export default async function CharacterPage(props: {
               }}
             />
           ))}
-          {/* Empty placeholder slots — fill to a nice 6-slot minimum layout */}
-          {Array.from({ length: Math.max(0, 6 - c.gallery.length) }).map((_, i) => (
-            <div
-              key={`slot-${i}`}
-              aria-hidden="true"
+
+          {/* Locked previews from the rest of the gallery */}
+          {lockedImages.map((g) => (
+            <a
+              key={g.src}
+              href={ctaUrl}
+              rel="sponsored noopener nofollow"
+              target="_blank"
+              aria-label={`Unlock more images of ${c.name} on Secret Desires`}
               style={{
+                position: 'relative',
+                display: 'block',
+                aspectRatio: '3/4',
+                borderRadius: 16,
+                border: '3px solid #fff',
+                boxShadow: '0 6px 24px rgba(120,30,70,0.14)',
+                overflow: 'hidden',
+                textDecoration: 'none',
+              }}
+            >
+              {/* Blurred image preview */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={g.src}
+                alt=""
+                aria-hidden="true"
+                style={{
+                  width: '100%', height: '100%',
+                  objectFit: 'cover', objectPosition: 'top',
+                  filter: 'blur(18px) saturate(0.85) brightness(0.85)',
+                  transform: 'scale(1.15)',
+                  display: 'block',
+                }}
+              />
+              {/* Dark scrim */}
+              <div aria-hidden="true" style={{
+                position: 'absolute', inset: 0,
+                background: 'linear-gradient(160deg, rgba(43,15,29,0.55), rgba(43,15,29,0.75))',
+              }} />
+              {/* Lock badge + CTA */}
+              <div style={{
+                position: 'absolute', inset: 0,
+                display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                gap: 8, padding: 18, textAlign: 'center',
+              }}>
+                <div style={{
+                  width: 44, height: 44, borderRadius: 999,
+                  background: 'rgba(255,255,255,0.12)',
+                  border: '1px solid rgba(255,255,255,0.3)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  backdropFilter: 'blur(4px)',
+                }}>
+                  {/* Simple padlock glyph */}
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M7 10V7a5 5 0 0110 0v3M6 10h12v10H6z" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{ color: '#fff', fontFamily: 'Playfair Display, serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.02em' }}>
+                  Unlock on Secret Desires
+                </div>
+                <div style={{ color: '#ffd6e6', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+                  Meet {c.name} →
+                </div>
+              </div>
+            </a>
+          ))}
+
+          {/* Fill to at least 6 tiles so the grid always feels full.
+              These are pure premium teasers — no source image, just a locked panel. */}
+          {Array.from({ length: teaseCount }).map((_, i) => (
+            <a
+              key={`tease-${i}`}
+              href={ctaUrl}
+              rel="sponsored noopener nofollow"
+              target="_blank"
+              aria-label={`See more of ${c.name} on Secret Desires`}
+              style={{
+                position: 'relative',
+                display: 'block',
                 aspectRatio: '3/4',
                 borderRadius: 16,
                 border: '2px dashed #f0a3c2',
-                background: 'rgba(255,255,255,0.55)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                color: '#a3818f', fontSize: 13,
-                padding: 16, textAlign: 'center',
+                background: 'linear-gradient(160deg, #fde8f0, #fbd0e0)',
+                overflow: 'hidden',
+                textDecoration: 'none',
               }}
             >
-              New {c.name} image coming soon
-            </div>
+              <div style={{
+                position: 'absolute', inset: 0,
+                display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                gap: 8, padding: 18, textAlign: 'center',
+              }}>
+                <div style={{
+                  width: 44, height: 44, borderRadius: 999,
+                  background: 'rgba(214,51,108,0.12)',
+                  border: '1px solid rgba(214,51,108,0.28)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M7 10V7a5 5 0 0110 0v3M6 10h12v10H6z" stroke="#c2255c" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{ color: '#2b0f1d', fontFamily: 'Playfair Display, serif', fontWeight: 700, fontSize: 15 }}>
+                  More of {c.name}
+                </div>
+                <div style={{ color: '#c2255c', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+                  Unlock on Secret Desires →
+                </div>
+              </div>
+            </a>
           ))}
+
         </div>
       </section>
 
@@ -288,7 +398,7 @@ export default async function CharacterPage(props: {
             Chat, customize and create with AI companions like {c.name} on Secret Desires.
           </p>
           <a
-            href={SECRET_DESIRES_AFFILIATE_URL}
+            href={ctaUrl}
             rel="sponsored noopener nofollow"
             target="_blank"
             style={{
@@ -298,7 +408,7 @@ export default async function CharacterPage(props: {
               fontSize: 16, fontWeight: 800, textDecoration: 'none',
             }}
           >
-            Try Secret Desires →
+            {c.sdaiProfileUrl ? `Meet ${c.name} on Secret Desires →` : 'Try Secret Desires →'}
           </a>
           <div style={{ fontSize: 12, color: '#ffc2da', marginTop: 16 }}>18+ only.</div>
         </div>

@@ -30,15 +30,18 @@ export const NAV = [
   { label: 'FAQ',                 href: '/#faq' },
 ] as const
 
+// icon is a semantic keyword resolved by <CategoryIcon /> into an inline SVG.
+// Using icons (not emoji) so the section looks like a polished product surface
+// rather than a chat message.
 export const CATEGORIES = [
-  { icon: '💘', name: 'AI Girlfriends', desc: 'Explore virtual girlfriends and romantic AI companions.', href: '/#characters' },
-  { icon: '🤵', name: 'AI Boyfriends',  desc: 'Discover AI male companions and virtual partners.',       href: '/#characters' },
-  { icon: '✨', name: 'AI Characters',  desc: 'Browse original AI Companions Labs characters.',                href: '/#characters' },
-  { icon: '📸', name: 'AI Images',      desc: 'Explore AI-generated companion imagery.',                  href: '/#characters' },
-  { icon: '🎬', name: 'AI Videos',      desc: 'Discover AI companion video experiences.',                 href: '/#lab' },
-  { icon: '🎙️', name: 'AI Voice & Calls', desc: 'Explore voice-enabled AI companions.',                  href: '/#lab' },
-  { icon: '⭐', name: 'Reviews',        desc: 'Read hands-on platform reviews.',                          href: '/#reviews' },
-  { icon: '⚖️', name: 'Comparisons',    desc: 'Compare leading AI companion platforms.',                  href: '/#trending' },
+  { icon: 'heart',    name: 'AI Girlfriends',  desc: 'Explore virtual girlfriends and romantic AI companions.', href: '/#characters' },
+  { icon: 'user',     name: 'AI Boyfriends',   desc: 'Discover AI male companions and virtual partners.',       href: '/#characters' },
+  { icon: 'sparkles', name: 'AI Characters',   desc: 'Browse original AI Companions Labs characters.',          href: '/#characters' },
+  { icon: 'image',    name: 'AI Images',       desc: 'Explore AI-generated companion imagery.',                 href: '/#characters' },
+  { icon: 'play',     name: 'AI Videos',       desc: 'Discover AI companion video experiences.',                href: '/#lab' },
+  { icon: 'waveform', name: 'AI Voice & Calls',desc: 'Explore voice-enabled AI companions.',                    href: '/#lab' },
+  { icon: 'star',     name: 'Reviews',         desc: 'Read hands-on platform reviews.',                         href: '/#reviews' },
+  { icon: 'chart',    name: 'Comparisons',     desc: 'Compare leading AI companion platforms.',                 href: '/#trending' },
 ] as const
 
 // Trending platforms — "Score pending" for every entry we haven't hands-on-tested,

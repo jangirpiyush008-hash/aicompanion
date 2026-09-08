@@ -1,8 +1,13 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Manrope } from 'next/font/google'
+import Script from 'next/script'
 import { SITE } from '@/lib/site'
 import AgeGate from '@/components/AgeGate'
 import './globals.css'
+
+// GA4 property — configure once. Loaded via next/script with the 'afterInteractive'
+// strategy so it never blocks first paint.
+const GA_ID = 'G-JP3DY9TE7X'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -62,6 +67,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <AgeGate />
+
+        {/* Google Analytics 4 — loads asynchronously after the page becomes interactive. */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
       </body>
     </html>
   )
