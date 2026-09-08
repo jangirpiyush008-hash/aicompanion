@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import FloatingBackground from '@/components/FloatingBackground'
-import EditorsPickShowcase from '@/components/EditorsPickShowcase'
+import HeroShowcase from '@/components/HeroShowcase'
 import CategoryIcon from '@/components/CategoryIcon'
 import { characters, characterCover } from '@/lib/characters'
 import { posts } from '@/lib/blog'
@@ -96,49 +96,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div style={{ position: 'relative', justifySelf: 'end', width: '100%', maxWidth: 420 }}>
-            <div
-              aria-hidden="true"
-              style={{
-                position: 'absolute', inset: -30,
-                background: 'radial-gradient(closest-side,rgba(230,73,128,0.25),transparent)',
-                filter: 'blur(24px)',
-              }}
-            />
-            <Image
-              src="/characters/karley/1.webp"
-              alt="Karley, an AI-generated companion character in an elegant evening look"
-              width={840} height={1120}
-              priority
-              style={{
-                position: 'relative',
-                width: '100%',
-                aspectRatio: '3/4',
-                objectFit: 'cover',
-                objectPosition: 'top',
-                borderRadius: 24,
-                border: '4px solid #fff',
-                boxShadow: '0 30px 70px rgba(120,30,70,0.28)',
-                display: 'block',
-              }}
-            />
-            <div
-              style={{
-                position: 'absolute',
-                left: 16, bottom: 16,
-                background: 'rgba(255,255,255,0.85)',
-                backdropFilter: 'blur(10px)',
-                WebkitBackdropFilter: 'blur(10px)',
-                border: '1px solid #f6d3e1',
-                borderRadius: 12,
-                padding: '10px 16px',
-                fontSize: 13,
-              }}
-            >
-              <span style={{ fontWeight: 700 }}>Karley</span>{' '}
-              <span style={{ color: '#8a6274' }}>· AI-generated character</span>
-            </div>
-          </div>
+          <HeroShowcase />
         </div>
       </header>
 
@@ -187,12 +145,24 @@ export default function Home() {
           </div>
           <div
             style={{
-              position: 'relative',
-              background: 'linear-gradient(160deg,#fde8f0,#fbd0e0)',
-              minHeight: 320,
+              background:
+                'radial-gradient(400px 300px at 70% 40%,#fbd6e5,transparent),linear-gradient(160deg,#fde8f0,#fbd0e0)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 200,
             }}
           >
-            <EditorsPickShowcase />
+            <div style={{ textAlign: 'center', padding: 24, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logos/secret-desires.svg"
+                alt="Secret Desires"
+                width={240}
+                height={64}
+                style={{ width: '100%', maxWidth: 240, height: 'auto', display: 'block' }}
+              />
+              <div style={{ fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#a3818f', fontFamily: 'monospace' }}>
+                Featured Partner
+              </div>
+            </div>
           </div>
         </div>
       </section>
