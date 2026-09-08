@@ -3,8 +3,8 @@ import BestOfPage, { P, H2 } from '@/components/BestOfPage'
 import { pageMetadata } from '@/lib/seo'
 
 const PATH = '/best-ai-girlfriends'
-const META_TITLE = 'Best AI Girlfriends 2026 — Tested & Ranked'
-const META_DESC = 'The best AI girlfriend apps of 2026, ranked by our 9-category methodology. Tested platforms only — no fake scores.'
+const META_TITLE = 'Best AI Girlfriend Apps 2026: Hands-On Tested & Ranked (AI Girlfriend, AI GF, AI Companion)'
+const META_DESC = 'The best AI girlfriend apps of 2026 — hands-on tested and ranked. Real scores across image quality, memory, voice, AI sexting, roleplay depth and price. Free tier picks + Editor\'s Pick included.'
 
 export const metadata: Metadata = pageMetadata({ title: META_TITLE, description: META_DESC, path: PATH })
 

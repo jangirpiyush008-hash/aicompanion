@@ -18,11 +18,11 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   const path = `/reviews/${r.slug}`
   const isPub = r.status === 'published'
   const title = isPub
-    ? `${r.name} Review 2026 — Hands-On Testing & Verdict`
-    : `${r.name} — Review Not Yet Available`
+    ? `${r.name} Review 2026 — Hands-On AI Companion App Testing & Verdict`
+    : `${r.name} AI Companion Review — Coming Soon 2026`
   const desc = isPub
-    ? `Full hands-on ${r.name} review: features, pricing, image quality, memory, voice, video and verdict. Scored on our 9-category methodology.`
-    : `We have not yet independently tested ${r.name}. This page tracks what we know and when a full review will be available.`
+    ? `${r.name} review 2026: full hands-on test of the AI companion platform. Features, pricing, image quality, AI sexting, memory, voice, video, verdict. Scored on our 9-category methodology.`
+    : `${r.name} AI companion review coming soon. This page tracks features, pricing and how ${r.name} compares to the best AI girlfriend and AI companion platforms we have tested.`
   return pageMetadata({ title, description: desc, path, type: 'article' })
 }
 
