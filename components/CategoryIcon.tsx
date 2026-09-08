@@ -3,7 +3,7 @@
 
 type IconKey =
   | 'heart' | 'user' | 'sparkles' | 'image'
-  | 'play' | 'waveform' | 'star' | 'chart'
+  | 'play' | 'waveform' | 'star' | 'chart' | 'anime'
 
 const COMMON = {
   width: 28,
@@ -77,6 +77,17 @@ export default function CategoryIcon({ name }: { name: string }) {
           <rect x="5.5" y="12" width="3" height="6" rx="0.6" />
           <rect x="10.5" y="8" width="3" height="10" rx="0.6" />
           <rect x="15.5" y="4.5" width="3" height="13.5" rx="0.6" />
+        </svg>
+      )
+    case 'anime':
+      return (
+        <svg {...COMMON}>
+          <path d="M6.5 9.5 5 4.5l3.5 3" />
+          <path d="M17.5 9.5 19 4.5l-3.5 3" />
+          <path d="M6 11.5c0 4 2.7 7.5 6 7.5s6-3.5 6-7.5" />
+          <circle cx="9.5" cy="13" r="0.9" fill="currentColor" stroke="none" />
+          <circle cx="14.5" cy="13" r="0.9" fill="currentColor" stroke="none" />
+          <path d="M10.5 16.2c.6.6 2.4.6 3 0" />
         </svg>
       )
     default:

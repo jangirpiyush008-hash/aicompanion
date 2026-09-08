@@ -39,6 +39,7 @@ export const NAV = [
 export const CATEGORIES = [
   { icon: 'heart',    name: 'AI Girlfriends',  desc: 'Explore virtual girlfriends and romantic AI companions.', href: '/ai-girlfriends/' },
   { icon: 'user',     name: 'AI Boyfriends',   desc: 'Discover AI male companions and virtual partners.',       href: '/ai-boyfriends/' },
+  { icon: 'anime',    name: 'AI Anime',        desc: 'Anime-styled AI companions — waifu, senpai and more.',    href: '/anime-ai-companions/' },
   { icon: 'sparkles', name: 'AI Characters',   desc: 'Browse original AI Companions Labs characters.',          href: '/characters/' },
   { icon: 'image',    name: 'AI Images',       desc: 'Explore AI-generated companion imagery.',                 href: '/ai-girlfriend-images/' },
   { icon: 'play',     name: 'AI Videos',       desc: 'Discover AI companion video experiences.',                href: '/ai-girlfriend-videos/' },
@@ -46,6 +47,61 @@ export const CATEGORIES = [
   { icon: 'star',     name: 'Reviews',         desc: 'Read hands-on platform reviews.',                         href: '/reviews/' },
   { icon: 'chart',    name: 'Comparisons',     desc: 'Compare leading AI companion platforms.',                 href: '/comparisons/' },
 ] as const
+
+// SDAI Showcase — hand-picked characters from Secret Desires, grouped by
+// category. Every image + CTA links to SECRET_DESIRES_AFFILIATE_URL (never
+// deep-link, per site policy). Images live at
+// /public/sdai-showcase/{slug}/{1..imageCount}.webp.
+// Kept intentionally separate from `/public/characters/` (site's original set)
+// so editorial framing stays clean.
+export type SdaiCategory = 'girlfriend' | 'boyfriend' | 'anime'
+
+export const SDAI_SHOWCASE: {
+  slug: string
+  name: string
+  age: number | null
+  category: SdaiCategory
+  imageCount: number
+  teaser: string
+}[] = [
+  // AI Girlfriends
+  { slug: 'lucia-reyes',        name: 'Lucía',       age: 21,   category: 'girlfriend', imageCount: 2, teaser: 'Vibrant, playful energy — quick wit and warmth.' },
+  { slug: 'morgan-morin',       name: 'Morgan',      age: 25,   category: 'girlfriend', imageCount: 2, teaser: 'Confident, career-driven — knows what she wants.' },
+  { slug: 'hannah-white',       name: 'Hannah',      age: 19,   category: 'girlfriend', imageCount: 2, teaser: 'Sweet, curious — the classic girl-next-door.' },
+  { slug: 'zoey-lewis',         name: 'Zoey',        age: 25,   category: 'girlfriend', imageCount: 2, teaser: 'Adventurous free spirit — loves late-night talks.' },
+  { slug: 'anya-petrova',       name: 'Anya',        age: 19,   category: 'girlfriend', imageCount: 2, teaser: 'Mysterious with a mischievous streak.' },
+  { slug: 'tara-moore',         name: 'Tara',        age: 20,   category: 'girlfriend', imageCount: 2, teaser: 'Bookish, thoughtful — deep conversations first.' },
+
+  // AI Boyfriends
+  { slug: 'axel-kross',         name: 'Axel',        age: 21,   category: 'boyfriend',  imageCount: 1, teaser: 'Rebellious edge — writes his own rules.' },
+  { slug: 'charlie-ford',       name: 'Charlie',     age: 36,   category: 'boyfriend',  imageCount: 1, teaser: 'Experienced, steady — a rock in the storm.' },
+  { slug: 'taeyang-seo',        name: 'Taeyang',     age: 24,   category: 'boyfriend',  imageCount: 1, teaser: 'Charismatic dreamer — passion and poetry.' },
+  { slug: 'christopher-ramirez',name: 'Christopher', age: 28,   category: 'boyfriend',  imageCount: 1, teaser: 'Grounded, protective — quietly attentive.' },
+  { slug: 'hideki-nakamura',    name: 'Hideki',      age: null, category: 'boyfriend',  imageCount: 1, teaser: 'Introspective, artistic — old-soul energy.' },
+  { slug: 'elias-morgan',       name: 'Elias',       age: null, category: 'boyfriend',  imageCount: 1, teaser: 'Brooding, intense — the mystery you chase.' },
+
+  // Anime
+  { slug: 'sae-yukishiro',      name: 'Sae Yukishiro',   age: 21, category: 'anime', imageCount: 2, teaser: 'Quiet grace, sharp mind — the honor-bound classmate.' },
+  { slug: 'aiko-shimei',        name: 'Aiko Shimei',     age: 30, category: 'anime', imageCount: 2, teaser: 'Cool, composed sensei — teaches through silence.' },
+  { slug: 'aya-schreik',        name: 'Aya Schreik',     age: 23, category: 'anime', imageCount: 2, teaser: 'Genki chaos — pure sunshine and speed.' },
+  { slug: 'serena-ueda',        name: 'Serena Ueda',     age: 19, category: 'anime', imageCount: 2, teaser: 'Dreamy, ethereal — the club-president crush.' },
+  { slug: 'ella-ando',          name: 'Ella Ando',       age: 28, category: 'anime', imageCount: 2, teaser: 'Confident onee-san — knowing smile, no games.' },
+]
+
+export const SDAI_SHOWCASE_LABELS: Record<SdaiCategory, { heading: string; blurb: string }> = {
+  girlfriend: {
+    heading: 'Featured on Secret Desires — AI Girlfriends',
+    blurb: 'Hand-picked girlfriends currently trending on Secret Desires, our editor’s-pick platform. Every image is a real profile from the platform.',
+  },
+  boyfriend: {
+    heading: 'Featured on Secret Desires — AI Boyfriends',
+    blurb: 'Popular male companions on Secret Desires. Tap any card to start chatting on the platform.',
+  },
+  anime: {
+    heading: 'Featured on Secret Desires — Anime AI Companions',
+    blurb: 'Anime-styled companions on Secret Desires — from quiet honor-students to genki chaos to composed onee-san.',
+  },
+}
 
 // Homepage "Tested & Featured Platforms" strip. Every entry carries a status
 // (editor-pick | testing | featured) — NEVER a numeric rank, because numeric

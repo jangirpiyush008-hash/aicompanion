@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Hubs
     { url: `${SITE.url}/ai-girlfriends/`,        lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${SITE.url}/ai-boyfriends/`,         lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${SITE.url}/anime-ai-companions/`,   lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${SITE.url}/ai-companions/`,         lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${SITE.url}/ai-characters/`,         lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${SITE.url}/ai-girlfriend-images/`,  lastModified: now, changeFrequency: 'weekly',  priority: 0.85 },

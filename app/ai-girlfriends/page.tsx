@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import HubPage, { P, H2 } from '@/components/HubPage'
+import SDAIShowcase from '@/components/SDAIShowcase'
 import { pageMetadata } from '@/lib/seo'
 
 const PATH = '/ai-girlfriends'
@@ -34,6 +35,7 @@ export default function AIGirlfriendsHub() {
           </P>
         </>
       }
+      extraSection={<SDAIShowcase category="girlfriend" />}
       charFilter={(c) => !/male|boyfriend|him/i.test((c.tags || []).join(' ') + ' ' + c.subtitle)}
       reviewSlugs={['secret-desires', 'candy-ai', 'dreamgf', 'nomi']}
       faqs={[
