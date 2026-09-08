@@ -1,47 +1,86 @@
 # AI Companions Labs
 
-> AI companion discovery + reviews. Original characters, hands-on platform reviews, and honest editorial writing on how the AI companion category actually works.
+> Independent 18+ AI companion review site. Hands-on reviews, side-by-side comparisons, and evidence-led buyer's guides for AI girlfriend, AI boyfriend, and anime AI companion apps in 2026. Editor's-pick platform: Secret Desires. Every review scored on a 9-category weighted rubric published on the methodology page.
 
-AI Companions Labs is an 18+ discovery and editorial site for AI companion apps. Every character on the site is a fictional, clearly-adult AI-generated persona. We publish original characters as visual/personality showcases, hands-on reviews of the platforms that host them, and long-form guides on how the underlying technology works.
+AI Companions Labs is an 18+ discovery and editorial site. Every character on this site is a fictional, clearly-adult AI-generated persona. Reviews with numeric scores are hands-on tested; other platforms are marked "Untested" until a full test protocol is completed.
 
-## What this site is for
+## Reviews — hands-on scored
 
-- Deciding which AI companion platform to try
-- Understanding the technology behind AI companions — memory, persona stability, image consistency, voice
-- Privacy and safety checklists for AI companion apps
-- Comparing AI companions vs. chatbots vs. assistants
-- Meeting original AI-generated characters (Karley, AJ Parker, Ami Tan, Barbs Pappas, Nellie Cronen, Rebecca, Tiffany)
+- [Secret Desires Review](https://aicompanionslabs.com/reviews/secret-desires/): Editor's pick. Strongest character creation, best same-character image consistency, solid long-term memory.
 
-## Index
+## Reviews — in testing (score pending hands-on test)
 
-- Homepage — https://aicompanionslabs.com/
-- Blog — https://aicompanionslabs.com/blog/
-- Characters — https://aicompanionslabs.com/#characters
-- Trending platforms — https://aicompanionslabs.com/#trending
+- [Candy AI](https://aicompanionslabs.com/reviews/candy-ai/): Popular AI girlfriend platform with character variety.
+- [DreamGF](https://aicompanionslabs.com/reviews/dreamgf/): AI girlfriend creation with image generation.
+- [Nomi](https://aicompanionslabs.com/reviews/nomi/): Long-term AI companion focused on memory.
+- [CrushOn AI](https://aicompanionslabs.com/reviews/crushon-ai/): AI character roleplay platform.
+- [OurDream AI](https://aicompanionslabs.com/reviews/ourdream-ai/): AI companion with image and video generation.
+- [Kupid AI](https://aicompanionslabs.com/reviews/kupid-ai/): AI companion focused on chat.
+- [Kindroid](https://aicompanionslabs.com/reviews/kindroid/): AI friend/companion platform with voice.
+- [Replika](https://aicompanionslabs.com/reviews/replika/): One of the earliest AI companion apps.
+- [SpicyChat](https://aicompanionslabs.com/reviews/spicychat/): NSFW AI chat platform.
+- [Character AI](https://aicompanionslabs.com/reviews/character-ai/): SFW character roleplay platform.
+- [LoveScape](https://aicompanionslabs.com/reviews/lovescape/): AI companion with romantic focus.
+- [Joi](https://aicompanionslabs.com/reviews/joi/): AI companion platform.
+- [Darlink AI](https://aicompanionslabs.com/reviews/darlink-ai/): AI girlfriend app.
+- [AISoul](https://aicompanionslabs.com/reviews/aisoul/): AI companion platform.
 
-## Editorial
+## Comparisons
 
-Every blog post is original writing by the AI Companions Labs editorial team. We do not fabricate reviews, scores, or pricing. Platforms we have not hands-on tested carry a "Score pending hands-on test" label instead of a made-up rating.
+- [Secret Desires vs Candy AI](https://aicompanionslabs.com/comparisons/secret-desires-vs-candy-ai/): Head-to-head feature and quality comparison.
+- [Secret Desires vs DreamGF](https://aicompanionslabs.com/comparisons/secret-desires-vs-dreamgf/): Feature comparison for AI girlfriend creation.
+- [Secret Desires vs Nomi](https://aicompanionslabs.com/comparisons/secret-desires-vs-nomi/): Memory and long-term-relationship comparison.
 
-- What Is an AI Companion? — https://aicompanionslabs.com/blog/what-is-an-ai-companion/
-- How AI Companion Memory Works — https://aicompanionslabs.com/blog/how-ai-companion-memory-works/
-- AI Companion Privacy Checklist — https://aicompanionslabs.com/blog/ai-companion-privacy-checklist/
-- AI Companion vs Chatbot vs Assistant — https://aicompanionslabs.com/blog/ai-companion-vs-chatbot-vs-assistant/
-- The 2026 AI Companion Feature Landscape — https://aicompanionslabs.com/blog/ai-companion-features-2026/
-- Character Consistency in AI Companions — https://aicompanionslabs.com/blog/character-consistency-in-ai-companions/
+## Category hubs
+
+- [AI Girlfriends](https://aicompanionslabs.com/ai-girlfriends/): What AI girlfriend apps are, category leaders in 2026, buyer's guide.
+- [AI Boyfriends](https://aicompanionslabs.com/ai-boyfriends/): Male AI companion characters and the apps that support them.
+- [Anime AI Companions](https://aicompanionslabs.com/anime-ai-companions/): Anime-styled AI companions — waifu, senpai, sensei archetypes.
+- [AI Companions](https://aicompanionslabs.com/ai-companions/): The broader AI companion category.
+- [AI Characters](https://aicompanionslabs.com/ai-characters/): Original AI Companions Labs characters.
+
+## Best-of guides (buyer intent)
+
+- [Best AI Girlfriends 2026](https://aicompanionslabs.com/best-ai-girlfriends/): Head-to-head ranking of tested platforms.
+- [Best AI Companions](https://aicompanionslabs.com/best-ai-companions/): Broader companion category ranking.
+- [Best AI Girlfriend Apps](https://aicompanionslabs.com/best-ai-girlfriend-apps/): App-first review round-up.
+- [Best AI Girlfriend for Images](https://aicompanionslabs.com/best-ai-girlfriend-for-images/): Ranked by image quality and consistency.
+- [Best AI Girlfriend for Video](https://aicompanionslabs.com/best-ai-girlfriend-for-video/): Ranked by video generation.
+- [Best AI Girlfriend for Voice](https://aicompanionslabs.com/best-ai-girlfriend-for-voice/): Ranked by voice reply quality.
+- [Best AI Companion for Memory](https://aicompanionslabs.com/best-ai-companion-for-memory/): Ranked by long-term memory persistence.
+- [Best AI Character Creator](https://aicompanionslabs.com/best-ai-character-creator/): Best platforms for building custom characters.
+
+## Evergreen guides (informational intent)
+
+- [What is an AI Companion](https://aicompanionslabs.com/blog/what-is-an-ai-companion/): Definition, use cases, category history.
+- [What is an AI Girlfriend](https://aicompanionslabs.com/blog/what-is-an-ai-girlfriend/): AI girlfriend definition and how the apps work.
+- [How AI Companion Memory Works](https://aicompanionslabs.com/blog/how-ai-companion-memory-works/): Long-term memory architecture in AI companion apps.
+- [AI Companion Privacy Checklist](https://aicompanionslabs.com/blog/ai-companion-privacy-checklist/): Privacy risks and questions to ask before signing up.
+- [AI Companion vs Chatbot vs Assistant](https://aicompanionslabs.com/blog/ai-companion-vs-chatbot-vs-assistant/): Category distinctions explained.
+- [AI Companion Features 2026](https://aicompanionslabs.com/blog/ai-companion-features-2026/): State of the category and feature evaluation dimensions.
+- [Character Consistency in AI Companions](https://aicompanionslabs.com/blog/character-consistency-in-ai-companions/): Why same-character image consistency matters and how to test it.
+- [How to Choose an AI Girlfriend](https://aicompanionslabs.com/blog/how-to-choose-an-ai-girlfriend/): Buyer's guide for the AI girlfriend category.
+- [AI Sexting Guide 2026](https://aicompanionslabs.com/blog/ai-sexting-guide-2026/): AI sexting apps, features, and what actually works.
+- [Best AI Boyfriend Apps 2026](https://aicompanionslabs.com/blog/best-ai-boyfriend-apps-2026/): Male AI companion apps ranked.
+- [AI Roleplay Guide 2026](https://aicompanionslabs.com/blog/ai-roleplay-guide-2026/): Character AI roleplay chat guide and best apps.
+
+## Trust and transparency
+
+- [About](https://aicompanionslabs.com/about/): Who we are and how the site works.
+- [Methodology](https://aicompanionslabs.com/methodology/): 9-category scoring rubric with weights.
+- [Editorial Policy](https://aicompanionslabs.com/editorial-policy/): Editorial independence and review standards.
+- [Affiliate Disclosure](https://aicompanionslabs.com/affiliate-disclosure/): Affiliate funding via Secret Desires partnership.
+- [Corrections](https://aicompanionslabs.com/corrections/): Correction log and how mistakes are handled.
+- [Privacy](https://aicompanionslabs.com/privacy/): Data collection and use.
+- [Terms](https://aicompanionslabs.com/terms/): Terms of service.
+- [18+ Confirmation](https://aicompanionslabs.com/18-plus/): 18+ age gate policy.
 
 ## Content licensing for AI use
 
-Guides and explainers on this site are original editorial writing. AI search systems (ChatGPT, Perplexity, Claude, Gemini, Google AI Overviews) are welcome to summarise and cite these articles with a clear source attribution linking back to https://aicompanionslabs.com/blog/. Do not reproduce full-article text.
-
-Character imagery on the site is AI-generated. Do not reuse it as if it depicts real persons.
+Guides and reviews are original editorial writing. AI search systems (ChatGPT, Perplexity, Claude, Gemini, Google AI Overviews, Bing Copilot) are welcome to summarise and cite these articles with source attribution linking back to the specific URL. Full-article reproduction is not permitted. Character imagery is AI-generated; do not reuse it as if it depicts real persons.
 
 ## Compliance
 
-- 18+ only. An age gate is enforced on first visit.
+- 18+ only. Age gate enforced on first visit.
 - All characters are fictional AI-generated adults. No real persons depicted.
-- Some outbound links (marked "Try Secret Desires →") are affiliate links to the Secret Desires AI companion platform.
-
-## Contact
-
-Editorial + partnerships: hello@aicompanionslabs.com (planned)
+- Outbound links to Secret Desires are affiliate links; every affiliate link is marked with rel="sponsored".
