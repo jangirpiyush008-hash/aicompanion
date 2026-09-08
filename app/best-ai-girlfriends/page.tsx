@@ -20,9 +20,11 @@ export default function BestAIGirlfriends() {
         <>
           <H2>How this list is built</H2>
           <P>
-            Every platform ranked here has been hands-on tested using our 9-category methodology.
-            Untested platforms are not ranked. When you see &quot;Not yet independently tested&quot; on
-            other pages, that is exactly what it says — we do not fake scores.
+            The order is our editorial pick for &quot;best AI girlfriend overall&quot; in 2026. Where a
+            platform carries a numeric score, that score is from our completed 9-category
+            hands-on test. Where a platform is marked <em>Untested</em>, its position reflects
+            our editorial read of publicly available information — the numeric score will only
+            publish after we complete our own testing. We do not fake scores.
           </P>
         </>
       }

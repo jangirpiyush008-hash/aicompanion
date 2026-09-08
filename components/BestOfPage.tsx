@@ -48,13 +48,28 @@ export default function BestOfPage({
         border: '1px solid #f6d3e1',
         borderRadius: 14,
         padding: '18px 22px',
-        margin: '4px 0 26px',
+        margin: '4px 0 20px',
         fontSize: 14, lineHeight: 1.65, color: '#331523',
       }}>
         <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#c2255c', marginBottom: 6 }}>
           Quick Answer
         </div>
         {quickAnswer}
+      </div>
+
+      <div style={{
+        background: '#fff',
+        border: '1px dashed #f0a3c2',
+        borderRadius: 12,
+        padding: '12px 16px',
+        margin: '0 0 22px',
+        fontSize: 13, color: '#5b3d4b', lineHeight: 1.55,
+      }}>
+        <strong style={{ color: '#c2255c' }}>How this ranking works:</strong>{' '}
+        Positions are our editorial pick for this dimension. Platforms with a numeric score have
+        completed our full hands-on test; platforms marked <em>Untested</em> are on the queue and
+        their placement reflects our editorial read, not a score. See our{' '}
+        <Link href="/methodology/" style={{ color: '#c2185b', fontWeight: 700 }}>methodology</Link>.
       </div>
 
       {intro}

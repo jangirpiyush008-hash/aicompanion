@@ -11,7 +11,8 @@ import { REVIEWS } from '@/lib/reviews'
 import { COMPARISONS } from '@/lib/comparisons'
 import ImageHubGrid from '@/components/ImageHubGrid'
 import {
-  CATEGORIES, FAQS, LAB_TESTS, PLATFORMS, SECRET_DESIRES_AFFILIATE_URL, SITE,
+  CATEGORIES, FAQS, LAB_TESTS, PLATFORMS, PLATFORM_STATUS_LABELS,
+  SECRET_DESIRES_AFFILIATE_URL, SITE,
 } from '@/lib/site'
 
 // Small typed inline-style helpers to keep JSX below readable.
@@ -299,34 +300,35 @@ export default function Home() {
             </Link>
           ))}
 
-          {/* 40+ more coming placeholder */}
-          <div
+          {/* Discovery tile — replaces the misleading "40+ more coming"
+              placeholder. Links to full browse + category pages instead of
+              implying character volume we don't yet have. */}
+          <Link
+            href="/characters/"
             style={{
               display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-              gap: 12, border: '2px dashed #f0a3c2', borderRadius: 18,
+              gap: 10, border: '2px dashed #f0a3c2', borderRadius: 18,
               background: 'rgba(255,255,255,0.6)', minHeight: 320, padding: 24, textAlign: 'center',
+              textDecoration: 'none', color: '#331523',
             }}
           >
-            <div style={{ fontSize: 28 }}>💗</div>
-            <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 22, fontWeight: 600, color: '#2b0f1d' }}>40+ more coming</div>
-            <div style={{ fontSize: 13.5, color: '#8a6274', lineHeight: 1.5 }}>
-              The character universe is growing. New AI companions added regularly.
+            <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 22, fontWeight: 600, color: '#2b0f1d' }}>
+              Browse all characters
             </div>
-            <a
-              href={SECRET_DESIRES_AFFILIATE_URL}
-              rel="sponsored noopener nofollow"
-              target="_blank"
-              style={{ fontSize: 13.5, fontWeight: 700, color: '#d6336c', textDecoration: 'none' }}
-            >
-              Create your own →
-            </a>
-          </div>
+            <div style={{ fontSize: 13.5, color: '#8a6274', lineHeight: 1.5, maxWidth: '28ch' }}>
+              New AI-generated companions added regularly. Filter by personality and style.
+            </div>
+            <span style={{ fontSize: 13, fontWeight: 700, color: '#c2185b', marginTop: 4 }}>Explore characters →</span>
+          </Link>
         </div>
       </section>
 
-      {/* ─────────── TRENDING PLATFORMS ─────────── */}
+      {/* ─────────── TESTED & FEATURED PLATFORMS ───────────
+          Editor's Pick is separated from "Currently Testing" to make the
+          testing status visible. No numeric ranks: numeric ranks imply
+          comparative testing we haven't completed. */}
       <section
-        id="trending"
+        id="platforms"
         style={{
           position: 'relative',
           background: 'radial-gradient(800px 420px at 50% 0%,rgba(230,73,128,0.12),transparent 70%)',
@@ -334,45 +336,58 @@ export default function Home() {
         }}
       >
         <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 34, margin: '0 0 8px', fontWeight: 700, color: '#2b0f1d' }}>
-          Trending AI Companion Platforms
+          Tested &amp; Featured Platforms
         </h2>
         <p style={{ color: '#8a6274', fontSize: 15, margin: '0 0 28px', maxWidth: '70ch' }}>
-          Ranked by our editorial framework: conversation, memory, customization, visual
-          quality, voice, video, usability and value. Scores publish after hands-on testing.
+          Our Editor&apos;s Pick is the only platform we&apos;ve completed our full 9-category test on
+          today. Others are on the testing queue — see each review page for details. Scores publish
+          only after actual testing. Read the{' '}
+          <Link href="/methodology/" style={{ color: '#c2185b', fontWeight: 700 }}>methodology</Link>.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-          {PLATFORMS.map((p) => (
-            <div
-              key={p.rank}
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '56px minmax(140px,1fr) minmax(160px,2fr) auto',
-                gap: 18, alignItems: 'center',
-                background: '#fff', border: '1px solid #f6d3e1', borderRadius: 16, padding: '20px 24px',
-              }}
-            >
-              <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 26, fontWeight: 700, color: '#e64980' }}>#{p.rank}</div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-                <div style={{ fontWeight: 800, fontSize: 17, color: '#2b0f1d' }}>{p.name}</div>
-                <div style={{ fontSize: 12, color: '#a3818f' }}>{p.rating}</div>
-              </div>
-              <div style={{ fontSize: 14, color: '#6f4a5d', lineHeight: 1.5 }}>{p.bestFor}</div>
-              <a
-                href={p.href}
-                rel={p.rank === 1 ? 'sponsored noopener nofollow' : undefined}
-                target={p.rank === 1 ? '_blank' : undefined}
+          {PLATFORMS.map((p) => {
+            const s = PLATFORM_STATUS_LABELS[p.status]
+            return (
+              <div
+                key={p.slug}
                 style={{
-                  justifySelf: 'end',
-                  fontSize: 13.5, fontWeight: 700, color: '#fff',
-                  background: p.btnBg,
-                  borderRadius: 999, padding: '10px 20px', whiteSpace: 'nowrap',
-                  textDecoration: 'none',
+                  display: 'grid',
+                  gridTemplateColumns: 'minmax(160px,1fr) minmax(160px,2fr) auto',
+                  gap: 18, alignItems: 'center',
+                  background: '#fff', border: '1px solid #f6d3e1', borderRadius: 16, padding: '20px 24px',
                 }}
               >
-                {p.cta}
-              </a>
-            </div>
-          ))}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                  <div style={{ fontWeight: 800, fontSize: 17, color: '#2b0f1d' }}>{p.name}</div>
+                  <span style={{
+                    alignSelf: 'flex-start',
+                    fontSize: 10.5, fontWeight: 800,
+                    padding: '3px 8px', borderRadius: 999,
+                    background: s.bg, color: s.color,
+                    letterSpacing: '0.06em', textTransform: 'uppercase',
+                  }}>
+                    {s.label}
+                  </span>
+                </div>
+                <div style={{ fontSize: 14, color: '#6f4a5d', lineHeight: 1.5 }}>{p.bestFor}</div>
+                <a
+                  href={p.href}
+                  {...(p.external ? { rel: 'sponsored noopener nofollow', target: '_blank' } : {})}
+                  style={{
+                    justifySelf: 'end',
+                    fontSize: 13.5, fontWeight: 700, color: '#fff',
+                    background: p.status === 'editor-pick'
+                      ? 'linear-gradient(135deg,#f0417e,#ad1457)'
+                      : '#a3748d',
+                    borderRadius: 999, padding: '10px 20px', whiteSpace: 'nowrap',
+                    textDecoration: 'none',
+                  }}
+                >
+                  {p.cta}
+                </a>
+              </div>
+            )
+          })}
         </div>
       </section>
 

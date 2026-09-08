@@ -27,7 +27,8 @@ export const NAV = [
   { label: 'AI Girlfriends',      href: '/ai-girlfriends/' },
   { label: 'Reviews',             href: '/reviews/' },
   { label: 'Comparisons',         href: '/comparisons/' },
-  { label: 'Best of',             href: '/best-ai-girlfriends/' },
+  { label: 'Guides',              href: '/guides/' },
+  { label: 'Lab',                 href: '/lab/' },
   { label: 'Blog',                href: '/blog/' },
   { label: 'Search',              href: '/search/' },
 ] as const
@@ -46,22 +47,41 @@ export const CATEGORIES = [
   { icon: 'chart',    name: 'Comparisons',     desc: 'Compare leading AI companion platforms.',                 href: '/#trending' },
 ] as const
 
-// Trending platforms — "Score pending" for every entry we haven't hands-on-tested,
-// per the compliance rule: never fabricate reviews/scores/pricing.
-export const PLATFORMS = [
+// Homepage "Tested & Featured Platforms" strip. Every entry carries a status
+// (editor-pick | testing | featured) — NEVER a numeric rank, because numeric
+// ranks imply we've comparatively tested platforms we haven't. Only Secret
+// Desires is currently marked editor-pick because it's the only platform we
+// have full hands-on data for.
+export type PlatformStatus = 'editor-pick' | 'testing' | 'planned'
+
+export const PLATFORMS: {
+  slug: string
+  name: string
+  status: PlatformStatus
+  bestFor: string
+  href: string
+  cta: string
+  external?: boolean
+}[] = [
   {
-    rank: 1,
+    slug: 'secret-desires',
     name: 'Secret Desires',
-    rating: "Editor's Pick",
+    status: 'editor-pick',
     bestFor: 'Best for personalized AI companions — custom characters, images and immersive chat.',
     href: SECRET_DESIRES_AFFILIATE_URL,
     cta: 'Try Secret Desires →',
-    btnBg: 'linear-gradient(135deg,#f0417e,#ad1457)',
+    external: true,
   },
-  { rank: 2, name: 'Candy AI',  rating: 'Score pending hands-on test', bestFor: 'Popular AI girlfriend platform with character variety.', href: '/#reviews', cta: 'Review coming', btnBg: '#b98ba0' },
-  { rank: 3, name: 'DreamGF',   rating: 'Score pending hands-on test', bestFor: 'AI girlfriend creation with image generation.',           href: '/#reviews', cta: 'Review coming', btnBg: '#b98ba0' },
-  { rank: 4, name: 'Nomi',      rating: 'Score pending hands-on test', bestFor: 'Long-term AI companionship and memory.',                  href: '/#reviews', cta: 'Review coming', btnBg: '#b98ba0' },
-] as const
+  { slug: 'candy-ai', name: 'Candy AI', status: 'testing', bestFor: 'Popular AI girlfriend platform with character variety.', href: '/reviews/candy-ai/',  cta: 'See details →' },
+  { slug: 'dreamgf',  name: 'DreamGF',  status: 'testing', bestFor: 'AI girlfriend creation with image generation.',         href: '/reviews/dreamgf/',   cta: 'See details →' },
+  { slug: 'nomi',     name: 'Nomi',     status: 'testing', bestFor: 'Long-term AI companion with strong memory focus.',      href: '/reviews/nomi/',      cta: 'See details →' },
+]
+
+export const PLATFORM_STATUS_LABELS: Record<PlatformStatus, { label: string; color: string; bg: string }> = {
+  'editor-pick': { label: "Editor's Pick",       color: '#7c1236', bg: '#fde8f0' },
+  'testing':     { label: 'Currently Testing',    color: '#a05a00', bg: '#fff5e6' },
+  'planned':     { label: 'Not yet tested',       color: '#5b3d4b', bg: '#f6d3e1' },
+}
 
 // Standardised statuses: Published (linked to a real page), Testing (work in
 // progress), Planned (on the roadmap). Never invent "hands-on tested" here —

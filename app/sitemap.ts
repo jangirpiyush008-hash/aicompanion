@@ -31,6 +31,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE.url}/ai-girlfriend-videos/`,  lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${SITE.url}/ai-companion-videos/`,   lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
 
+    // Lab / Research / Guides landing pages
+    { url: `${SITE.url}/lab/`,                   lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE.url}/research/`,              lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${SITE.url}/guides/`,                lastModified: now, changeFrequency: 'weekly',  priority: 0.85 },
+
     // Best-of pages
     { url: `${SITE.url}/best-ai-girlfriends/`,               lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${SITE.url}/best-ai-companions/`,                lastModified: now, changeFrequency: 'monthly', priority: 0.85 },

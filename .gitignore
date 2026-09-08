@@ -8,3 +8,7 @@ out
 npm-debug.log*
 .vscode
 .idea
+
+# TypeScript incremental build info (should never be committed)
+*.tsbuildinfo
+tsconfig.tsbuildinfo
