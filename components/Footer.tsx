@@ -18,10 +18,10 @@ export default function Footer({ variant = 'full' }: { variant?: 'full' | 'compa
         }}
       >
         <Link href="/" style={{ color: '#f783ac', fontWeight: 700, textDecoration: 'none' }}>
-          ← Back to AICompanionPartner
+          ← Back to AI Companions Labs
         </Link>
         <div style={{ marginTop: 10 }}>
-          © 2026 AICompanionPartner.com — 18+ only · All imagery is AI-generated. No real
+          © 2026 aicompanionslabs.com — 18+ only · All imagery is AI-generated. No real
           persons depicted.
         </div>
       </footer>
@@ -48,7 +48,7 @@ export default function Footer({ variant = 'full' }: { variant?: 'full' | 'compa
       >
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 22, fontWeight: 700, color: '#fff' }}>
-            AI<span style={{ color: '#f783ac' }}>Companion</span>Partner
+            AI Companions <span style={{ color: '#f783ac' }}>Labs</span>
           </div>
           <p style={{ fontSize: 13, lineHeight: 1.6, color: '#c99cb2', margin: 0, maxWidth: '36ch' }}>
             An 18+ AI companion discovery platform. Original characters, honest reviews,
@@ -96,7 +96,7 @@ export default function Footer({ variant = 'full' }: { variant?: 'full' | 'compa
           flexWrap: 'wrap',
         }}
       >
-        <span>© 2026 AICompanionPartner.com — 18+ only</span>
+        <span>© 2026 aicompanionslabs.com — 18+ only</span>
         <span>All imagery is AI-generated. No real persons depicted.</span>
       </div>
     </footer>

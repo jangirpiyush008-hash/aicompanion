@@ -1,7 +1,7 @@
-# AICompanionPartner
+# AI Companions Labs
 
 18+ AI companion discovery / review / affiliate site. Built from the
-`design_handoff_aicompanionpartner` bundle (Home + Character-Karley design references).
+`design_handoff_aicompanionslabs` bundle (Home + Character-Karley design references).
 
 **Stack:** Next.js 15 App Router · TypeScript · Tailwind CSS · Google Fonts (Playfair Display + Manrope).
 
@@ -27,7 +27,7 @@ npm start       # serve production build on $PORT (default 8080)
 ## Environment variables
 
 ```
-NEXT_PUBLIC_SITE_URL=https://aicompanionpartner.com
+NEXT_PUBLIC_SITE_URL=https://aicompanionslabs.com
 NEXT_PUBLIC_SECRET_DESIRES_AFFILIATE_URL=https://your-secret-desires-affiliate-link
 ```
 

@@ -243,7 +243,7 @@ export default function Home() {
       >
         <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 20, flexWrap: 'wrap', marginBottom: 10 }}>
           <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 34, margin: 0, fontWeight: 700, color: '#2b0f1d' }}>
-            Meet the AICompanionPartner Characters
+            Meet the AI Companions Labs Characters
           </h2>
           <span style={{ fontSize: 13, color: '#a3818f' }}>
             All characters are fictional adults · AI-generated
@@ -399,7 +399,7 @@ export default function Home() {
             What We&apos;re Testing This Week
           </h2>
           <span style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#d6336c' }}>
-            AICompanionPartner Lab
+            AI Companions Labs Lab
           </span>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(230px,1fr))', gap: 16 }}>
@@ -486,10 +486,10 @@ export default function Home() {
       {/* ─────────── FAQ ─────────── */}
       <section id="faq" style={{ position: 'relative', maxWidth: 900, margin: '0 auto', padding: '80px 40px 0' }}>
         <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 34, margin: '0 0 8px', fontWeight: 700, color: '#2b0f1d' }}>
-          What Is AICompanionPartner?
+          What Is AI Companions Labs?
         </h2>
         <p style={{ color: '#6f4a5d', fontSize: 15, lineHeight: 1.7, margin: '0 0 28px' }}>
-          AICompanionPartner is an 18+ discovery platform for AI girlfriends, AI boyfriends and
+          AI Companions Labs is an 18+ discovery platform for AI girlfriends, AI boyfriends and
           virtual companions. We publish original AI-generated characters with full
           galleries, hands-on platform reviews, side-by-side comparisons, and lab tests —
           so you can find the companion experience that fits you. Some links are affiliate

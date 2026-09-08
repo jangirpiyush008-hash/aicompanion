@@ -3,14 +3,14 @@
 // elsewhere. Override at build time with env var of the same name.
 
 export const SITE = {
-  name: 'AICompanionPartner',
-  domain: 'aicompanionpartner.com',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://aicompanionpartner.com',
+  name: 'AI Companions Labs',
+  domain: 'aicompanionslabs.com',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://aicompanionslabs.com',
   tagline: 'AI Companion Discovery Platform',
   descriptionShort:
     '18+ AI companion discovery, honest reviews and original AI-generated characters.',
   descriptionLong:
-    'AICompanionPartner is an 18+ discovery platform for AI girlfriends, AI boyfriends, and virtual companions. Original AI-generated characters, hands-on platform reviews, side-by-side comparisons, and lab tests.',
+    'AI Companions Labs is an 18+ discovery platform for AI girlfriends, AI boyfriends, and virtual companions. Original AI-generated characters, hands-on platform reviews, side-by-side comparisons, and lab tests.',
 }
 
 // Real Secret Desires affiliate URL (provided by site owner). Env var override
@@ -33,7 +33,7 @@ export const NAV = [
 export const CATEGORIES = [
   { icon: '💘', name: 'AI Girlfriends', desc: 'Explore virtual girlfriends and romantic AI companions.', href: '/#characters' },
   { icon: '🤵', name: 'AI Boyfriends',  desc: 'Discover AI male companions and virtual partners.',       href: '/#characters' },
-  { icon: '✨', name: 'AI Characters',  desc: 'Browse original AICompanionPartner characters.',                href: '/#characters' },
+  { icon: '✨', name: 'AI Characters',  desc: 'Browse original AI Companions Labs characters.',                href: '/#characters' },
   { icon: '📸', name: 'AI Images',      desc: 'Explore AI-generated companion imagery.',                  href: '/#characters' },
   { icon: '🎬', name: 'AI Videos',      desc: 'Discover AI companion video experiences.',                 href: '/#lab' },
   { icon: '🎙️', name: 'AI Voice & Calls', desc: 'Explore voice-enabled AI companions.',                  href: '/#lab' },
@@ -70,5 +70,5 @@ export const FAQS = [
   { q: 'Can AI companions generate images and videos?', a: 'Many platforms generate images of your companion; video support varies by platform. Our reviews note exactly which features each platform offers.' },
   { q: 'What is Secret Desires?', a: 'Secret Desires is an AI companion platform where adults create and interact with customizable virtual companions through conversation and AI-generated media.' },
   { q: 'Are AI companions private?', a: 'Privacy varies by platform. Check each service’s data handling and billing practices — our reviews cover the privacy questions worth asking.' },
-  { q: 'Is AICompanionPartner 18+?', a: 'Yes. AICompanionPartner is intended for adults 18+ only, and every character on this site is a fictional, clearly adult, AI-generated persona.' },
+  { q: 'Is AI Companions Labs 18+?', a: 'Yes. AI Companions Labs is intended for adults 18+ only, and every character on this site is a fictional, clearly adult, AI-generated persona.' },
 ] as const

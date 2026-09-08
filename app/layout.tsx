@@ -20,15 +20,15 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: 'AICompanionPartner — AI Girlfriends, AI Companions & Virtual Partners',
-    template: '%s | AICompanionPartner',
+    default: 'AI Companions Labs — AI Girlfriends, AI Companions & Virtual Partners',
+    template: '%s | AI Companions Labs',
   },
   description:
-    'AICompanionPartner is an 18+ discovery platform for AI girlfriends, AI boyfriends and virtual companions. Original AI-generated characters, hands-on platform reviews and side-by-side comparisons.',
+    'AI Companions Labs is an 18+ discovery platform for AI girlfriends, AI boyfriends and virtual companions. Original AI-generated characters, hands-on platform reviews and side-by-side comparisons.',
   applicationName: SITE.name,
   category: 'entertainment',
   openGraph: {
-    title: 'AICompanionPartner — AI Companion Discovery Platform',
+    title: 'AI Companions Labs — AI Companion Discovery Platform',
     description: SITE.descriptionLong,
     url: SITE.url,
     siteName: SITE.name,
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AICompanionPartner — AI Companion Discovery Platform',
+    title: 'AI Companions Labs — AI Companion Discovery Platform',
     description: SITE.descriptionShort,
   },
   robots: {

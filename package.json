@@ -1,8 +1,8 @@
 {
-  "name": "aicompanionpartner",
+  "name": "aicompanionslabs",
   "private": true,
   "version": "1.0.0",
-  "description": "AICompanionPartner — 18+ AI companion discovery + review + affiliate platform.",
+  "description": "AI Companions Labs — 18+ AI companion discovery + review + affiliate platform.",
   "engines": { "node": "20.x" },
   "scripts": {
     "dev": "next dev -p 4200",

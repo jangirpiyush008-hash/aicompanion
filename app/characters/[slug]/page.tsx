@@ -139,7 +139,7 @@ export default async function CharacterPage(props: {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
           <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#d6336c' }}>
-            AICompanionPartner Original Character
+            AI Companions Labs Original Character
           </div>
           <h1 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(44px,6vw,72px)', margin: 0, fontWeight: 700, color: '#2b0f1d', lineHeight: 1 }}>
             {c.name}

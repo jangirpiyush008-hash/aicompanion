@@ -34,7 +34,7 @@ export default function Nav() {
           textDecoration: 'none',
         }}
       >
-        AI<span style={{ color: '#d6336c' }}>Companion</span>Partner
+        AI Companions <span style={{ color: '#d6336c' }}>Labs</span>
       </Link>
 
       <div

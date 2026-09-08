@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'Original editorial writing on AI companions — what they are, how the memory actually works, privacy checklists, feature landscapes, and honest reviews. Updated regularly.',
   alternates: { canonical: `${SITE.url}/blog/` },
   openGraph: {
-    title: 'AICompanionPartner Blog',
+    title: 'AI Companions Labs Blog',
     description:
       'Guides, explainers and reviews on AI companion apps — memory, privacy, features, and the honest state of the category.',
     url: `${SITE.url}/blog/`,
@@ -27,7 +27,7 @@ export default function BlogIndex() {
   const blogListLd = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    name: 'AICompanionPartner Blog',
+    name: 'AI Companions Labs Blog',
     url: `${SITE.url}/blog/`,
     blogPost: posts.map((p) => ({
       '@type': 'BlogPosting',

@@ -109,7 +109,7 @@ export default function AgeGate() {
               textTransform: 'uppercase', marginBottom: 12, fontWeight: 600,
             }}
           >
-            AICompanionPartner
+            AI Companions Labs
           </div>
           <h2
             id="age-gate-title"

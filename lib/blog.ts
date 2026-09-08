@@ -29,7 +29,7 @@ export type BlogPost = {
   author: string
 }
 
-const AUTHOR = 'AICompanionPartner Editorial'
+const AUTHOR = 'AI Companions Labs Editorial'
 
 const POSTS: BlogPost[] = [
 
@@ -102,7 +102,7 @@ const POSTS: BlogPost[] = [
       'Value at your usage level — free tier limits, paid tier price, whether it charges per message.',
     ]},
 
-    { kind: 'h2', text: 'Where AICompanionPartner fits in' },
+    { kind: 'h2', text: 'Where AI Companions Labs fits in' },
     { kind: 'p', text: 'This site is a discovery + review platform, not a companion app itself. We publish original characters as visual/personality showcases, hands-on reviews of the platforms that host them, and honest comparisons across the category. We are not the app you chat with — we are the guide to picking one.' },
     { kind: 'p', text: 'The blog posts in this section go deeper on each of the topics above: how memory actually works, what the privacy story looks like, how to tell a real companion from a re-branded chatbot, and which features are worth paying for. If you are new to the category, start with the "AI Companion vs Chatbot vs Assistant" post next; if you already know the space, the memory and privacy pieces are the two most-searched deep-dives.' },
   ],
