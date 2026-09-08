@@ -6,11 +6,18 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import FloatingBackground from '@/components/FloatingBackground'
 import { characters, getCharacter, characterCover } from '@/lib/characters'
+import { CHARACTER_CATEGORIES, getCharacterCategory, charactersForCategory } from '@/lib/character-categories'
 import { SECRET_DESIRES_AFFILIATE_URL, SITE } from '@/lib/site'
+import CategoryPage from './CategoryPage'
 
-// Statically generate every character page.
+// Static-generate BOTH character pages AND character-category pages under
+// /characters/[slug]/. Slugs are disjoint by construction (categories use
+// multi-word slugs like "romantic-ai-girlfriends", characters use single-name
+// slugs like "karley"). The renderer dispatches on which lookup matches.
 export function generateStaticParams() {
-  return characters.map((c) => ({ slug: c.slug }))
+  const charSlugs = characters.map((c) => ({ slug: c.slug }))
+  const catSlugs = CHARACTER_CATEGORIES.map((c) => ({ slug: c.slug }))
+  return [...charSlugs, ...catSlugs]
 }
 
 export const dynamicParams = false
@@ -19,6 +26,16 @@ export async function generateMetadata(props: {
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await props.params
+  const cat = getCharacterCategory(slug)
+  if (cat) {
+    const url = `${SITE.url}/characters/${cat.slug}/`
+    return {
+      title: cat.title,
+      description: cat.description,
+      alternates: { canonical: url },
+      openGraph: { title: cat.title, description: cat.description, url },
+    }
+  }
   const c = getCharacter(slug)
   if (!c) return { title: 'Character not found' }
   const url = `${SITE.url}/characters/${c.slug}/`
@@ -46,6 +63,9 @@ export default async function CharacterPage(props: {
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await props.params
+  const cat = getCharacterCategory(slug)
+  if (cat) return <CategoryPage category={cat} chars={charactersForCategory(cat)} />
+
   const c = getCharacter(slug)
   if (!c) notFound()
 

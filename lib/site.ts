@@ -20,14 +20,15 @@ export const SECRET_DESIRES_AFFILIATE_URL =
   process.env.NEXT_PUBLIC_SECRET_DESIRES_AFFILIATE_URL ||
   'https://secretdesires.ai/create-partner?via=saddam-299148'
 
-// Homepage nav links (in-page anchors on / plus real routes).
+// Top nav links. Every entry is a real route (no #anchors) so the nav works
+// from any page on the site.
 export const NAV = [
-  { label: 'Characters',          href: '/#characters' },
-  { label: 'Best AI Girlfriends', href: '/#trending' },
-  { label: 'Reviews',             href: '/#reviews' },
+  { label: 'Characters',          href: '/characters/' },
+  { label: 'AI Girlfriends',      href: '/ai-girlfriends/' },
+  { label: 'Reviews',             href: '/reviews/' },
+  { label: 'Comparisons',         href: '/comparisons/' },
+  { label: 'Best of',             href: '/best-ai-girlfriends/' },
   { label: 'Blog',                href: '/blog/' },
-  { label: 'Lab',                 href: '/#lab' },
-  { label: 'FAQ',                 href: '/#faq' },
 ] as const
 
 // icon is a semantic keyword resolved by <CategoryIcon /> into an inline SVG.

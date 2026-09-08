@@ -21,6 +21,20 @@ export type Character = {
     title: string
     description: string
   }
+
+  // ─── Phase 3 additions — all optional so legacy records still compile ───
+
+  /** All characters are adults. This is metadata for display + filtering. */
+  age?: number
+  gender?: 'female' | 'male' | 'nonbinary'
+  relationshipStyle?: string    // e.g. "Devoted", "Playful", "Independent"
+  visualStyle?: 'realistic' | 'anime' | 'stylised'
+  communicationStyle?: string
+  aesthetic?: string
+  videos?: { src: string; poster?: string; title: string }[]
+  relatedCharacterSlugs?: string[]
+  relatedArticleSlugs?: string[]
+  faq?: { q: string; a: string }[]
 }
 
 const CHARACTERS: Character[] = [

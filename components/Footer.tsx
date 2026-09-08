@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { SECRET_DESIRES_AFFILIATE_URL } from '@/lib/site'
 
 /**
  * Two variants: `full` = homepage 4-column footer, `compact` = character page.
@@ -61,24 +60,28 @@ export default function Footer({ variant = 'full' }: { variant?: 'full' | 'compa
         </div>
 
         <FooterCol title="Explore">
-          <FL href="/#characters">AI Girlfriends</FL>
-          <FL href="/#characters">AI Boyfriends</FL>
-          <FL href="/#characters">AI Characters</FL>
-          <FL href="/#characters">AI Images</FL>
+          <FL href="/ai-girlfriends/">AI Girlfriends</FL>
+          <FL href="/ai-boyfriends/">AI Boyfriends</FL>
+          <FL href="/characters/">Characters</FL>
+          <FL href="/best-ai-girlfriends/">Best AI Girlfriends</FL>
         </FooterCol>
 
         <FooterCol title="Reviews">
-          <FLExt href={SECRET_DESIRES_AFFILIATE_URL}>Secret Desires</FLExt>
-          <FL href="/#reviews">Candy AI</FL>
-          <FL href="/#reviews">DreamGF</FL>
-          <FL href="/#reviews">Nomi</FL>
+          <FL href="/reviews/secret-desires/">Secret Desires</FL>
+          <FL href="/comparisons/">Comparisons</FL>
+          <FL href="/methodology/">Methodology</FL>
+          <FL href="/reviews/">All Reviews</FL>
         </FooterCol>
 
         <FooterCol title="Company">
-          <FL href="/#faq">About</FL>
-          <FL href="/#faq">Affiliate Disclosure</FL>
-          <FL href="/#faq">Privacy Policy</FL>
-          <FL href="/#faq">18+ Notice</FL>
+          <FL href="/about/">About</FL>
+          <FL href="/editorial-policy/">Editorial Policy</FL>
+          <FL href="/affiliate-disclosure/">Affiliate Disclosure</FL>
+          <FL href="/contact/">Contact</FL>
+          <FL href="/privacy/">Privacy</FL>
+          <FL href="/terms/">Terms</FL>
+          <FL href="/18-plus/">18+ Notice</FL>
+          <FL href="/corrections/">Corrections</FL>
         </FooterCol>
       </div>
 
@@ -118,12 +121,5 @@ function FL({ href, children }: { href: string; children: React.ReactNode }) {
     <Link href={href} style={{ color: '#e8cfdb', textDecoration: 'none' }}>
       {children}
     </Link>
-  )
-}
-function FLExt({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <a href={href} rel="sponsored noopener nofollow" target="_blank" style={{ color: '#e8cfdb', textDecoration: 'none' }}>
-      {children}
-    </a>
   )
 }
