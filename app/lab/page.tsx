@@ -113,7 +113,7 @@ export default function LabPage() {
                 <div style={{ fontSize: 12.5, color: '#8a6274' }}>Last updated: {t.lastUpdated}</div>
               )}
               {t.href && (
-                <div style={{ fontSize: 13, fontWeight: 700, color: '#c2185b', marginTop: 4 }}>Read →</div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: '#c2185b', marginTop: 4 }}>Read</div>
               )}
             </>
           )

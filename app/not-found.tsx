@@ -56,7 +56,7 @@ export default function NotFound() {
           <Link href="/characters/" style={outlinePill}>Characters</Link>
           <Link href="/reviews/" style={outlinePill}>Reviews</Link>
           <Link href="/best-ai-girlfriends/" style={outlinePill}>Best AI Girlfriends</Link>
-          <Link href="/search/" style={outlinePill}>Search →</Link>
+          <Link href="/search/" style={outlinePill}>Search</Link>
         </div>
       </section>
 

@@ -88,7 +88,7 @@ export default function ResearchPage() {
               {r.title}
             </div>
             <P>{r.blurb}</P>
-            <span style={{ fontSize: 13, fontWeight: 700, color: '#c2185b' }}>Read →</span>
+            <span style={{ fontSize: 13, fontWeight: 700, color: '#c2185b' }}>Read</span>
           </Link>
         ))}
       </div>

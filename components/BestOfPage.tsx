@@ -109,13 +109,13 @@ export default function BestOfPage({
                 </div>
                 <P>{e.note}</P>
                 <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginTop: 4 }}>
-                  <Link href={`/reviews/${r.slug}/`} style={pill}>Full review →</Link>
+                  <Link href={`/reviews/${r.slug}/`} style={pill}>Full review</Link>
                   {r.affiliate && r.externalUrl && (
                     <a href={r.externalUrl} rel="sponsored noopener nofollow" target="_blank" style={{
                       background: 'linear-gradient(135deg,#f0417e,#ad1457)',
                       color: '#fff', borderRadius: 999, padding: '8px 16px',
                       fontSize: 13, fontWeight: 700, textDecoration: 'none',
-                    }}>Try {r.name} →</a>
+                    }}>Try {r.name}</a>
                   )}
                 </div>
               </div>

@@ -69,12 +69,12 @@ export const PLATFORMS: {
     status: 'editor-pick',
     bestFor: 'Best for personalized AI companions — custom characters, images and immersive chat.',
     href: SECRET_DESIRES_AFFILIATE_URL,
-    cta: 'Try Secret Desires →',
+    cta: 'Try Secret Desires',
     external: true,
   },
-  { slug: 'candy-ai', name: 'Candy AI', status: 'testing', bestFor: 'Popular AI girlfriend platform with character variety.', href: '/reviews/candy-ai/',  cta: 'See details →' },
-  { slug: 'dreamgf',  name: 'DreamGF',  status: 'testing', bestFor: 'AI girlfriend creation with image generation.',         href: '/reviews/dreamgf/',   cta: 'See details →' },
-  { slug: 'nomi',     name: 'Nomi',     status: 'testing', bestFor: 'Long-term AI companion with strong memory focus.',      href: '/reviews/nomi/',      cta: 'See details →' },
+  { slug: 'candy-ai', name: 'Candy AI', status: 'testing', bestFor: 'Popular AI girlfriend platform with character variety.', href: '/reviews/candy-ai/',  cta: 'See details' },
+  { slug: 'dreamgf',  name: 'DreamGF',  status: 'testing', bestFor: 'AI girlfriend creation with image generation.',         href: '/reviews/dreamgf/',   cta: 'See details' },
+  { slug: 'nomi',     name: 'Nomi',     status: 'testing', bestFor: 'Long-term AI companion with strong memory focus.',      href: '/reviews/nomi/',      cta: 'See details' },
 ]
 
 export const PLATFORM_STATUS_LABELS: Record<PlatformStatus, { label: string; color: string; bg: string }> = {

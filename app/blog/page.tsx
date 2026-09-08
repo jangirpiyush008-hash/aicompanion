@@ -106,7 +106,7 @@ export default function BlogIndex() {
               <span aria-hidden="true">·</span>
               <span>{featured.readMin} min read</span>
               <span aria-hidden="true">·</span>
-              <span style={{ color: '#a61e4d', fontWeight: 700 }}>Read the guide →</span>
+              <span style={{ color: '#a61e4d', fontWeight: 700 }}>Read the guide</span>
             </div>
           </div>
           {featured.heroImage && (
@@ -183,7 +183,7 @@ export default function BlogIndex() {
                   <span aria-hidden="true">·</span>
                   <span>{p.readMin} min read</span>
                 </div>
-                <div style={{ fontSize: 13.5, color: '#d6336c', fontWeight: 700, marginTop: 4 }}>Read →</div>
+                <div style={{ fontSize: 13.5, color: '#d6336c', fontWeight: 700, marginTop: 4 }}>Read</div>
               </div>
             </Link>
           ))}

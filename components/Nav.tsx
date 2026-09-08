@@ -3,7 +3,7 @@ import { NAV, SECRET_DESIRES_AFFILIATE_URL } from '@/lib/site'
 
 /**
  * Sticky top nav. Logo returns to /. Nav links are page-relative anchors on
- * the homepage sections. "Try Secret Desires →" pill always visible.
+ * the homepage sections. "Try Secret Desires" pill always visible.
  */
 export default function Nav() {
   return (
@@ -87,8 +87,7 @@ export default function Nav() {
           textDecoration: 'none',
         }}
       >
-        Try Secret Desires →
-      </a>
+        Try Secret Desires      </a>
     </nav>
   )
 }

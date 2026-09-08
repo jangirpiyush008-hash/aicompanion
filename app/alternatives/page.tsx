@@ -44,7 +44,7 @@ export default function AlternativesIndexPage() {
             <span style={{ fontFamily: 'Playfair Display, serif', fontSize: 17, fontWeight: 700, color: '#2b0f1d' }}>
               {a.targetName} alternatives
             </span>
-            <span style={{ fontSize: 13, color: '#8a6274' }}>{a.entries.length} genuine picks →</span>
+            <span style={{ fontSize: 13, color: '#8a6274' }}>{a.entries.length} genuine picks</span>
           </Link>
         ))}
       </div>

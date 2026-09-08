@@ -269,8 +269,7 @@ export default async function BlogPostPage(props: {
               marginTop: 6,
             }}
           >
-            Try Secret Desires →
-          </a>
+            Try Secret Desires          </a>
           <div style={{ fontSize: 11.5, color: '#ffc2da' }}>Affiliate link · 18+ only.</div>
         </div>
       </section>
@@ -315,8 +314,7 @@ export default async function BlogPostPage(props: {
                   if (!r) return null
                   return (
                     <Link key={r.slug} href={`/reviews/${r.slug}/`} style={relPill}>
-                      {r.name}{r.overall != null ? ` · ${r.overall}/10` : ''} →
-                    </Link>
+                      {r.name}{r.overall != null ? ` · ${r.overall}/10` : ''}                    </Link>
                   )
                 })}
               </div>
@@ -331,8 +329,7 @@ export default async function BlogPostPage(props: {
                   if (!c) return null
                   return (
                     <Link key={c.slug} href={`/comparisons/${c.slug}/`} style={relPill}>
-                      {c.a.name} vs {c.b.name} →
-                    </Link>
+                      {c.a.name} vs {c.b.name}                    </Link>
                   )
                 })}
               </div>
@@ -367,7 +364,7 @@ export default async function BlogPostPage(props: {
                 <div style={{ fontSize: 13, color: '#6f4a5d', lineHeight: 1.6 }}>
                   {r.description}
                 </div>
-                <div style={{ fontSize: 13, color: '#d6336c', fontWeight: 700 }}>Read →</div>
+                <div style={{ fontSize: 13, color: '#d6336c', fontWeight: 700 }}>Read</div>
               </Link>
             ))}
           </div>

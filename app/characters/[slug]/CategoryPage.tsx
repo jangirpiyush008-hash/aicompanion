@@ -64,7 +64,7 @@ export default function CategoryPage({
             }}/>
             <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: 16 }}>
               <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 19, fontWeight: 700 }}>{c.name}</div>
-              <div style={{ fontSize: 12.5, fontWeight: 700, color: '#ffa8c9' }}>Meet {c.name} →</div>
+              <div style={{ fontSize: 12.5, fontWeight: 700, color: '#ffa8c9' }}>Meet {c.name}</div>
             </div>
           </Link>
         ))}

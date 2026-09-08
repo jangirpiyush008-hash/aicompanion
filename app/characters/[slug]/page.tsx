@@ -224,8 +224,7 @@ export default async function CharacterPage(props: {
                 textDecoration: 'none',
               }}
             >
-              Meet {c.name} on Secret Desires →
-            </a>
+              Meet {c.name} on Secret Desires            </a>
             <Link
               href="#gallery"
               style={{
@@ -364,8 +363,7 @@ export default async function CharacterPage(props: {
                   Unlock on Secret Desires
                 </div>
                 <div style={{ color: '#ffd6e6', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-                  Meet {c.name} →
-                </div>
+                  Meet {c.name}                </div>
               </div>
             </a>
           ))}
@@ -409,8 +407,7 @@ export default async function CharacterPage(props: {
                   More of {c.name}
                 </div>
                 <div style={{ color: '#c2255c', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-                  Unlock on Secret Desires →
-                </div>
+                  Unlock on Secret Desires                </div>
               </div>
             </a>
           ))}
@@ -445,7 +442,7 @@ export default async function CharacterPage(props: {
               fontSize: 16, fontWeight: 800, textDecoration: 'none',
             }}
           >
-            {c.sdaiProfileUrl ? `Meet ${c.name} on Secret Desires →` : 'Try Secret Desires →'}
+            {c.sdaiProfileUrl ? `Meet ${c.name} on Secret Desires` : 'Try Secret Desires'}
           </a>
           <div style={{ fontSize: 12, color: '#ffc2da', marginTop: 16 }}>18+ only.</div>
         </div>
@@ -491,7 +488,7 @@ export default async function CharacterPage(props: {
               />
               <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: 16, display: 'flex', flexDirection: 'column', gap: 4 }}>
                 <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 20, fontWeight: 700 }}>{r.name}</div>
-                <div style={{ fontSize: 12.5, fontWeight: 700, color: '#ffa8c9' }}>Meet {r.name} →</div>
+                <div style={{ fontSize: 12.5, fontWeight: 700, color: '#ffa8c9' }}>Meet {r.name}</div>
               </div>
             </Link>
           ))}

@@ -22,7 +22,7 @@ export default function AffiliateDisclosurePage() {
 
       <H2>Our current affiliate partners</H2>
       <P>
-        Our primary affiliate partner is <strong>Secret Desires</strong>. Every "Try Secret Desires →"
+        Our primary affiliate partner is <strong>Secret Desires</strong>. Every "Try Secret Desires"
         button, every character page CTA, and the Editor&apos;s Pick placement on the homepage is an
         affiliate link.
       </P>

@@ -51,7 +51,7 @@ export default function CharactersIndexPage() {
             <span style={{ fontFamily: 'Playfair Display, serif', fontSize: 17, fontWeight: 700 }}>
               {cat.name}
             </span>
-            <span style={{ fontSize: 13, color: '#8a6274' }}>Explore →</span>
+            <span style={{ fontSize: 13, color: '#8a6274' }}>Explore</span>
           </Link>
         ))}
       </div>
@@ -102,7 +102,7 @@ export default function CharactersIndexPage() {
             />
             <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: 16 }}>
               <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 19, fontWeight: 700 }}>{c.name}</div>
-              <div style={{ fontSize: 12.5, fontWeight: 700, color: '#ffa8c9' }}>Meet {c.name} →</div>
+              <div style={{ fontSize: 12.5, fontWeight: 700, color: '#ffa8c9' }}>Meet {c.name}</div>
             </div>
           </Link>
         ))}

@@ -39,7 +39,7 @@ export default function ReviewsIndexPage() {
               )}
             </div>
             <p style={cardBody}>{r.tagline}</p>
-            <span style={cta}>Read review →</span>
+            <span style={cta}>Read review</span>
           </Link>
         ))}
       </div>
@@ -57,7 +57,7 @@ export default function ReviewsIndexPage() {
               <span style={{ ...score, background: '#f6d3e1', color: '#7c1236' }}>Untested</span>
             </div>
             <p style={cardBody}>{r.tagline}</p>
-            <span style={cta}>See details →</span>
+            <span style={cta}>See details</span>
           </Link>
         ))}
       </div>

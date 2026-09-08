@@ -52,7 +52,7 @@ export default function GuidesIndex() {
           <Link key={c.href} href={c.href} style={card}>
             <div style={cardTitle}>{c.title}</div>
             <P>{c.blurb}</P>
-            <span style={readMore}>Read →</span>
+            <span style={readMore}>Read</span>
           </Link>
         ))}
       </div>
@@ -70,7 +70,7 @@ export default function GuidesIndex() {
             </div>
             <div style={cardTitle}>{p.title}</div>
             <P>{p.description}</P>
-            <span style={readMore}>Read →</span>
+            <span style={readMore}>Read</span>
           </Link>
         ))}
       </div>

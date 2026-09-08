@@ -94,7 +94,7 @@ export default function Home() {
               <Link href="/best-ai-girlfriends/" style={primaryCta}>See the Best AI Girlfriends</Link>
               <Link href="#characters" style={outlinePinkCta}>Meet AI Characters</Link>
               <Link href="/reviews/secret-desires/" style={{ color: '#8a6274', fontSize: 14, fontWeight: 600, textDecoration: 'none' }}>
-                Read Editor&apos;s Pick Review →
+                Read Editor&apos;s Pick Review
               </Link>
             </div>
             <div style={{ fontSize: 12, color: '#a3818f' }}>
@@ -142,8 +142,7 @@ export default function Home() {
                   fontSize: 15, fontWeight: 700, textDecoration: 'none',
                 }}
               >
-                Try Secret Desires →
-              </a>
+                Try Secret Desires              </a>
               <Link href="#reviews" style={{ color: '#a61e4d', fontSize: 14, fontWeight: 700, textDecoration: 'none' }}>
                 Read Our Secret Desires Review
               </Link>
@@ -218,7 +217,7 @@ export default function Home() {
               </div>
               <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 20, fontWeight: 600 }}>{cat.name}</div>
               <div style={{ fontSize: 13.5, color: '#8a6274', lineHeight: 1.5 }}>{cat.desc}</div>
-              <div style={{ fontSize: 13, color: '#d6336c', fontWeight: 700, marginTop: 'auto' }}>Explore →</div>
+              <div style={{ fontSize: 13, color: '#d6336c', fontWeight: 700, marginTop: 'auto' }}>Explore</div>
             </Link>
           ))}
         </div>
@@ -302,7 +301,7 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
-                <div style={{ fontSize: 13.5, fontWeight: 700, color: '#ffa8c9' }}>Meet {c.name} →</div>
+                <div style={{ fontSize: 13.5, fontWeight: 700, color: '#ffa8c9' }}>Meet {c.name}</div>
               </div>
             </Link>
           ))}
@@ -325,7 +324,7 @@ export default function Home() {
             <div style={{ fontSize: 13.5, color: '#8a6274', lineHeight: 1.5, maxWidth: '28ch' }}>
               New AI-generated companions added regularly. Filter by personality and style.
             </div>
-            <span style={{ fontSize: 13, fontWeight: 700, color: '#c2185b', marginTop: 4 }}>Explore characters →</span>
+            <span style={{ fontSize: 13, fontWeight: 700, color: '#c2185b', marginTop: 4 }}>Explore characters</span>
           </Link>
         </div>
       </section>
@@ -410,8 +409,7 @@ export default function Home() {
             </h2>
           </div>
           <Link href="/reviews/" style={{ fontSize: 14, fontWeight: 700, color: '#a61e4d', textDecoration: 'none' }}>
-            All reviews →
-          </Link>
+            All reviews          </Link>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 14 }}>
           {REVIEWS.slice(0, 6).map((r) => {
@@ -432,7 +430,7 @@ export default function Home() {
                   )}
                 </div>
                 <div style={{ fontSize: 13.5, color: '#6f4a5d', lineHeight: 1.55 }}>{r.tagline}</div>
-                <div style={{ fontSize: 13, color: '#d6336c', fontWeight: 700, marginTop: 'auto' }}>Read {isPub ? 'review' : 'more'} →</div>
+                <div style={{ fontSize: 13, color: '#d6336c', fontWeight: 700, marginTop: 'auto' }}>Read {isPub ? 'review' : 'more'}</div>
               </Link>
             )
           })}
@@ -451,8 +449,7 @@ export default function Home() {
             </h2>
           </div>
           <Link href="/comparisons/" style={{ fontSize: 14, fontWeight: 700, color: '#a61e4d', textDecoration: 'none' }}>
-            All comparisons →
-          </Link>
+            All comparisons          </Link>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: 14 }}>
           {COMPARISONS.map((c) => (
@@ -466,7 +463,7 @@ export default function Home() {
                 {c.a.name} vs {c.b.name}
               </div>
               <div style={{ fontSize: 13.5, color: '#6f4a5d', lineHeight: 1.55 }}>{c.quickVerdict.slice(0, 130)}…</div>
-              <div style={{ fontSize: 13, color: '#d6336c', fontWeight: 700, marginTop: 'auto' }}>Read comparison →</div>
+              <div style={{ fontSize: 13, color: '#d6336c', fontWeight: 700, marginTop: 'auto' }}>Read comparison</div>
             </Link>
           ))}
         </div>
@@ -484,8 +481,7 @@ export default function Home() {
             </h2>
           </div>
           <Link href="/ai-companion-images/" style={{ fontSize: 14, fontWeight: 700, color: '#a61e4d', textDecoration: 'none' }}>
-            Explore gallery →
-          </Link>
+            Explore gallery          </Link>
         </div>
         <ImageHubGrid limit={12} />
       </section>
@@ -512,7 +508,7 @@ export default function Home() {
                 </div>
                 <div style={{ fontSize: 13, color: '#8a6274', lineHeight: 1.55 }}>{t.desc}</div>
                 {t.href && (
-                  <div style={{ fontSize: 13, color: '#d6336c', fontWeight: 700, marginTop: 'auto' }}>Read →</div>
+                  <div style={{ fontSize: 13, color: '#d6336c', fontWeight: 700, marginTop: 'auto' }}>Read</div>
                 )}
               </>
             )
@@ -557,8 +553,7 @@ export default function Home() {
             </h2>
           </div>
           <Link href="/blog/" style={{ fontSize: 14, fontWeight: 700, color: '#a61e4d', textDecoration: 'none' }}>
-            All articles →
-          </Link>
+            All articles          </Link>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 16 }}>
           {posts.slice(0, 3).map((p) => (
@@ -584,7 +579,7 @@ export default function Home() {
               <div style={{ fontSize: 12.5, color: '#8a6274', display: 'flex', gap: 8, marginTop: 4 }}>
                 <span>{p.readMin} min read</span>
               </div>
-              <div style={{ fontSize: 13.5, color: '#d6336c', fontWeight: 700, marginTop: 4 }}>Read →</div>
+              <div style={{ fontSize: 13.5, color: '#d6336c', fontWeight: 700, marginTop: 4 }}>Read</div>
             </Link>
           ))}
         </div>
@@ -673,8 +668,7 @@ export default function Home() {
                 padding: '16px 36px', fontSize: 16, fontWeight: 800, textDecoration: 'none',
               }}
             >
-              Try Secret Desires →
-            </a>
+              Try Secret Desires            </a>
             <Link
               href="#characters"
               style={{
@@ -684,8 +678,7 @@ export default function Home() {
                 textDecoration: 'none',
               }}
             >
-              Explore AI Characters →
-            </Link>
+              Explore AI Characters            </Link>
           </div>
           <div style={{ fontSize: 12, color: '#ffc2da', marginTop: 18 }}>18+ only.</div>
         </div>

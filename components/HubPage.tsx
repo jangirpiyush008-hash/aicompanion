@@ -103,15 +103,14 @@ export default function HubPage({
             }}/>
             <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: 16 }}>
               <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 19, fontWeight: 700 }}>{c.name}</div>
-              <div style={{ fontSize: 12.5, fontWeight: 700, color: '#ffa8c9' }}>Meet {c.name} →</div>
+              <div style={{ fontSize: 12.5, fontWeight: 700, color: '#ffa8c9' }}>Meet {c.name}</div>
             </div>
           </Link>
         ))}
       </div>
       <div style={{ marginBottom: 32 }}>
         <Link href="/characters/" style={{ fontSize: 14, fontWeight: 700, color: '#c2185b' }}>
-          Browse all characters →
-        </Link>
+          Browse all characters        </Link>
       </div>
 
       <H2>Related reviews</H2>

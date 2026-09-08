@@ -50,7 +50,7 @@ export default function ComparisonsIndexPage() {
             <p style={{ fontSize: 14, color: '#6f4a5d', margin: 0, lineHeight: 1.55 }}>
               {c.quickVerdict.slice(0, 140)}…
             </p>
-            <span style={{ fontSize: 13, fontWeight: 700, color: '#c2185b' }}>Read comparison →</span>
+            <span style={{ fontSize: 13, fontWeight: 700, color: '#c2185b' }}>Read comparison</span>
           </Link>
         ))}
       </div>

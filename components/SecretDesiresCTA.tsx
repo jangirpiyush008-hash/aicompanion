@@ -29,7 +29,7 @@ export default function SecretDesiresCTA({
   const href = hrefOverride ?? SECRET_DESIRES_AFFILIATE_URL
   const text =
     label ??
-    (characterName ? `Meet ${characterName} on Secret Desires →` : 'Try Secret Desires →')
+    (characterName ? `Meet ${characterName} on Secret Desires` : 'Try Secret Desires')
 
   switch (variant) {
     case 'editorPick':
@@ -103,7 +103,7 @@ export default function SecretDesiresCTA({
                 textDecoration: 'none',
               }}
             >
-              {characterName ? `Meet ${characterName} →` : 'Try Secret Desires →'}
+              {characterName ? `Meet ${characterName}` : 'Try Secret Desires'}
             </a>
             <div style={{ fontSize: 12, color: '#ffc2da', marginTop: 14 }}>
               18+ only · Sponsored link

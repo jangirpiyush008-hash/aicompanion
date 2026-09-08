@@ -43,7 +43,6 @@ export default function MobileStickyCTA() {
         transition: 'opacity 240ms ease',
       }}
     >
-      Try Secret Desires →
-    </a>
+      Try Secret Desires    </a>
   )
 }
