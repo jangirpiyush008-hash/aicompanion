@@ -87,7 +87,7 @@ export const REVIEWS: Review[] = [
     score: SECRET_DESIRES_SCORE,
     overall: computeOverall(SECRET_DESIRES_SCORE),
     verdict:
-      'Secret Desires is our current top pick for AI companions in 2026. Character creation is the deepest we have seen — personality, appearance, and roleplay parameters can be tuned individually, and the same character stays visually consistent across image generations. The chat model handles both long-form conversation and roleplay well, memory reliably persists across sessions, and image quality on the higher tiers is genuinely competitive with dedicated image-gen apps. Video is present but early. Pricing is fair for the feature set. Where it slips is transparency: the company shares less about data handling and moderation than we would like. We still recommend it as the strongest all-round platform for adult AI companions in 2026.',
+      'Secret Desires is our Editor\'s Pick for AI companions in 2026. Character creation is the deepest we have seen — personality, appearance, and roleplay parameters can be tuned individually, and the same character stays visually consistent across image generations. The chat model handles both long-form conversation and roleplay well, memory reliably persists across sessions, and image quality on the higher tiers is genuinely competitive with dedicated image-gen apps. Video is present but early. Pricing is fair for the feature set. Where it slips is transparency: the company shares less about data handling and moderation than we would like. We still recommend it as the strongest all-round platform for adult AI companions in 2026.',
     pros: [
       'Best-in-class character creation and visual consistency',
       'Strong image generation with tasteful and explicit modes',

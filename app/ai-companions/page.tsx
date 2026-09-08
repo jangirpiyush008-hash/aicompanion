@@ -35,7 +35,7 @@ export default function AICompanionsHub() {
       reviewSlugs={['secret-desires', 'nomi', 'candy-ai', 'kindroid']}
       faqs={[
         { q: 'What is an AI companion?', a: 'A chat-based app with a persistent AI-powered character. Fixed personality, growing memory of you, often images and voice.' },
-        { q: 'What is the best AI companion in 2026?', a: 'Secret Desires is our current top pick overall. Nomi is our pick specifically for long-term memory depth.' },
+        { q: 'What is the best AI companion in 2026?', a: 'Secret Desires is our Editor\'s Pick overall. Nomi is our pick specifically for long-term memory depth.' },
         { q: 'Are AI companions private?', a: 'Privacy varies. See each review and our privacy checklist for what to look for.' },
       ]}
     />

@@ -53,7 +53,7 @@ export default function SDAIShowcase({ category }: { category: SdaiCategory }) {
           gap: 16,
         }}
       >
-        {chars.map((c) => (
+        {chars.map((c, i) => (
           <a
             key={c.slug}
             href={sdaiCharUrl(c)}
@@ -76,6 +76,7 @@ export default function SDAIShowcase({ category }: { category: SdaiCategory }) {
                 src={`/sdai-showcase/${c.slug}/1.webp`}
                 alt={`${c.name} — Secret Desires AI companion`}
                 fill
+                priority={i === 0}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 220px"
                 style={{ objectFit: 'cover', objectPosition: 'top' }}
               />

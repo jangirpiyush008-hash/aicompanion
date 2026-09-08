@@ -77,10 +77,15 @@ export function websiteLd() {
     '@type': 'WebSite',
     name: SITE.name,
     url: SITE.url,
+    description: SITE.descriptionLong,
     inLanguage: 'en',
+    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
     potentialAction: {
       '@type': 'SearchAction',
-      target: `${SITE.url}/?q={search_term_string}`,
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE.url}/search/?q={search_term_string}`,
+      },
       'query-input': 'required name=search_term_string',
     },
   }
@@ -111,6 +116,11 @@ export function articleLd(input: {
   authorName?: string
 }) {
   const url = absoluteUrl(input.path)
+  // Always emit an `image` — falls back to the default OG image so Article
+  // rich-result eligibility is never blocked by missing this required field.
+  const image = input.image
+    ? (input.image.startsWith('http') ? input.image : `${SITE.url}${input.image}`)
+    : `${SITE.url}${DEFAULT_OG}`
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -118,7 +128,7 @@ export function articleLd(input: {
     description: input.description,
     mainEntityOfPage: url,
     url,
-    ...(input.image && { image: input.image.startsWith('http') ? input.image : `${SITE.url}${input.image}` }),
+    image: { '@type': 'ImageObject', url: image, width: 1200, height: 630 },
     ...(input.datePublished && { datePublished: input.datePublished }),
     ...(input.dateModified && { dateModified: input.dateModified }),
     author: {
@@ -129,6 +139,7 @@ export function articleLd(input: {
       '@type': 'Organization',
       name: SITE.name,
       url: SITE.url,
+      logo: { '@type': 'ImageObject', url: `${SITE.url}${DEFAULT_OG}`, width: 1200, height: 630 },
     },
   }
 }
@@ -151,18 +162,38 @@ export function reviewLd(input: {
   reviewBody: string
   ratingValue?: number   // omit for un-tested platforms — never fabricate
   bestRating?: number
+  worstRating?: number
   reviewerName?: string
   datePublished?: string
 }) {
+  const bestRating = input.bestRating ?? 10
+  const worstRating = input.worstRating ?? 1
+  // Strip affiliate query params from the canonical `url` — schema URLs must
+  // point to the clean product page. Affiliate tracking belongs in <a href>.
+  const cleanItemUrl = input.itemUrl?.split('?')[0].split('#')[0]
+  const itemReviewed: Record<string, unknown> = {
+    '@type': 'SoftwareApplication',
+    name: input.itemName,
+    applicationCategory: 'EntertainmentApplication',
+    operatingSystem: 'Web',
+    ...(cleanItemUrl && { url: cleanItemUrl }),
+  }
+  // AggregateRating on the SoftwareApplication lets Google show star ratings
+  // in Product/Software rich results. We have one editorial rating so
+  // ratingCount is 1 — accurate, not inflated.
+  if (input.ratingValue != null) {
+    itemReviewed.aggregateRating = {
+      '@type': 'AggregateRating',
+      ratingValue: input.ratingValue,
+      bestRating,
+      worstRating,
+      ratingCount: 1,
+    }
+  }
   const base: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Review',
-    itemReviewed: {
-      '@type': 'SoftwareApplication',
-      name: input.itemName,
-      applicationCategory: 'EntertainmentApplication',
-      ...(input.itemUrl && { url: input.itemUrl }),
-    },
+    itemReviewed,
     reviewBody: input.reviewBody,
     author: {
       '@type': 'Organization',
@@ -174,8 +205,34 @@ export function reviewLd(input: {
     base.reviewRating = {
       '@type': 'Rating',
       ratingValue: input.ratingValue,
-      bestRating: input.bestRating ?? 10,
+      bestRating,
+      worstRating,
     }
   }
   return base
+}
+
+// ItemList schema — for comparison pages and hub pages that enumerate a
+// finite set of products/platforms. Helps Google understand the page is a
+// ranked or curated list, which can qualify for list-style rich results.
+export function itemListLd(input: {
+  name: string
+  items: { name: string; url: string; description?: string }[]
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: input.name,
+    itemListElement: input.items.map((it, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'SoftwareApplication',
+        name: it.name,
+        url: it.url,
+        applicationCategory: 'EntertainmentApplication',
+        ...(it.description && { description: it.description }),
+      },
+    })),
+  }
 }

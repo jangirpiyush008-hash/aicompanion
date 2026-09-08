@@ -40,7 +40,7 @@ export default function AIGirlfriendsHub() {
       reviewSlugs={['secret-desires', 'candy-ai', 'dreamgf', 'nomi']}
       faqs={[
         { q: 'Are AI girlfriend apps 18+?', a: 'Most are. AI Companions Labs treats every platform we review as 18+ by default, and the site itself is 18+.' },
-        { q: 'Which AI girlfriend app is best in 2026?', a: 'Our current top pick is Secret Desires — strongest character creation, best same-character image consistency, and solid memory. See our full review for the breakdown.' },
+        { q: 'Which AI girlfriend app is best in 2026?', a: 'Our Editor\'s Pick is Secret Desires — strongest character creation, best same-character image consistency, and solid memory. See our full review for the breakdown.' },
         { q: 'Can AI girlfriends remember me?', a: 'Yes, on the platforms that invest in long-term memory. Secret Desires and Nomi lead this category in our testing.' },
         { q: 'Do AI girlfriend apps generate video?', a: 'Some do. Video generation is functional but early across the category; we do not recommend picking a platform primarily for video yet.' },
       ]}

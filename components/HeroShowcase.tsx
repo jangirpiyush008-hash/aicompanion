@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { characters, characterCover } from '@/lib/characters'
 import { SECRET_DESIRES_AFFILIATE_URL } from '@/lib/site'
@@ -81,19 +82,25 @@ export default function HeroShowcase() {
           color: 'inherit',
         }}
       >
-        {/* Bottom layer (preloading the next portrait) */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        {/* Bottom layer (preloading the next portrait). Not priority — it's the
+            crossfade target for the next rotation, not the initial paint. */}
+        <Image
           src={characterCover(characters[botIdx])}
           alt=""
           aria-hidden="true"
+          fill
+          sizes="(max-width: 640px) 100vw, 420px"
           style={layer(!showTop)}
         />
-        {/* Top layer (currently visible) */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        {/* Top layer (currently visible). `priority` on this one makes next/image
+            emit <link rel="preload"> into <head> for the initial hero portrait —
+            this is the homepage LCP element, so preload is worth ~1.5-2s off LCP. */}
+        <Image
           src={characterCover(characters[topIdx])}
           alt={`${current.name} — AI-generated companion character portrait`}
+          fill
+          priority
+          sizes="(max-width: 640px) 100vw, 420px"
           style={layer(showTop)}
         />
 

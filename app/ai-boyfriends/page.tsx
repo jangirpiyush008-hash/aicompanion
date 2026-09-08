@@ -39,7 +39,7 @@ export default function AIBoyfriendsHub() {
       reviewSlugs={['secret-desires', 'candy-ai', 'nomi']}
       faqs={[
         { q: 'Do AI boyfriend apps exist?', a: 'Yes. Every major AI companion platform that supports character creation supports male characters. Some platforms — particularly older ones — skew female-only.' },
-        { q: 'Which is best for AI boyfriends?', a: 'Secret Desires is our current pick — deep character creation applies equally to male characters, and image consistency is strong.' },
+        { q: 'Which is best for AI boyfriends?', a: 'Secret Desires is our Editor\'s Pick — deep character creation applies equally to male characters, and image consistency is strong.' },
         { q: 'Are AI boyfriends the same as AI girlfriends?', a: 'Same app category, different persona. Feature parity is largely there in 2026.' },
       ]}
       bottomCtaLabel="Create your AI boyfriend"

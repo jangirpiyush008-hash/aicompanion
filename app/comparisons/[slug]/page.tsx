@@ -3,8 +3,9 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import PageLayout, { H1, Lede, H2, P, UL, Callout } from '@/components/PageLayout'
 import SecretDesiresCTA from '@/components/SecretDesiresCTA'
-import { pageMetadata, articleLd, faqLd } from '@/lib/seo'
+import { pageMetadata, articleLd, faqLd, itemListLd } from '@/lib/seo'
 import { COMPARISONS, getComparison } from '@/lib/comparisons'
+import { SITE } from '@/lib/site'
 
 export function generateStaticParams() {
   return COMPARISONS.map((c) => ({ slug: c.slug }))
@@ -32,6 +33,13 @@ export default async function ComparisonPage(props: { params: Promise<{ slug: st
 
   const lds: unknown[] = [
     articleLd({ headline: title, description: c.quickVerdict, path, dateModified: c.lastUpdated }),
+    itemListLd({
+      name: `${c.a.name} vs ${c.b.name} — compared platforms`,
+      items: [
+        { name: c.a.name, url: c.a.slug ? `${SITE.url}/reviews/${c.a.slug}/` : SITE.url, description: c.bestForA },
+        { name: c.b.name, url: c.b.slug ? `${SITE.url}/reviews/${c.b.slug}/` : SITE.url, description: c.bestForB },
+      ],
+    }),
   ]
   if (c.faqs.length) lds.push(faqLd(c.faqs))
 

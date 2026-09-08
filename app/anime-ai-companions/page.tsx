@@ -42,7 +42,7 @@ export default function AnimeAICompanionsHub() {
       extraSection={<SDAIShowcase category="anime" />}
       faqs={[
         { q: 'What is an anime AI girlfriend?', a: 'An anime AI girlfriend is an AI chat companion whose visual style is drawn from anime and manga — stylised eyes, cel-shaded rendering, anime-typical personality archetypes like tsundere, yandere, kuudere or genki.' },
-        { q: 'Which app has the best anime AI characters?', a: 'Secret Desires is our current pick for anime-styled AI companions — the character creation flow lets you pick an anime visual style up front, and image consistency is strong across the anime aesthetic specifically.' },
+        { q: 'Which app has the best anime AI characters?', a: 'Secret Desires is our Editor\'s Pick for anime-styled AI companions — the character creation flow lets you pick an anime visual style up front, and image consistency is strong across the anime aesthetic specifically.' },
         { q: 'Can I make my own anime waifu?', a: 'Yes. Every modern AI companion platform with character creation supports building anime-styled characters from scratch — you tune the face, hair, outfit, personality archetype and speaking style.' },
         { q: 'Are anime AI companions the same as regular AI girlfriends?', a: 'Same app category, different visual style. Feature-set is identical — chat, memory, image generation, voice — only the character aesthetic differs.' },
       ]}

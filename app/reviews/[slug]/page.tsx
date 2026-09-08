@@ -65,11 +65,21 @@ export default async function ReviewPage(props: { params: Promise<{ slug: string
       ]}
       jsonLd={lds}
     >
-      {/* Affiliate disclosure banner — top of every affiliated review */}
+      {/* Affiliate disclosure banner — top of every affiliated review. Secret
+          Desires gets an extra sentence disclosing the operational relationship
+          (site owner has an ongoing business tie beyond a standard affiliate
+          link), which QRG treats as a trust signal for review integrity. */}
       {r.affiliate && (
         <div style={disclosureBanner}>
           <strong>Disclosure:</strong> This review contains affiliate links. We may earn a
-          commission if you sign up through them, at no extra cost to you. See our{' '}
+          commission if you sign up through them, at no extra cost to you.
+          {r.slug === 'secret-desires' && (
+            <> The site owner also has an ongoing business relationship with Secret
+            Desires beyond a standard affiliate link — this may bias our editorial
+            framing even though scores follow our published{' '}
+            <Link href="/methodology/" style={{ color: '#fff', fontWeight: 700 }}>methodology</Link>.</>
+          )}{' '}
+          See our{' '}
           <Link href="/affiliate-disclosure/" style={{ color: '#fff', fontWeight: 700 }}>affiliate disclosure</Link>.
         </div>
       )}

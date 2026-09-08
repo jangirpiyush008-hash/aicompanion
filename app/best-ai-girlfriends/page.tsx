@@ -15,7 +15,7 @@ export default function BestAIGirlfriends() {
       title="Best AI Girlfriends 2026"
       metaTitle={META_TITLE}
       metaDescription={META_DESC}
-      quickAnswer="Secret Desires is our current pick for best AI girlfriend in 2026 — strongest character creation, best same-character image consistency, and solid memory. Nomi wins for memory depth; Candy AI is the best browse-a-catalog experience."
+      quickAnswer="Secret Desires is our Editor's Pick for best AI girlfriend in 2026 — strongest character creation, best same-character image consistency, and solid memory. Nomi wins for memory depth; Candy AI is the best browse-a-catalog experience."
       intro={
         <>
           <H2>How this list is built</H2>

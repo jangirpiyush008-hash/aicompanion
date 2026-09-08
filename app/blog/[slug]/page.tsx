@@ -106,6 +106,36 @@ export default async function BlogPostPage(props: {
       <FloatingBackground density={8} />
       <Nav />
 
+      {/* Affiliate disclosure banner — every blog post carries at least one
+          affiliate CTA to Secret Desires, so FTC + Google trust guidelines
+          require point-of-recommendation disclosure, not just a footer link. */}
+      <div
+        style={{
+          maxWidth: 900,
+          margin: '0 auto',
+          padding: '18px 40px 0',
+        }}
+      >
+        <div
+          style={{
+            background: 'linear-gradient(160deg,#fde8f0,#fbd0e0)',
+            border: '1px solid #f6d3e1',
+            borderRadius: 10,
+            padding: '10px 14px',
+            fontSize: 12.5,
+            color: '#5c1f36',
+            lineHeight: 1.5,
+          }}
+        >
+          <strong>Disclosure:</strong> This post contains affiliate links to Secret
+          Desires. We may earn a commission if you sign up through them, at no
+          extra cost to you. See our{' '}
+          <Link href="/affiliate-disclosure/" style={{ color: '#7c1236', fontWeight: 700 }}>
+            affiliate disclosure
+          </Link>.
+        </div>
+      </div>
+
       {/* Breadcrumb */}
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '20px 40px 0', fontSize: 13, color: '#a3818f' }}>
         <Link href="/" style={{ color: '#8a6274', textDecoration: 'none' }}>Home</Link>
