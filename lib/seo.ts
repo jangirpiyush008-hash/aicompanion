@@ -5,7 +5,11 @@
 import type { Metadata } from 'next'
 import { SITE } from './site'
 
-const DEFAULT_OG = '/og/default.png'
+// Auto-generated at build time by app/opengraph-image.tsx (next/og ImageResponse).
+// Next serves it at /opengraph-image.png and auto-injects <meta og:image> on any
+// route that doesn't override — kept as the fallback here for blog posts and
+// other pages that go through pageMetadata().
+const DEFAULT_OG = '/opengraph-image.png'
 
 // Absolute URL builder. Accepts a path (with or without leading slash) and
 // always emits `${SITE.url}/<path>/`. Trailing slash is enforced for

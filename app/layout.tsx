@@ -33,6 +33,9 @@ export const metadata: Metadata = {
     'AI Companions Labs is an 18+ discovery platform for AI girlfriends, AI boyfriends and virtual companions. Original AI-generated characters, hands-on platform reviews and side-by-side comparisons.',
   applicationName: SITE.name,
   category: 'entertainment',
+  // Root canonical — homepage self-canonicalises to SITE.url. Nested routes
+  // override this via pageMetadata() in lib/seo.ts.
+  alternates: { canonical: SITE.url },
   openGraph: {
     title: 'AI Companions Labs — AI Companion Discovery Platform',
     description: SITE.descriptionLong,

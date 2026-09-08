@@ -37,14 +37,14 @@ export const NAV = [
 // Using icons (not emoji) so the section looks like a polished product surface
 // rather than a chat message.
 export const CATEGORIES = [
-  { icon: 'heart',    name: 'AI Girlfriends',  desc: 'Explore virtual girlfriends and romantic AI companions.', href: '/#characters' },
-  { icon: 'user',     name: 'AI Boyfriends',   desc: 'Discover AI male companions and virtual partners.',       href: '/#characters' },
-  { icon: 'sparkles', name: 'AI Characters',   desc: 'Browse original AI Companions Labs characters.',          href: '/#characters' },
-  { icon: 'image',    name: 'AI Images',       desc: 'Explore AI-generated companion imagery.',                 href: '/#characters' },
-  { icon: 'play',     name: 'AI Videos',       desc: 'Discover AI companion video experiences.',                href: '/#lab' },
-  { icon: 'waveform', name: 'AI Voice & Calls',desc: 'Explore voice-enabled AI companions.',                    href: '/#lab' },
-  { icon: 'star',     name: 'Reviews',         desc: 'Read hands-on platform reviews.',                         href: '/#reviews' },
-  { icon: 'chart',    name: 'Comparisons',     desc: 'Compare leading AI companion platforms.',                 href: '/#trending' },
+  { icon: 'heart',    name: 'AI Girlfriends',  desc: 'Explore virtual girlfriends and romantic AI companions.', href: '/ai-girlfriends/' },
+  { icon: 'user',     name: 'AI Boyfriends',   desc: 'Discover AI male companions and virtual partners.',       href: '/ai-boyfriends/' },
+  { icon: 'sparkles', name: 'AI Characters',   desc: 'Browse original AI Companions Labs characters.',          href: '/characters/' },
+  { icon: 'image',    name: 'AI Images',       desc: 'Explore AI-generated companion imagery.',                 href: '/ai-girlfriend-images/' },
+  { icon: 'play',     name: 'AI Videos',       desc: 'Discover AI companion video experiences.',                href: '/ai-girlfriend-videos/' },
+  { icon: 'waveform', name: 'AI Voice & Calls',desc: 'Explore voice-enabled AI companions.',                    href: '/best-ai-girlfriend-for-voice/' },
+  { icon: 'star',     name: 'Reviews',         desc: 'Read hands-on platform reviews.',                         href: '/reviews/' },
+  { icon: 'chart',    name: 'Comparisons',     desc: 'Compare leading AI companion platforms.',                 href: '/comparisons/' },
 ] as const
 
 // Homepage "Tested & Featured Platforms" strip. Every entry carries a status
