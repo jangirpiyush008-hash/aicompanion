@@ -69,7 +69,7 @@ export default function Home() {
         >
           <div style={{ display: 'flex', flexDirection: 'column', gap: 24, position: 'relative', zIndex: 1 }}>
             <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#d6336c' }}>
-              AI Companion Discovery Platform
+              Reviewed 2026 · AI Companion Discovery
             </div>
             <h1
               style={{
@@ -82,17 +82,19 @@ export default function Home() {
                 textWrap: 'balance',
               }}
             >
-              Your Next AI Companion <em style={{ color: '#c2255c', fontStyle: 'italic' }}>Is Waiting</em>
+              AI Girlfriends, AI Companions &amp;{' '}
+              <em style={{ color: '#c2255c', fontStyle: 'italic' }}>Virtual Partners</em>
             </h1>
-            <p style={{ fontSize: 18, lineHeight: 1.65, color: '#6f4a5d', margin: 0, maxWidth: '52ch' }}>
-              Discover AI girlfriends, virtual companions, custom characters, immersive
-              experiences, and the platforms behind them.
+            <p style={{ fontSize: 18, lineHeight: 1.65, color: '#6f4a5d', margin: 0, maxWidth: '54ch' }}>
+              Hands-on reviews of the best AI girlfriend apps, AI boyfriend platforms,
+              AI sex chat and AI roleplay tools — plus original AI-generated characters,
+              honest comparisons and lab tests.
             </p>
             <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', alignItems: 'center' }}>
-              <Link href="#characters" style={primaryCta}>Explore AI Companions</Link>
-              <Link href="#characters" style={outlinePinkCta}>Browse AI Characters</Link>
-              <Link href="#trending" style={{ color: '#8a6274', fontSize: 14, fontWeight: 600, textDecoration: 'none' }}>
-                Find the Best AI Companion →
+              <Link href="/best-ai-girlfriends/" style={primaryCta}>See the Best AI Girlfriends</Link>
+              <Link href="#characters" style={outlinePinkCta}>Meet AI Characters</Link>
+              <Link href="/reviews/secret-desires/" style={{ color: '#8a6274', fontSize: 14, fontWeight: 600, textDecoration: 'none' }}>
+                Read Editor&apos;s Pick Review →
               </Link>
             </div>
             <div style={{ fontSize: 12, color: '#a3818f' }}>
@@ -173,9 +175,14 @@ export default function Home() {
 
       {/* ─────────── EXPLORE BY CATEGORY ─────────── */}
       <section style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '72px 40px 0' }}>
-        <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 34, margin: '0 0 28px', fontWeight: 700, color: '#2b0f1d' }}>
-          Explore by Category
+        <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 34, margin: '0 0 8px', fontWeight: 700, color: '#2b0f1d' }}>
+          Browse AI Companions by Category
         </h2>
+        <p style={{ color: '#8a6274', fontSize: 15, margin: '0 0 28px', maxWidth: '70ch' }}>
+          Explore AI girlfriends, AI boyfriends, AI sex chat, AI roleplay
+          characters and more — every category links to hands-on reviews and
+          buyer&apos;s guides.
+        </p>
         <div
           style={{
             display: 'grid',
@@ -586,14 +593,14 @@ export default function Home() {
       {/* ─────────── FAQ ─────────── */}
       <section id="faq" style={{ position: 'relative', maxWidth: 900, margin: '0 auto', padding: '80px 40px 0' }}>
         <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 34, margin: '0 0 8px', fontWeight: 700, color: '#2b0f1d' }}>
-          What Is AI Companions Labs?
+          AI Girlfriend &amp; AI Companion FAQ
         </h2>
         <p style={{ color: '#6f4a5d', fontSize: 15, lineHeight: 1.7, margin: '0 0 28px' }}>
-          AI Companions Labs is an 18+ discovery platform for AI girlfriends, AI boyfriends and
-          virtual companions. We publish original AI-generated characters with full
-          galleries, hands-on platform reviews, side-by-side comparisons, and lab tests —
-          so you can find the companion experience that fits you. Some links are affiliate
-          links; our ratings are intended to remain independent of compensation.
+          Everything you need to know about the best AI girlfriend apps, AI
+          companions, AI sexting, AI roleplay and AI sex chat platforms — from
+          how they work to what to check before you sign up. Some links on this
+          site are affiliate links; our ratings remain independent of
+          compensation.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           {FAQS.map((f) => (

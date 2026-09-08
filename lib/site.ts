@@ -8,9 +8,9 @@ export const SITE = {
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://aicompanionslabs.com',
   tagline: 'AI Companion Discovery Platform',
   descriptionShort:
-    '18+ AI companion discovery, honest reviews and original AI-generated characters.',
+    'Reviews of the best AI girlfriend apps, AI companions, AI boyfriend and AI sex chat platforms. 18+.',
   descriptionLong:
-    'AI Companions Labs is an 18+ discovery platform for AI girlfriends, AI boyfriends, and virtual companions. Original AI-generated characters, hands-on platform reviews, side-by-side comparisons, and lab tests.',
+    'Hands-on reviews of the best AI girlfriend apps, AI companions, AI boyfriend platforms, AI sex chat, AI sexting and AI roleplay tools. Original AI-generated characters, honest comparisons and lab tests. 18+.',
 }
 
 // Real Secret Desires affiliate URL (provided by site owner). Env var override
@@ -93,10 +93,17 @@ export const LAB_TESTS = [
   { status: 'Planned',   statusColor: '#a3818f', name: 'Long-Term Memory Test',                  desc: 'Does the companion still remember you after 30 days offline?',           href: undefined },
 ] as const
 
+// FAQ entries double as FAQPage JSON-LD (see websiteLd/faqLd in lib/seo). Each
+// question is anchored on a top target keyword so we're eligible for AI
+// Overview / featured-snippet citation. Keep answers direct, self-contained
+// and factual — that's what generative engines cite.
 export const FAQS = [
-  { q: 'What is an AI girlfriend?', a: 'An AI girlfriend is a virtual companion powered by AI that you can chat with, customize and interact with through text, images, voice and sometimes video.' },
-  { q: 'Can AI companions generate images and videos?', a: 'Many platforms generate images of your companion; video support varies by platform. Our reviews note exactly which features each platform offers.' },
-  { q: 'What is Secret Desires?', a: 'Secret Desires is an AI companion platform where adults create and interact with customizable virtual companions through conversation and AI-generated media.' },
-  { q: 'Are AI companions private?', a: 'Privacy varies by platform. Check each service’s data handling and billing practices — our reviews cover the privacy questions worth asking.' },
-  { q: 'Is AI Companions Labs 18+?', a: 'Yes. AI Companions Labs is intended for adults 18+ only, and every character on this site is a fictional, clearly adult, AI-generated persona.' },
+  { q: 'What is the best AI girlfriend app in 2026?', a: 'The best AI girlfriend app depends on what you value most — visual customisation, memory, roleplay depth or privacy. Secret Desires is our current editor\'s pick for personalised AI girlfriends with strong image generation; other tested picks are in our Best AI Girlfriends 2026 round-up.' },
+  { q: 'How does AI sexting work?', a: 'AI sexting apps use large language models fine-tuned for romantic and explicit roleplay. You describe or design a character, then chat with them via text and often generated images. The best AI sexting platforms remember your preferences across sessions and support voice, image and video reply modes.' },
+  { q: 'What is the difference between an AI girlfriend and an AI companion?', a: 'An AI girlfriend is a specific type of AI companion designed for romantic roleplay. AI companion is the broader category — it covers AI girlfriends, AI boyfriends, platonic AI friends, therapy-style companions and character AI roleplay bots.' },
+  { q: 'Are AI companions and AI girlfriends safe to use?', a: 'Reputable AI companion platforms encrypt chats, let you delete data and never sell conversations. Risks include unclear data retention, surprise billing and platforms that share generated images with third parties. Our privacy checklist covers exactly what to ask before signing up for any AI girlfriend app.' },
+  { q: 'What is the best free AI girlfriend?', a: 'Most AI girlfriend apps offer a free tier, but limits are strict — fewer daily messages, no image generation, no voice. The best free AI girlfriend depends on whether you value message volume, character customisation or image generation. See our comparison for tested free-tier picks.' },
+  { q: 'Can I do AI roleplay with a custom character?', a: 'Yes. AI roleplay platforms let you create characters from scratch — appearance, personality, backstory, speaking style — then chat with them in scenarios you define. Some platforms specialise in NSFW AI chat with uncensored roleplay; others focus on family-friendly character creation.' },
+  { q: 'What is Secret Desires?', a: 'Secret Desires is our editor\'s pick AI companion platform where adults create and interact with customisable virtual companions through conversation, AI-generated images and immersive chat.' },
+  { q: 'Is AI Companions Labs 18+?', a: 'Yes. AI Companions Labs is an 18+ AI companion discovery platform, and every character on this site is a fictional, clearly adult, AI-generated persona.' },
 ] as const

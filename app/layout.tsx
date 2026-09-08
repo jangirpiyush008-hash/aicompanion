@@ -26,18 +26,18 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: 'AI Companions Labs — AI Girlfriends, AI Companions & Virtual Partners',
+    default: 'AI Girlfriends, AI Companions & Reviews 2026 | AI Companions Labs',
     template: '%s | AI Companions Labs',
   },
   description:
-    'AI Companions Labs is an 18+ discovery platform for AI girlfriends, AI boyfriends and virtual companions. Original AI-generated characters, hands-on platform reviews and side-by-side comparisons.',
+    'Reviews of the best AI girlfriend apps, AI companions, AI boyfriend platforms, AI sex chat and AI roleplay tools. Original AI-generated characters, hands-on tests, honest comparisons. 18+.',
   applicationName: SITE.name,
   category: 'entertainment',
   // Root canonical — homepage self-canonicalises to SITE.url. Nested routes
   // override this via pageMetadata() in lib/seo.ts.
   alternates: { canonical: SITE.url },
   openGraph: {
-    title: 'AI Companions Labs — AI Companion Discovery Platform',
+    title: 'AI Girlfriends, AI Companions & Virtual Partners — Reviewed 2026',
     description: SITE.descriptionLong,
     url: SITE.url,
     siteName: SITE.name,
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Companions Labs — AI Companion Discovery Platform',
+    title: 'AI Girlfriends, AI Companions & Reviews 2026',
     description: SITE.descriptionShort,
   },
   robots: {
