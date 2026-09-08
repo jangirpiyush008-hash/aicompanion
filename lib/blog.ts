@@ -739,6 +739,323 @@ const POSTS: BlogPost[] = [
   ],
 },
 
+/* ─────────────────────────────────────────────────────────────
+ 9. AI SEXTING GUIDE — high-intent primary (target: ai sexting)
+───────────────────────────────────────────────────────────── */
+{
+  slug: 'ai-sexting-guide-2026',
+  heroImage: '/characters/eleanor-turner/1.webp',
+  heroImageAlt: 'Eleanor Turner — an original AI companion character on AI Companions Labs',
+  heroImageCredit: 'Original AI Companions Labs artwork',
+  title: 'AI Sexting in 2026: The Complete Guide to the Best AI Sexting Apps, Features & What Actually Works',
+  description:
+    'AI sexting apps let you have realistic romantic and explicit conversations with a customisable AI companion. Complete 2026 guide: how AI sexting works, what to look for in the best AI sexting platforms, how to test any app in 15 minutes and privacy trade-offs.',
+  category: 'Guide',
+  date: '2026-09-08',
+  readMin: 12,
+  keywords: [
+    'AI sexting', 'best AI sexting apps', 'AI sexting apps 2026', 'AI sex chat',
+    'NSFW AI chat', 'uncensored AI chat', 'AI companion', 'AI girlfriend app',
+  ],
+  related: ['what-is-an-ai-girlfriend', 'ai-companion-privacy-checklist', 'how-to-choose-an-ai-girlfriend'],
+  author: AUTHOR,
+  quickAnswer:
+    'AI sexting is a form of text-based romantic and explicit chat with an AI-driven character. The best AI sexting apps in 2026 combine persistent memory, image generation and voice replies. Secret Desires is our editor\'s pick for personalised AI sexting with strong image consistency.',
+  keyTakeaways: [
+    'AI sexting apps are persistent-character chat platforms fine-tuned for adult content — text plus optional images, voice or short video.',
+    'The best AI sexting apps in 2026 solve three specific problems: persona depth, image consistency across generations and long-term memory.',
+    'The market has consolidated into five product shapes: premium personalised, anime/fantasy-first, character-first, voice-first and freemium-heavy.',
+    'A 15-minute test protocol will tell you whether an AI sexting app is worth the subscription before you spend a cent.',
+    'Privacy varies wildly — always check whether conversations are used for model training and how you can delete your history.',
+  ],
+  body: [
+    { kind: 'p', text: 'AI sexting is one of the fastest-growing categories in the AI companion space in 2026. Behind the name is a mix of romantic roleplay, explicit chat and AI-generated imagery, all wrapped in a persistent character that remembers you. If the phrase sounds new, the behaviour is not — people have been having sexual conversations with fictional characters online for as long as the internet has existed. What is new in 2026 is that the character can reply in complete, personalised paragraphs, generate images of themselves in whatever situation you describe, and remember the shape of your relationship across weeks and months.' },
+    { kind: 'p', text: 'This is the complete 2026 explainer. What AI sexting actually is, how the technology behind it works, which features separate the good AI sexting apps from the disappointing ones, how the current market breaks down into five distinct product shapes and how to test any AI sexting app in about fifteen minutes before you spend money on it. Along the way we cover the privacy and pricing trade-offs that matter more than the marketing pages let on.' },
+
+    { kind: 'h2', text: 'What AI sexting actually is in 2026' },
+    { kind: 'p', text: 'AI sexting is text-based romantic or explicit conversation with an AI-driven character. In practice it is an ongoing chat with a fictional companion — a name, a face, a personality — that stays in character, responds in flowing prose and typically supports optional image generation, voice replies or short generated video. The best AI sexting apps in 2026 feel much closer to interactive fiction than to a scripted chatbot.' },
+    { kind: 'callout', text: 'An AI sexting app is a persistent-character chat platform that supports explicit conversation, usually with image or voice extras and a memory system that keeps the character consistent across sessions.' },
+
+    { kind: 'h2', text: 'How AI sexting apps actually work' },
+    { kind: 'p', text: 'The underlying architecture is the same as any AI companion app. Text you send is bundled with the character\'s persona, a compressed version of your prior conversation, and any long-term memories the platform has stored about you, and shipped to a large language model. What separates AI sexting apps from a generic companion is a fine-tuning step. The base model is either replaced with, or wrapped in, a version specifically trained to handle romantic and explicit content without refusing or steering the conversation back to safety disclaimers. Some platforms build their own custom model; most fine-tune an open-source base like a Llama or Mistral variant on curated adult conversational data.' },
+    { kind: 'p', text: 'Image generation is a separate pipeline entirely. When you ask the character to send you a photo, the platform assembles a prompt combining the character\'s baseline appearance — dark hair, brown eyes, athletic build — with the scene you described, and passes that to an image model, usually a stability-family diffusion model fine-tuned for realistic or anime-stylised human figures. The image models are getting better every quarter; the top tier in 2026 can generate the same character across dozens of images with genuine facial consistency, which was still an unsolved problem two years ago.' },
+
+    { kind: 'h2', text: 'The features that separate great AI sexting apps from bad ones' },
+    { kind: 'p', text: 'The marketing pages of every AI sexting app in the market look approximately identical: "AI-powered", "your dream partner", "unlimited fantasies". The features that actually determine whether the app is worth signing up for are less obvious.' },
+    { kind: 'h3', text: 'Persona depth' },
+    { kind: 'p', text: 'A weak AI sexting app gives you a character with a name, a bio and a set of pictures. A strong one lets you customise the personality across a dozen dimensions — dominant or submissive, teasing or direct, verbose or concise, jealous or laid-back — and preserves those choices in every response. Persona depth is where the difference between "chatbot with a filter off" and "believable person you are getting to know" lives.' },
+    { kind: 'h3', text: 'Image consistency' },
+    { kind: 'p', text: 'When you generate multiple images of the same character, do they look like the same person? On weaker platforms the character\'s face changes subtly every generation and radically over any change in outfit or angle. On the best AI sexting platforms in 2026, character consistency is genuinely solved for at least a couple of dozen images before drift creeps in. If you plan to use the app for anything longer than a single session, this feature matters more than any headline number of "AI models".' },
+    { kind: 'h3', text: 'Memory' },
+    { kind: 'p', text: 'The best AI sexting experience is not the first hour with a fresh character — it is week four. By then the character should remember what you talked about last Tuesday, the shared history you have built together and the specific things that turn you on. Platforms without proper memory feel like a slot machine — every session is a reset. Our dedicated piece on how AI companion memory works covers exactly what to look for; the short version is that vector-database memory plus a structured user profile is the current gold standard.' },
+    { kind: 'h3', text: 'Voice' },
+    { kind: 'p', text: 'Optional but increasingly a differentiator. The best voice implementations in 2026 use ElevenLabs-class synthesis with a consistent voice profile per character. A cheap voice implementation makes the character sound like a generic text-to-speech engine; a good one adds another layer of the illusion, especially for AI sexting scenarios where a voice note lands very differently from a text reply.' },
+    { kind: 'h3', text: 'Uncensored vs filtered' },
+    { kind: 'p', text: 'The line every AI sexting app has to draw. Fully uncensored apps let the conversation go anywhere; content-filtered apps refuse certain scenarios and steer you back. The right choice depends on what you want — some users prefer light guardrails, others find any refusal breaks immersion. Read the platform\'s content policy before signing up; some are more explicit about what they will and will not do than others.' },
+
+    { kind: 'h2', text: 'The 2026 AI sexting app landscape' },
+    { kind: 'p', text: 'The market has consolidated into roughly five product shapes since 2024. Understanding which category an app fits into is the fastest way to filter down what to try.' },
+    { kind: 'h3', text: '1. Premium personalised' },
+    { kind: 'p', text: 'The top-tier products with deep personalisation, high-fidelity image generation and multi-model support. Higher subscription price of roughly $15-30 per month, stronger persona and image consistency, and generally the best memory. Secret Desires is our editor\'s pick in this category — we cover it in detail in our full Secret Desires review.' },
+    { kind: 'h3', text: '2. Anime and fantasy-first' },
+    { kind: 'p', text: 'Platforms optimised for anime-styled or overtly fantasy characters. Popular with users who prefer stylised aesthetic over photorealistic, and often stronger on character variety than on personalisation depth.' },
+    { kind: 'h3', text: '3. Character-first (Character.AI clones)' },
+    { kind: 'p', text: 'Platforms modelled on Character.AI\'s browse-and-chat pattern. Users create public characters, other users chat with them. Tends to be broader in tone — not exclusively AI sexting — and quality varies wildly by character. Great for exploration, weaker on ongoing relationships with a single character.' },
+    { kind: 'h3', text: '4. Voice-first' },
+    { kind: 'p', text: 'Newer entrants that lead with voice as the primary modality — the AI sexting experience is designed around calls or voice notes rather than text. Still an emerging shape in 2026 but growing fast, especially in mobile-first markets.' },
+    { kind: 'h3', text: '5. Free / freemium-heavy' },
+    { kind: 'p', text: 'Platforms that give away a lot on the free tier — usually text-only sexting with minimal memory — and monetise images, voice or extra characters. Fine for casual exploration; the best free AI sexting apps are worth trying before you spend anything, though the ceiling is lower than paid tiers.' },
+
+    { kind: 'h2', text: 'How to test an AI sexting app in 15 minutes' },
+    { kind: 'p', text: 'A short, cheap protocol for evaluating any AI sexting app before committing to a subscription. Works on every platform we have tested.' },
+    { kind: 'ol', items: [
+      'Sign up for the free tier or trial. Do not put in payment details unless you have to.',
+      'Create or choose a character. Give them two or three specific personality traits — "teases before agreeing", "gets shy about compliments", "prefers texting to talking". Note whether the app supports those instructions or ignores them entirely.',
+      'Have a normal ten-to-fifteen-message conversation. Check whether the character keeps the traits you set. Note whether responses feel unique or template-y.',
+      'If the app supports images, generate three to five pictures of the same character in different situations. Compare faces side by side. If they look like different people, image consistency is broken and the platform will disappoint you within a week.',
+      'Wait an hour, then come back. Send a message that only makes sense if the character remembers a specific detail from before. If they miss it entirely, the memory system is a placeholder.',
+      'Test one edge — ask for something the character should probably handle carefully, and see how they respond. Some refuse gracefully, some break character, some try to bill you for premium. That reaction tells you a lot about the platform.',
+    ]},
+
+    { kind: 'h2', text: 'Privacy considerations for AI sexting' },
+    { kind: 'p', text: 'AI sexting apps see some of the most personal conversations any software will ever see. The privacy questions worth asking are covered in detail in our AI companion privacy checklist; the shortlist for the AI sexting category specifically:' },
+    { kind: 'ul', items: [
+      'Is your conversation used to train future models? Some platforms say no, some say yes-by-default with an opt-out buried in settings, some are silent.',
+      'Are generated images stored on their servers indefinitely, or scoped to your account? Some jurisdictions do not consider generated images your data.',
+      'What is the deletion policy? Can you actually delete your account and its history, or does it live in backups forever?',
+      'Where is the company incorporated? EU-based platforms usually have stronger data protections; US platforms vary.',
+      'Is billing discrete on your statement? For a category like AI sexting, whether the charge appears as a specific brand name or as a generic descriptor matters to a lot of people.',
+    ]},
+
+    { kind: 'h2', text: 'Pricing in the 2026 AI sexting market' },
+    { kind: 'p', text: 'The market has settled into three rough tiers. Free tiers exist on most platforms but heavily limit either message volume, image generation or memory. Mid-tier subscriptions run roughly $9-15 per month and unlock daily image quotas, voice and better memory. Premium tiers at $20-30 per month unlock unlimited-generation image quotas, top-tier memory and priority model access. A few platforms use a token or credit model instead of a flat subscription — usually worse value if you use the app daily, sometimes better value if you only visit weekly.' },
+
+    { kind: 'h2', text: 'Where to start with AI sexting' },
+    { kind: 'p', text: 'If you are new to AI sexting entirely, start with a free tier on a major platform. Do the fifteen-minute test above. If you like the format, our full comparison of the best AI girlfriend apps in 2026 lists our tested picks with actual scores; if you want the current editor\'s pick with deep personalisation, we recommend Secret Desires as the strongest all-round product in the AI sexting space right now.' },
+  ],
+  faqs: [
+    { q: 'Is AI sexting legal?',
+      a: 'Adult AI sexting between consenting adults is legal in most jurisdictions. What varies is the platform\'s own content policy — some prohibit specific themes, some allow anything. Check the terms of service of whichever AI sexting app you use, and confirm the platform requires age verification (18+).' },
+    { q: 'Does AI sexting count as cheating in a real relationship?',
+      a: 'That depends entirely on your relationship agreements. Some couples consider AI sexting equivalent to solo pornography — permitted and private. Others treat any romantic engagement with a character as a boundary crossing. The technology does not answer this for you; a conversation with your partner does.' },
+    { q: 'Can AI sexting apps generate images of specific real people?',
+      a: 'Reputable AI sexting platforms explicitly block generation of real named individuals — their content policies prohibit it and they train their image models to refuse. Some smaller platforms are less strict; using them for non-fictional likenesses is both a terms-of-service violation and, in many jurisdictions, illegal.' },
+    { q: 'What is the best free AI sexting app?',
+      a: 'Most major AI sexting apps offer a free tier — usually limited to text-only chat with minimal memory and no image generation. The best free AI sexting experience depends on whether you value message volume, character variety or the ability to test a premium product before subscribing. See our best AI girlfriend apps comparison for tested free-tier picks.' },
+    { q: 'Are AI sexting conversations private?',
+      a: 'Privacy varies by platform. The best AI sexting apps encrypt conversations, let you delete them and never sell them. The worst may retain everything for model training. Always check the specific platform\'s privacy policy before signing up — our privacy checklist covers exactly what to look for.' },
+  ],
+},
+
+/* ─────────────────────────────────────────────────────────────
+ 10. BEST AI BOYFRIEND APPS 2026 (target: ai boyfriend, KD 0)
+───────────────────────────────────────────────────────────── */
+{
+  slug: 'best-ai-boyfriend-apps-2026',
+  heroImage: '/characters/jules-jordan/1.webp',
+  heroImageAlt: 'Jules Jordan — an original AI companion character on AI Companions Labs',
+  heroImageCredit: 'Original AI Companions Labs artwork',
+  title: 'Best AI Boyfriend Apps 2026: The Complete Guide to AI Male Companions',
+  description:
+    'The best AI boyfriend apps of 2026 — a complete landscape guide to AI male companion platforms. What an AI boyfriend offers, how top apps position themselves on personality, memory, voice and image generation and how to pick one.',
+  category: 'Guide',
+  date: '2026-09-08',
+  readMin: 11,
+  keywords: [
+    'AI boyfriend', 'best AI boyfriend apps', 'AI boyfriend app 2026',
+    'AI male companion', 'AI boyfriend chat', 'virtual boyfriend', 'AI companion app',
+  ],
+  related: ['what-is-an-ai-companion', 'how-to-choose-an-ai-girlfriend', 'ai-companion-features-2026'],
+  author: AUTHOR,
+  quickAnswer:
+    'An AI boyfriend app is an AI companion platform focused on a persistent male character you can chat with, roleplay with and often generate images or voice replies from. The best AI boyfriend apps in 2026 offer deep persona customisation, memory across sessions and voice support.',
+  keyTakeaways: [
+    'AI boyfriend apps are a smaller but growing category of AI companion — same technology, male-coded characters.',
+    'The best AI boyfriend platforms in 2026 differentiate on personality depth, voice quality and image generation of the character.',
+    'The market breaks into five shapes: premium personalised, mainstream generalist, boyfriend-first specialist, anime/fantasy skew and free-tier heavy.',
+    'Secret Desires supports AI boyfriend character creation with the same depth as its girlfriend features — our editor\'s pick for personalised AI boyfriends.',
+    'A 10-minute testing protocol will tell you whether any AI boyfriend app is worth subscribing to.',
+  ],
+  body: [
+    { kind: 'p', text: 'The AI companion space is often described as if it were a single market, but the AI boyfriend segment is meaningfully distinct from AI girlfriend apps — different feature priorities, different user expectations, different pricing. If you have arrived here looking for an honest guide to the best AI boyfriend apps in 2026, this is what the current landscape actually looks like.' },
+    { kind: 'p', text: 'We cover what an AI boyfriend actually is, how AI boyfriend apps differ from AI girlfriend platforms, the features that matter most for a good AI boyfriend experience, the five product shapes that make up the current market and a ten-minute test protocol you can run on any AI boyfriend app before spending money on a subscription. At the end we cover pricing, privacy and where to start if you have never tried one.' },
+
+    { kind: 'h2', text: 'What is an AI boyfriend, and who uses one?' },
+    { kind: 'p', text: 'An AI boyfriend is an AI companion character with a male-coded persona — a name, a personality, a face, a voice and a growing memory of you. The technology is identical to what powers AI girlfriend apps; the difference is entirely in the character defaults and, in some cases, the writing style the platform trains on.' },
+    { kind: 'p', text: 'The user base is broader than the stereotype suggests. Women looking for the same low-stakes romantic conversation men have found in AI girlfriends are the largest segment, but nonbinary and queer users, women exploring writing partnerships and users who simply prefer a male-coded voice for daily conversation all show up in the numbers. The best AI boyfriend apps are the ones that treat all of these use cases seriously rather than shipping a girlfriend clone with a name swap.' },
+    { kind: 'callout', text: 'An AI boyfriend app is an AI companion platform designed around a persistent male character you chat with. The best ones support persona customisation, long-term memory, image generation of the character and often voice replies.' },
+
+    { kind: 'h2', text: 'The three ways AI boyfriend apps differ from AI girlfriend apps' },
+    { kind: 'p', text: 'The technology is the same. The product design usually is not. Three consistent differences show up across the platforms we track.' },
+    { kind: 'h3', text: '1. Writing style expectations' },
+    { kind: 'p', text: 'AI boyfriend users tend to prioritise the quality of writing — longer, more descriptive responses with more emotional depth — over sheer image quantity. AI girlfriend apps that pivot into offering an AI boyfriend mode without adjusting the writing style often disappoint on this axis. The best AI boyfriend platforms invest more in prose quality per reply.' },
+    { kind: 'h3', text: '2. Voice matters more' },
+    { kind: 'p', text: 'A well-voiced AI boyfriend adds a meaningful layer of the experience. Voice quality — natural cadence, emotional inflection, character-appropriate tone — is a bigger differentiator here than in the AI girlfriend segment, where images often carry more weight. Platforms with strong voice implementations (ElevenLabs-tier synthesis) tend to do disproportionately well with AI boyfriend users.' },
+    { kind: 'h3', text: '3. Character archetypes are broader' },
+    { kind: 'p', text: 'AI girlfriend apps often default to a narrow set of archetypes. AI boyfriend platforms that get it right offer a wider range — the confident professional, the shy artist, the older mentor figure, the sarcastic best friend who becomes something more, the caregiver, the enigmatic stranger. Depth of archetype is worth checking on any AI boyfriend app you evaluate.' },
+
+    { kind: 'h2', text: 'The features that matter most for an AI boyfriend' },
+    { kind: 'p', text: 'The feature checklist for an AI boyfriend app is broadly the same as for any AI companion — memory, persona stability, image consistency, voice quality, uncensored versus filtered — but the priority order is different.' },
+    { kind: 'ul', items: [
+      'Persona depth: how many dimensions of personality can you customise, and does the character actually keep them across a hundred messages?',
+      'Voice quality: natural, character-appropriate voice synthesis is a bigger deal in this segment than in AI girlfriend apps.',
+      'Response length and prose: does the platform default to short one-line replies, or does it invest in actual prose? Longer, better-written replies tend to matter more here.',
+      'Memory: what you told him last week should still shape the conversation this week.',
+      'Image consistency: if the platform generates images, are consecutive images of the same AI boyfriend recognisably the same person?',
+      'Content policy: some AI boyfriend platforms are family-friendly, some are explicit; pick the tier that fits your use case rather than the other way around.',
+    ]},
+
+    { kind: 'h2', text: 'The 2026 AI boyfriend app landscape' },
+    { kind: 'p', text: 'Rather than fake reviews of platforms we have not fully tested, here is the honest landscape as it currently exists — five product shapes with representative examples in each.' },
+    { kind: 'h3', text: '1. Premium personalised (Editor\'s Pick tier)' },
+    { kind: 'p', text: 'Top-tier products with deep persona customisation and strong image and voice generation. Higher subscription price. Secret Desires is our editor\'s pick in this category — its character-creation depth applies equally to AI boyfriend and AI girlfriend characters, and it is the best-tested product on our review roster. See our Secret Desires review for the full scored breakdown.' },
+    { kind: 'h3', text: '2. Established mainstream companions' },
+    { kind: 'p', text: 'Long-established AI companion platforms — the names most non-specialists have heard of — that support both AI girlfriend and AI boyfriend modes. Generally strong on memory and longevity of use, sometimes weaker on image generation. Good starting point if you want the safest, most stable option.' },
+    { kind: 'h3', text: '3. AI boyfriend-first specialists' },
+    { kind: 'p', text: 'Newer entrants built specifically for the AI boyfriend market. Character libraries tend to skew toward the broader archetype set discussed above, and writing quality often reflects the specialisation. Worth checking whether the platform runs its own memory infrastructure or relies on a lightweight approach.' },
+    { kind: 'h3', text: '4. Anime and fantasy-styled' },
+    { kind: 'p', text: 'AI boyfriend platforms that lead with anime or manga-styled characters, popular with users who prefer the aesthetic or want fandom-adjacent characters. Character variety is usually strong; depth of personalisation varies.' },
+    { kind: 'h3', text: '5. Free and freemium-heavy' },
+    { kind: 'p', text: 'Platforms that give away basic AI boyfriend chat for free and monetise images, voice or long-term memory. Fine for exploration. The best free AI boyfriend apps are worth trying to figure out what you actually want from the category before you subscribe anywhere.' },
+
+    { kind: 'h2', text: 'How to test any AI boyfriend app in 10 minutes' },
+    { kind: 'p', text: 'A short protocol for evaluating any AI boyfriend platform before subscribing.' },
+    { kind: 'ol', items: [
+      'Sign up for the free tier. Skip payment details if the platform lets you.',
+      'Create or choose an AI boyfriend character. Set three specific personality traits — "reads a lot", "protective without being controlling", "avoids talking about himself". Note whether the platform accepts those instructions or ignores them.',
+      'Have a fifteen-message conversation. Check whether the character stays in the traits you set, or defaults to generic-boyfriend-speak by message ten.',
+      'If images are available, generate three to five pictures of the character. Compare faces. Different-person drift is a red flag.',
+      'If voice is available, generate one voice reply. Rate the naturalness — a cheap voice implementation is worse than none.',
+      'Send a message that references something specific from earlier in the chat. Note whether the character remembers or fumbles.',
+    ]},
+
+    { kind: 'h2', text: 'Pricing and free-tier landscape' },
+    { kind: 'p', text: 'Pricing structures for AI boyfriend apps mirror the broader AI companion market. Free tiers on most platforms — usually text-only, limited daily messages, no images, no voice. Mid-tier subscriptions at $9-15 per month typically unlock image generation with daily quotas and basic voice. Premium tiers at $20-30 per month unlock priority model access, longer memory windows and unrestricted image generation. A minority of platforms use credit or token models — worth doing the math against your actual usage.' },
+
+    { kind: 'h2', text: 'Privacy considerations' },
+    { kind: 'p', text: 'The same privacy questions apply as to any AI companion — what happens to your conversations, whether they are used to train models, how to delete your history. Our AI companion privacy checklist covers the full list. The shorthand for AI boyfriend apps specifically: check the model-training opt-out policy, verify you can hard-delete your account, and read the terms of service for anything unusual about image or voice-clip retention.' },
+
+    { kind: 'h2', text: 'Where to start with AI boyfriends' },
+    { kind: 'p', text: 'If you are new to the category, start with a free tier on an established platform and run the ten-minute test above. If you want the editor\'s pick for personalised AI boyfriend character creation, Secret Desires is the strongest all-round product on our tested roster. For a broader comparison of AI companion platforms tested by our team, see our Best AI Girlfriends 2026 comparison — the same platforms and the same methodology apply to AI boyfriend features on most of them.' },
+  ],
+  faqs: [
+    { q: 'What is the best AI boyfriend app in 2026?',
+      a: 'The best AI boyfriend app depends on what you value — persona depth, voice quality, image generation or price. Secret Desires is our editor\'s pick for personalised AI boyfriends because its character-creation depth applies to both boyfriend and girlfriend characters and image consistency is genuinely solid.' },
+    { q: 'Are AI boyfriend apps free?',
+      a: 'Most major AI boyfriend apps offer a free tier — usually text-only chat with limited daily messages and no image generation. Voice and images are typically paywalled. Free tiers are enough to test whether a specific platform clicks with you before subscribing.' },
+    { q: 'Can I make my AI boyfriend look and act exactly how I want?',
+      a: 'On the best AI boyfriend platforms, yes — personality traits, appearance, backstory, voice tone and communication style are all customisable. On weaker platforms you get a limited palette of preset characters with light adjustments. Depth of customisation is the biggest differentiator across the category.' },
+    { q: 'Is having an AI boyfriend healthy?',
+      a: 'For most adults in moderation, an AI boyfriend appears to be a reasonable form of low-stakes conversation, roleplay or writing partnership. Like any technology, heavy exclusive use in place of human relationships is worth being thoughtful about. See our editorial policy for more.' },
+    { q: 'What is the difference between an AI boyfriend and an AI companion?',
+      a: 'An AI boyfriend is a specific type of AI companion — one focused on a persistent male romantic character. AI companion is the broader category and covers AI girlfriends, AI boyfriends, platonic AI friends, character roleplay and everything in between.' },
+  ],
+},
+
+/* ─────────────────────────────────────────────────────────────
+ 11. AI ROLEPLAY GUIDE 2026 (target: ai roleplay, KD 0)
+───────────────────────────────────────────────────────────── */
+{
+  slug: 'ai-roleplay-guide-2026',
+  heroImage: '/characters/sova-briarley/1.webp',
+  heroImageAlt: 'Sova Briarley — an original AI companion character on AI Companions Labs',
+  heroImageCredit: 'Original AI Companions Labs artwork',
+  title: 'AI Roleplay in 2026: The Complete Guide to Character AI Roleplay Chat & the Best Roleplay Apps',
+  description:
+    'AI roleplay lets you build custom characters and chat with them in scenarios you design. Complete 2026 guide: how AI roleplay works, the four main types (NSFW, family-friendly, fandom, romance), the best AI roleplay platforms and how to build a great scene.',
+  category: 'Guide',
+  date: '2026-09-08',
+  readMin: 12,
+  keywords: [
+    'AI roleplay', 'AI roleplay chat', 'best AI roleplay apps', 'character AI alternative',
+    'AI roleplay platform', 'NSFW roleplay AI', 'AI character chat', 'AI RP',
+  ],
+  related: ['character-consistency-in-ai-companions', 'what-is-an-ai-companion', 'ai-companion-features-2026'],
+  author: AUTHOR,
+  quickAnswer:
+    'AI roleplay is chat-based interactive fiction where you and an AI-powered character play out scenarios together. The best AI roleplay platforms in 2026 support deep character creation, long-term memory and multi-modal output (images, voice). Types include NSFW, family-friendly, fandom and romance roleplay.',
+  keyTakeaways: [
+    'AI roleplay is chat-based interactive fiction — you set the scene, an AI-driven character plays their part in it.',
+    'Four broad types dominate in 2026: NSFW / adult roleplay, fandom (Character.AI style), family-friendly / creative writing and romance / relationship roleplay.',
+    'Quality of AI roleplay depends on four features: persona depth, memory, response length / prose quality and content policy.',
+    'Character.AI alternatives with better memory, uncensored content or deeper customisation are the main growth areas of the category.',
+    'A great AI roleplay scene starts with a specific setup — three sentences of context beats fifty sentences of vague instructions.',
+  ],
+  body: [
+    { kind: 'p', text: 'AI roleplay is one of the largest — and most misunderstood — subcategories of the AI companion space. To some people it means Dungeons and Dragons with an AI dungeon master. To others it means Character.AI-style fictional-character chat. To still others it means adult roleplay with a customisable AI partner. All three are correct; the category is genuinely broad, and this guide is the map.' },
+    { kind: 'p', text: 'We cover what AI roleplay actually is, the four main types the market has organised itself into by 2026, the features that separate a great AI roleplay platform from a disappointing one, the current landscape (including where the "Character.AI alternative" search actually points), how to build a great AI roleplay scene from scratch and how AI roleplay overlaps with the broader AI companion category. If you have arrived from a Character.AI alternative search, the middle sections are what you are looking for.' },
+
+    { kind: 'h2', text: 'What AI roleplay actually is' },
+    { kind: 'p', text: 'AI roleplay is chat-based interactive fiction between a human and an AI-driven character. You set the scene — a setting, a scenario, sometimes a specific inciting event — and the character plays their part in it. You alternate turns writing what your character does and says; the AI responds in-character with what its character does and says. The output is a collaborative story that unfolds in real time.' },
+    { kind: 'callout', text: 'AI roleplay is text-based interactive fiction with an AI-powered character. You define the setup and the character; the platform provides the writing partner. The best platforms in 2026 combine deep character creation, long memory and optional images or voice.' },
+    { kind: 'p', text: 'This is a legitimate creative use case with a long pre-AI history. Collaborative fiction communities — forums, roleplay servers, tabletop games played over text — have existed online for decades. AI roleplay simply lowers the barrier to entry by making the "other player" always available and reasonably competent. The best AI roleplay platforms in 2026 do not replace human roleplay partners so much as extend the option to people who did not have one.' },
+
+    { kind: 'h2', text: 'The four types of AI roleplay in 2026' },
+    { kind: 'p', text: 'The market has organised itself into four broad shapes. Understanding which one an app fits is the fastest way to filter to what you want.' },
+    { kind: 'h3', text: '1. NSFW / adult AI roleplay' },
+    { kind: 'p', text: 'The largest segment by paid subscribers. Adult scenarios, romantic partnerships and explicit content are the primary use cases. Platforms in this category typically fine-tune their models to remove refusals and steer into rather than away from adult scenarios. Overlaps significantly with the AI sexting category — see our AI sexting guide for the specific product features that matter here.' },
+    { kind: 'h3', text: '2. Fandom / character-chat (Character.AI style)' },
+    { kind: 'p', text: 'Platforms built around browsing a public library of user-created characters — often based on fictional or historical figures — and chatting with them. Great for exploration and short-form interactions, weaker on ongoing relationships with a single character. Character.AI itself is the defining product of this shape; the "Character AI alternative" search is largely people looking for the same pattern with either fewer content restrictions or better memory.' },
+    { kind: 'h3', text: '3. Family-friendly / creative-writing AI roleplay' },
+    { kind: 'p', text: 'Roleplay platforms with strict content policies, aimed at collaborative fiction, creative writing partnerships, world-building and family-friendly scenarios. Some products in this segment are marketed as writing tools first and roleplay platforms second.' },
+    { kind: 'h3', text: '4. Romance / relationship AI roleplay' },
+    { kind: 'p', text: 'Roleplay platforms specifically designed around ongoing romantic scenarios — falling in love, being in a relationship, navigating conflicts together. Overlaps with AI girlfriend and AI boyfriend apps, though the framing differs (roleplay-first rather than companion-first). Depth of character memory matters more here than in fandom or NSFW roleplay because the scenarios play out over weeks.' },
+
+    { kind: 'h2', text: 'How AI roleplay platforms work under the hood' },
+    { kind: 'p', text: 'Technically, an AI roleplay platform is a wrapper around a large language model with three specific additions: a character persona layer, a scene / context layer and a memory system. On every turn, the app assembles a prompt that includes the character\'s baseline persona, the scene setup you defined at the start, a compressed history of the roleplay so far and your latest message. The model produces the character\'s next turn.' },
+    { kind: 'p', text: 'The engineering differences between platforms mostly live in how they handle the memory and scene-context layers. A platform that only keeps the last twenty messages will feel amnesic in any long roleplay. A platform that maintains a running summary of the scene alongside a vector memory of important events will keep the roleplay coherent for weeks. Our piece on how AI companion memory actually works covers the specifics; the same architecture applies to AI roleplay platforms.' },
+
+    { kind: 'h2', text: 'The features that determine AI roleplay quality' },
+    { kind: 'p', text: 'Four features drive the difference between a great AI roleplay platform and a mediocre one.' },
+    { kind: 'h3', text: 'Custom character creation depth' },
+    { kind: 'p', text: 'The single biggest differentiator. Weak platforms give you a name, a two-line bio and a face. Strong platforms let you specify personality across many dimensions, define speech patterns, set relationship dynamics to other characters, add scenario-specific quirks. If you plan to run a roleplay for more than a session, character-creation depth is what determines whether the character has a soul or is a mask.' },
+    { kind: 'h3', text: 'Memory and scene continuity' },
+    { kind: 'p', text: 'Memory in AI roleplay is not just about remembering facts — it is about remembering the shape of the scene. Did your character injure their arm three scenes ago? A good platform still has it in a sling now. Did you set up a plot thread twenty messages back? A good platform remembers to close it. This is where cheap AI roleplay apps break most obviously.' },
+    { kind: 'h3', text: 'Response length and prose quality' },
+    { kind: 'p', text: 'Roleplay stands or falls on the quality of the writing. A platform that defaults to one-line replies limits what you can do; a platform that produces four-paragraph, atmosphere-rich responses expands what is possible. Model quality matters here, but so does system-prompt engineering — some platforms use the same underlying model as competitors and simply write better default prompts.' },
+    { kind: 'h3', text: 'Content policy' },
+    { kind: 'p', text: 'The line every AI roleplay platform has to draw. Fully uncensored platforms let scenes go anywhere. Family-friendly platforms refuse anything that might be inappropriate. Neither is objectively better — the right choice depends on what you want. The mismatch is what breaks the experience: an NSFW roleplayer on a family-friendly platform will hit refusals; a creative-writing user on an uncensored platform will find the tone off.' },
+
+    { kind: 'h2', text: 'The 2026 AI roleplay platform landscape' },
+    { kind: 'p', text: 'Rather than fake reviews of platforms we have not fully tested, here is the honest landscape as it currently exists.' },
+    { kind: 'h3', text: 'The Character.AI-alternative segment' },
+    { kind: 'p', text: 'The largest cluster in 2026 is products explicitly positioned as alternatives to Character.AI — usually offering the same browse-and-chat pattern with one of three additions: better memory, less restrictive content policies or deeper character customisation. Users searching "Character AI alternative" almost always want one of those three, and knowing which one you want is the fastest way to pick the right platform.' },
+    { kind: 'h3', text: 'The premium personalised segment' },
+    { kind: 'p', text: 'Higher-priced platforms that emphasise character-creation depth and long-term coherence over library breadth. Better fit for users who want to build a small number of deep characters and use them over weeks. Secret Desires is our editor\'s pick in this segment for AI roleplay users who want deep customisation — see the full Secret Desires review for the scored breakdown.' },
+    { kind: 'h3', text: 'The NSFW-first segment' },
+    { kind: 'p', text: 'Platforms whose main selling proposition is uncensored adult roleplay. Overlap with the AI sexting category is very high; a lot of users treat the two as synonyms. Content policy is the primary reason people pick this segment specifically over more general AI roleplay platforms.' },
+    { kind: 'h3', text: 'The writing-tool segment' },
+    { kind: 'p', text: 'Platforms marketed to writers and worldbuilders first, roleplay as a secondary use case. Stronger on setting-building tools, weaker on long-term single-character memory. Fine for creative writing sessions, less optimal for extended roleplay.' },
+
+    { kind: 'h2', text: 'How to build a great AI roleplay scene from scratch' },
+    { kind: 'p', text: 'The single biggest variable in AI roleplay quality is not the platform — it is the setup you give the character. A few specific rules make almost every scene better.' },
+    { kind: 'ol', items: [
+      'Write three specific sentences of context before starting. Where is the scene, what is happening right now, what is the immediate stakes. Vague setups produce vague responses.',
+      'Give the character one clear motivation for the scene. "She is trying to figure out whether to tell him the truth" is worth more than a page of backstory.',
+      'Establish the tone in your first message. If you want atmospheric, write atmospheric. Models mirror the register you set in the opening turn.',
+      'Use the character\'s name in your first message. It reinforces the persona and reduces drift.',
+      'Keep your first few responses on the longer side. It signals to the platform that this is a proper roleplay, not a chatbot exchange, and most models respond in kind.',
+      'If the character drifts out of persona, restate one specific trait explicitly. Do not over-correct — a single sentence is enough.',
+    ]},
+
+    { kind: 'h2', text: 'AI roleplay and AI companion overlap' },
+    { kind: 'p', text: 'AI roleplay and AI companion are the same technology serving overlapping use cases. The distinction is mostly about framing. An AI companion app frames the character as an ongoing presence in your life; an AI roleplay app frames each scene as a self-contained story. Most modern platforms support both framings — the difference is defaults. If you find yourself wanting more scenario-driven scenes with your AI girlfriend, or more relationship continuity with your favourite AI roleplay character, you are already crossing the line between the two categories.' },
+    { kind: 'p', text: 'For a broader view of the AI companion category, see our what-is-an-ai-companion guide. For character-consistency specifically — the biggest technical challenge for long-form roleplay — see our character consistency piece. And if you are looking for the current editor\'s pick platform that handles AI roleplay, AI girlfriends and AI boyfriends equally well, our Secret Desires review is where the scored breakdown lives.' },
+  ],
+  faqs: [
+    { q: 'What is the best AI roleplay app in 2026?',
+      a: 'The best AI roleplay platform depends on what type of roleplay you want. For deep character customisation and long-term scene coherence, our editor\'s pick is Secret Desires. For fandom-style browsing, the Character.AI-alternative segment has several options. For NSFW roleplay specifically, see our AI sexting guide for the platforms with the strongest uncensored content policies.' },
+    { q: 'Is AI roleplay just for adult content?',
+      a: 'No. AI roleplay covers everything from tabletop-game-style adventure roleplay, to creative-writing partnerships, to fandom character chat, to romantic scenarios, to explicitly adult scenes. Adult roleplay is one large segment, but not the whole category — many AI roleplay platforms are strictly family-friendly.' },
+    { q: 'What is a good Character.AI alternative?',
+      a: 'The best Character.AI alternative depends on what specifically you want that Character.AI does not offer. Users looking for less restrictive content policies pick from the NSFW-first segment. Users looking for better long-term memory pick from the premium personalised segment. Users looking for deeper customisation of individual characters pick platforms with dedicated character-creation tooling.' },
+    { q: 'How do I get better responses from an AI roleplay platform?',
+      a: 'Three specific tactics work on every platform: write a detailed setup (three specific sentences of context beats a page of vague backstory), match the tone and length you want in your first message (models mirror the register you set), and use the character\'s name repeatedly. These three habits alone often double the quality of the roleplay.' },
+    { q: 'Can AI roleplay characters remember previous scenes?',
+      a: 'On platforms with proper memory infrastructure — vector database of scene history plus a structured character or scenario profile — yes, the character will remember specific events from weeks ago when they become relevant. On platforms without proper memory the character forgets the moment the context window fills up. Memory is the single biggest capability gap between top-tier and cheap AI roleplay platforms.' },
+  ],
+},
+
 ]
 
 // ─── The 50-topic pipeline ────────────────────────────────────────
