@@ -49,13 +49,17 @@ export const CATEGORIES = [
 ] as const
 
 // SDAI Showcase — hand-picked characters from Secret Desires, grouped by
-// category. Every image + CTA links to SECRET_DESIRES_AFFILIATE_URL (never
-// deep-link, per site policy). Images live at
-// /public/sdai-showcase/{slug}/{1..imageCount}.webp.
+// category. Each card deep-links to the character-specific SDAI URL with
+// ?via=saddam-299148 appended so affiliate tracking is preserved. The bottom
+// "Try Secret Desires" button still uses SECRET_DESIRES_AFFILIATE_URL.
+// Images live at /public/sdai-showcase/{slug}/{1..imageCount}.webp.
 // Kept intentionally separate from `/public/characters/` (site's original set)
 // so editorial framing stays clean.
 export type SdaiCategory = 'girlfriend' | 'boyfriend' | 'anime'
 
+// sdaiPath examples:
+//   '/?profile=luc-a-reyes-cipmHA'   (female + anime — public profile modal)
+//   '/chat/68b312e2c314cddd90eb5bbf' (male — /gay-ai roster uses chat routes)
 export const SDAI_SHOWCASE: {
   slug: string
   name: string
@@ -63,30 +67,40 @@ export const SDAI_SHOWCASE: {
   category: SdaiCategory
   imageCount: number
   teaser: string
+  sdaiPath: string
 }[] = [
   // AI Girlfriends
-  { slug: 'lucia-reyes',        name: 'Lucía',       age: 21,   category: 'girlfriend', imageCount: 2, teaser: 'Vibrant, playful energy — quick wit and warmth.' },
-  { slug: 'morgan-morin',       name: 'Morgan',      age: 25,   category: 'girlfriend', imageCount: 2, teaser: 'Confident, career-driven — knows what she wants.' },
-  { slug: 'hannah-white',       name: 'Hannah',      age: 19,   category: 'girlfriend', imageCount: 2, teaser: 'Sweet, curious — the classic girl-next-door.' },
-  { slug: 'zoey-lewis',         name: 'Zoey',        age: 25,   category: 'girlfriend', imageCount: 2, teaser: 'Adventurous free spirit — loves late-night talks.' },
-  { slug: 'anya-petrova',       name: 'Anya',        age: 19,   category: 'girlfriend', imageCount: 2, teaser: 'Mysterious with a mischievous streak.' },
-  { slug: 'tara-moore',         name: 'Tara',        age: 20,   category: 'girlfriend', imageCount: 2, teaser: 'Bookish, thoughtful — deep conversations first.' },
+  { slug: 'lucia-reyes',        name: 'Lucía',       age: 21,   category: 'girlfriend', imageCount: 2, teaser: 'Vibrant, playful energy — quick wit and warmth.',              sdaiPath: '/?profile=luc-a-reyes-cipmHA' },
+  { slug: 'morgan-morin',       name: 'Morgan',      age: 25,   category: 'girlfriend', imageCount: 2, teaser: 'Confident, career-driven — knows what she wants.',              sdaiPath: '/?profile=morgan-morin-qYzGzg' },
+  { slug: 'hannah-white',       name: 'Hannah',      age: 19,   category: 'girlfriend', imageCount: 2, teaser: 'Sweet, curious — the classic girl-next-door.',                  sdaiPath: '/?profile=hannah-white-gyhaJg' },
+  { slug: 'zoey-lewis',         name: 'Zoey',        age: 25,   category: 'girlfriend', imageCount: 2, teaser: 'Adventurous free spirit — loves late-night talks.',             sdaiPath: '/?profile=zoey-lewis-VZ9zQA' },
+  { slug: 'anya-petrova',       name: 'Anya',        age: 19,   category: 'girlfriend', imageCount: 2, teaser: 'Mysterious with a mischievous streak.',                         sdaiPath: '/?profile=anya-petrova-N6jqzQ' },
+  { slug: 'tara-moore',         name: 'Tara',        age: 20,   category: 'girlfriend', imageCount: 2, teaser: 'Bookish, thoughtful — deep conversations first.',               sdaiPath: '/?profile=tara-moore-QDt_tA' },
 
   // AI Boyfriends
-  { slug: 'axel-kross',         name: 'Axel',        age: 21,   category: 'boyfriend',  imageCount: 1, teaser: 'Rebellious edge — writes his own rules.' },
-  { slug: 'charlie-ford',       name: 'Charlie',     age: 36,   category: 'boyfriend',  imageCount: 1, teaser: 'Experienced, steady — a rock in the storm.' },
-  { slug: 'taeyang-seo',        name: 'Taeyang',     age: 24,   category: 'boyfriend',  imageCount: 1, teaser: 'Charismatic dreamer — passion and poetry.' },
-  { slug: 'christopher-ramirez',name: 'Christopher', age: 28,   category: 'boyfriend',  imageCount: 1, teaser: 'Grounded, protective — quietly attentive.' },
-  { slug: 'hideki-nakamura',    name: 'Hideki',      age: null, category: 'boyfriend',  imageCount: 1, teaser: 'Introspective, artistic — old-soul energy.' },
-  { slug: 'elias-morgan',       name: 'Elias',       age: null, category: 'boyfriend',  imageCount: 1, teaser: 'Brooding, intense — the mystery you chase.' },
+  { slug: 'axel-kross',         name: 'Axel',        age: 21,   category: 'boyfriend',  imageCount: 1, teaser: 'Rebellious edge — writes his own rules.',                       sdaiPath: '/chat/68b312e2c314cddd90eb5bbf' },
+  { slug: 'charlie-ford',       name: 'Charlie',     age: 36,   category: 'boyfriend',  imageCount: 1, teaser: 'Experienced, steady — a rock in the storm.',                    sdaiPath: '/chat/689df96a4f33d071a56d7c93' },
+  { slug: 'taeyang-seo',        name: 'Taeyang',     age: 24,   category: 'boyfriend',  imageCount: 1, teaser: 'Charismatic dreamer — passion and poetry.',                     sdaiPath: '/chat/68af3174c314cddd90b8b27e' },
+  { slug: 'christopher-ramirez',name: 'Christopher', age: 28,   category: 'boyfriend',  imageCount: 1, teaser: 'Grounded, protective — quietly attentive.',                     sdaiPath: '/chat/6929caf88e037d994a9f858b' },
+  { slug: 'hideki-nakamura',    name: 'Hideki',      age: null, category: 'boyfriend',  imageCount: 1, teaser: 'Introspective, artistic — old-soul energy.',                    sdaiPath: '/chat/68a896bc0d855ec29628a232' },
+  { slug: 'elias-morgan',       name: 'Elias',       age: null, category: 'boyfriend',  imageCount: 1, teaser: 'Brooding, intense — the mystery you chase.',                    sdaiPath: '/chat/68b5bd7ab1bf418e61e51398' },
 
   // Anime
-  { slug: 'sae-yukishiro',      name: 'Sae Yukishiro',   age: 21, category: 'anime', imageCount: 2, teaser: 'Quiet grace, sharp mind — the honor-bound classmate.' },
-  { slug: 'aiko-shimei',        name: 'Aiko Shimei',     age: 30, category: 'anime', imageCount: 2, teaser: 'Cool, composed sensei — teaches through silence.' },
-  { slug: 'aya-schreik',        name: 'Aya Schreik',     age: 23, category: 'anime', imageCount: 2, teaser: 'Genki chaos — pure sunshine and speed.' },
-  { slug: 'serena-ueda',        name: 'Serena Ueda',     age: 19, category: 'anime', imageCount: 2, teaser: 'Dreamy, ethereal — the club-president crush.' },
-  { slug: 'ella-ando',          name: 'Ella Ando',       age: 28, category: 'anime', imageCount: 2, teaser: 'Confident onee-san — knowing smile, no games.' },
+  { slug: 'sae-yukishiro',      name: 'Sae Yukishiro',   age: 21, category: 'anime', imageCount: 2, teaser: 'Quiet grace, sharp mind — the honor-bound classmate.',           sdaiPath: '/?profile=sae-yukishiro-FlptZg' },
+  { slug: 'aiko-shimei',        name: 'Aiko Shimei',     age: 30, category: 'anime', imageCount: 2, teaser: 'Cool, composed sensei — teaches through silence.',               sdaiPath: '/?profile=aiko-shimei-VXJnXA' },
+  { slug: 'aya-schreik',        name: 'Aya Schreik',     age: 23, category: 'anime', imageCount: 2, teaser: 'Genki chaos — pure sunshine and speed.',                         sdaiPath: '/?profile=aya-schreik-IU9sZw' },
+  { slug: 'serena-ueda',        name: 'Serena Ueda',     age: 19, category: 'anime', imageCount: 2, teaser: 'Dreamy, ethereal — the club-president crush.',                   sdaiPath: '/?profile=serena-ueda-6KSagA' },
+  { slug: 'ella-ando',          name: 'Ella Ando',       age: 28, category: 'anime', imageCount: 2, teaser: 'Confident onee-san — knowing smile, no games.',                  sdaiPath: '/?profile=ella-ando-gjJSlA' },
 ]
+
+// Build a deep-link URL that preserves the ?via=saddam-299148 affiliate param.
+// SDAI's affiliate tracking sets its cookie from `?via=` on any URL, so this
+// still counts as a tracked referral even though we're not hitting /create-partner.
+export function sdaiCharUrl(char: { sdaiPath: string }): string {
+  const AFFILIATE_PARAM = 'via=saddam-299148'
+  const sep = char.sdaiPath.includes('?') ? '&' : '?'
+  return `https://secretdesires.ai${char.sdaiPath}${sep}${AFFILIATE_PARAM}`
+}
 
 export const SDAI_SHOWCASE_LABELS: Record<SdaiCategory, { heading: string; blurb: string }> = {
   girlfriend: {

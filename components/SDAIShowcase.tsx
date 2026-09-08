@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { SDAI_SHOWCASE, SDAI_SHOWCASE_LABELS, SECRET_DESIRES_AFFILIATE_URL, type SdaiCategory } from '@/lib/site'
+import { SDAI_SHOWCASE, SDAI_SHOWCASE_LABELS, SECRET_DESIRES_AFFILIATE_URL, sdaiCharUrl, type SdaiCategory } from '@/lib/site'
 
 export default function SDAIShowcase({ category }: { category: SdaiCategory }) {
   const chars = SDAI_SHOWCASE.filter((c) => c.category === category)
@@ -56,7 +56,7 @@ export default function SDAIShowcase({ category }: { category: SdaiCategory }) {
         {chars.map((c) => (
           <a
             key={c.slug}
-            href={SECRET_DESIRES_AFFILIATE_URL}
+            href={sdaiCharUrl(c)}
             target="_blank"
             rel="sponsored noopener noreferrer"
             style={{
