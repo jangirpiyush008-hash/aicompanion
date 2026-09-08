@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { color-scheme: light; }
+  body {
+    background: #fcecf4;
+    color: #331523;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--font-manrope), Manrope, ui-sans-serif, system-ui, sans-serif;
+  }
+  a { color: #d6336c; text-decoration: none; }
+  a:hover { color: #a61e4d; }
+  ::selection { background: #f783ac; color: #fff; }
+  details summary::-webkit-details-marker { display: none; }
+  :focus-visible {
+    outline: 2px solid #c2255c;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+/* Kill non-essential motion for prefers-reduced-motion. */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+/* Floating-layer keyframes (also defined in tailwind config for utility use, but present here for the raw layer). */
+@keyframes aspFloat {
+  0%   { transform: translateY(105vh) rotate(-8deg); }
+  100% { transform: translateY(-15vh) rotate(10deg); }
+}
+@keyframes aspSway {
+  0%,100% { margin-left: 0; }
+  50%     { margin-left: 38px; }
+}
+
