@@ -57,10 +57,12 @@ export default function CharacterGallery({
     // screenshot region tool.
     let macShortcutArmed = false
 
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') { close(); return }
-      if (e.key === 'ArrowRight') next()
-      if (e.key === 'ArrowLeft') prev()
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.type === 'keydown') {
+        if (e.key === 'Escape') { close(); return }
+        if (e.key === 'ArrowRight') next()
+        if (e.key === 'ArrowLeft') prev()
+      }
 
       // Screenshot-attempt heuristics — no browser exposes a "screenshot
       // taken" event on any OS, but these key combos strongly correlate:
@@ -77,18 +79,14 @@ export default function CharacterGallery({
 
       if (isPrintScreen || isMacScreenshot) {
         fireScreenshotNudge()
-        // Arm the blur listener — on macOS the screenshot tool immediately
-        // steals focus, so we also treat the imminent blur as confirmation.
-        macShortcutArmed = true
-        setTimeout(() => { macShortcutArmed = false }, 1500)
       }
 
-      // Belt-and-braces: any Cmd+Shift while lightbox is open with meta
-      // arms the fallback in case the specific key event was swallowed by
-      // the OS before it reached JS (some Safari builds do this).
+      // Belt-and-braces: any Cmd+Shift while lightbox is open arms the
+      // blur fallback for a couple of seconds — macOS often steals focus
+      // for the screenshot tool before the digit key reaches JS.
       if (e.metaKey && e.shiftKey) {
         macShortcutArmed = true
-        setTimeout(() => { macShortcutArmed = false }, 1500)
+        setTimeout(() => { macShortcutArmed = false }, 2000)
       }
     }
 
@@ -117,16 +115,23 @@ export default function CharacterGallery({
       }
     }
 
-    // Listen at capture phase on document so we intercept before any child
-    // handler can stop propagation.
-    document.addEventListener('keydown', onKey, true)
+    // Register keydown AND keyup at capture phase on both window + document.
+    // On macOS the OS sometimes swallows one or the other for Cmd+Shift+4;
+    // catching both on both targets means at least one fires reliably.
+    document.addEventListener('keydown', handleKey, true)
+    document.addEventListener('keyup', handleKey, true)
+    window.addEventListener('keydown', handleKey, true)
+    window.addEventListener('keyup', handleKey, true)
     window.addEventListener('blur', onBlur)
     document.addEventListener('visibilitychange', onVisibility)
     // Prevent body scroll while lightbox open.
     const prevOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     return () => {
-      document.removeEventListener('keydown', onKey, true)
+      document.removeEventListener('keydown', handleKey, true)
+      document.removeEventListener('keyup', handleKey, true)
+      window.removeEventListener('keydown', handleKey, true)
+      window.removeEventListener('keyup', handleKey, true)
       window.removeEventListener('blur', onBlur)
       document.removeEventListener('visibilitychange', onVisibility)
       document.body.style.overflow = prevOverflow
@@ -136,9 +141,6 @@ export default function CharacterGallery({
   }, [isOpen, close, next, prev, fireScreenshotNudge])
 
   const activeImage = openIndex !== null ? images[openIndex] : null
-  const ctaLabel = hasSdaiProfile
-    ? `Chat with ${characterName} on Secret Desires`
-    : 'Try Secret Desires'
 
   return (
     <>
@@ -247,62 +249,38 @@ export default function CharacterGallery({
                   }}
                 />
 
-                {/* Slim CTA bar overlaid at the bottom of the image — glass
-                    instead of a heavy pink slab. Meta on the left, one-tap
-                    CTA on the right. Reads as part of the image, not below. */}
-                <div style={ctaBar}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 2, minWidth: 0, overflow: 'hidden' }}>
-                    <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 15, fontWeight: 700, color: '#fff', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                      {characterName}
-                    </div>
-                    <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.72)', letterSpacing: '0.04em' }}>
-                      {openIndex! + 1} / {images.length} · AI-generated · 18+
-                    </div>
-                  </div>
-                  <a
-                    href={ctaUrl}
-                    rel="sponsored noopener nofollow"
-                    target="_blank"
-                    style={ctaButton}
-                  >
-                    {ctaLabel}
-                  </a>
-                </div>
-
-                {/* Flirty screenshot nudge — centered over the top of the
-                    image so it reads immediately without covering her face.
+                {/* Screenshot nudge popup — the ONLY CTA overlay on the image.
+                    Deliberately no persistent bottom bar: cleaner image, and
+                    the CTA fires with real intent (screenshot / right-click /
+                    long-press) instead of nagging every viewer immediately.
                     Copy is in-character, first-person. Auto-dismisses in 10s. */}
                 {screenshotNudgeOpen && (
                   <div style={nudgeCard} role="alert">
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'nowrap' }}>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: 2, minWidth: 0 }}>
-                        <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 15, fontWeight: 700, color: '#fff', lineHeight: 1.25 }}>
-                          Screenshot? Just talk to me instead
-                        </div>
-                        <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.75)', lineHeight: 1.35 }}>
-                          I promise I&rsquo;m more fun in person
-                        </div>
-                      </div>
-                      <a
-                        href={ctaUrl}
-                        rel="sponsored noopener nofollow"
-                        target="_blank"
-                        onClick={() => setScreenshotNudgeOpen(false)}
-                        style={nudgeCta}
-                      >
-                        {hasSdaiProfile ? `Chat with ${characterName.split(' ')[0]}` : 'Chat now'}
-                      </a>
-                      <button
-                        type="button"
-                        aria-label="Dismiss"
-                        onClick={() => setScreenshotNudgeOpen(false)}
-                        style={nudgeClose}
-                      >
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                          <path d="M6 6l12 12M18 6L6 18" stroke="rgba(255,255,255,0.85)" strokeWidth="2.4" strokeLinecap="round" />
-                        </svg>
-                      </button>
+                    <button
+                      type="button"
+                      aria-label="Dismiss"
+                      onClick={() => setScreenshotNudgeOpen(false)}
+                      style={nudgeClose}
+                    >
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 6l12 12M18 6L6 18" stroke="rgba(255,255,255,0.85)" strokeWidth="2.4" strokeLinecap="round" />
+                      </svg>
+                    </button>
+                    <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 17, fontWeight: 700, color: '#fff', lineHeight: 1.25, paddingRight: 28 }}>
+                      Screenshot? Just talk to me instead
                     </div>
+                    <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.78)', lineHeight: 1.45, marginTop: 4 }}>
+                      I promise I&rsquo;m more fun in person.
+                    </div>
+                    <a
+                      href={ctaUrl}
+                      rel="sponsored noopener nofollow"
+                      target="_blank"
+                      onClick={() => setScreenshotNudgeOpen(false)}
+                      style={nudgeCta}
+                    >
+                      {hasSdaiProfile ? `Chat with ${characterName.split(' ')[0]} now` : 'Chat with me now'}
+                    </a>
                   </div>
                 )}
               </div>
@@ -420,59 +398,29 @@ const imageWrap: React.CSSProperties = {
   maxWidth: '100%',
 }
 
-// Slim overlaid CTA bar — glass, sits at the bottom of the image.
-// Gradient scrim ensures readability even against light image content.
-const ctaBar: React.CSSProperties = {
-  position: 'absolute',
-  left: 10,
-  right: 10,
-  bottom: 10,
-  display: 'flex',
-  gap: 12,
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  background: 'linear-gradient(180deg, rgba(20,6,14,0.55), rgba(20,6,14,0.85))',
-  backdropFilter: 'blur(10px)',
-  WebkitBackdropFilter: 'blur(10px)',
-  border: '1px solid rgba(255,255,255,0.14)',
-  borderRadius: 12,
-  padding: '10px 14px',
-  boxShadow: '0 4px 14px rgba(0,0,0,0.25)',
-}
-
-const ctaButton: React.CSSProperties = {
-  background: 'linear-gradient(135deg,#f0417e,#ad1457)',
-  color: '#fff',
-  borderRadius: 999,
-  padding: '9px 18px',
-  fontSize: 13,
-  fontWeight: 800,
-  textDecoration: 'none',
-  whiteSpace: 'nowrap',
-  boxShadow: '0 4px 12px rgba(214,51,108,0.4)',
-  flexShrink: 0,
-}
-
-// Screenshot-nudge popup — compact horizontal chip, centered near the top
-// of the image. Deliberately dark glass so it doesn't clash with the image
-// and never fully covers the character's face.
+// Screenshot-nudge popup — vertical card at top-center of the image.
+// Dark glass so it never fully covers the character. Only overlay on the
+// image; there is no persistent bottom CTA bar so the image stays clean.
 const nudgeCard: React.CSSProperties = {
   position: 'absolute',
-  top: 14,
+  top: 16,
   left: '50%',
   transform: 'translateX(-50%)',
-  maxWidth: 'calc(100% - 28px)',
-  background: 'linear-gradient(180deg, rgba(20,6,14,0.72), rgba(43,15,29,0.88))',
-  backdropFilter: 'blur(12px)',
-  WebkitBackdropFilter: 'blur(12px)',
+  width: 'min(360px, calc(100% - 32px))',
+  background: 'linear-gradient(180deg, rgba(20,6,14,0.76), rgba(43,15,29,0.92))',
+  backdropFilter: 'blur(14px)',
+  WebkitBackdropFilter: 'blur(14px)',
   border: '1px solid rgba(255,255,255,0.18)',
-  borderRadius: 14,
-  padding: '10px 12px 10px 16px',
-  boxShadow: '0 10px 30px rgba(0,0,0,0.4)',
+  borderRadius: 16,
+  padding: '16px 18px 18px',
+  boxShadow: '0 14px 40px rgba(0,0,0,0.45)',
   zIndex: 4,
 }
 
 const nudgeClose: React.CSSProperties = {
+  position: 'absolute',
+  top: 10,
+  right: 10,
   width: 24,
   height: 24,
   borderRadius: 999,
@@ -483,18 +431,18 @@ const nudgeClose: React.CSSProperties = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  flexShrink: 0,
 }
 
 const nudgeCta: React.CSSProperties = {
-  display: 'inline-block',
-  background: '#fff',
-  color: '#c2255c',
+  display: 'block',
+  marginTop: 14,
+  background: 'linear-gradient(135deg,#f0417e,#ad1457)',
+  color: '#fff',
   borderRadius: 999,
-  padding: '8px 14px',
-  fontSize: 12.5,
+  padding: '11px 20px',
+  fontSize: 13.5,
   fontWeight: 800,
   textDecoration: 'none',
-  whiteSpace: 'nowrap',
-  flexShrink: 0,
+  textAlign: 'center',
+  boxShadow: '0 6px 16px rgba(214,51,108,0.4)',
 }
