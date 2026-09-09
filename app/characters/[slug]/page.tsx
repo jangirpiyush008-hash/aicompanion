@@ -77,14 +77,17 @@ export default async function CharacterPage(props: {
   // generic affiliate URL otherwise.
   const ctaUrl = c.sdaiProfileUrl ?? SECRET_DESIRES_AFFILIATE_URL
 
-  // Gallery split: first 2 images unlocked, rest render as locked previews
-  // that click through to the character's Secret Desires profile.
+  // Paywall UX is only honest when we have a specific SDAI profile URL for
+  // this character — otherwise "Unlock on Secret Desires / Meet <name>" is a
+  // promise we cannot deliver on (clicking dumps the user on generic sign-up).
+  // So: characters we have on SDAI get the locked-preview + single tease tile
+  // pattern. Characters we do not have get the full gallery unlocked and no
+  // tease tile. Never render duplicate "More of X" tiles.
+  const hasSdaiProfile = Boolean(c.sdaiProfileUrl)
   const UNLOCKED = 2
-  const unlockedImages = c.gallery.slice(0, UNLOCKED)
-  const lockedImages = c.gallery.slice(UNLOCKED)
-  // If the character has 0-1 locked images from their gallery, add a few
-  // "premium tease" slots so the paywall UX is visible on every character.
-  const teaseCount = Math.max(0, 4 - lockedImages.length)
+  const unlockedImages = hasSdaiProfile ? c.gallery.slice(0, UNLOCKED) : c.gallery
+  const lockedImages = hasSdaiProfile ? c.gallery.slice(UNLOCKED) : []
+  const teaseCount = hasSdaiProfile && lockedImages.length === 0 ? 1 : 0
 
   // Breadcrumb JSON-LD
   const breadcrumbLd = {
