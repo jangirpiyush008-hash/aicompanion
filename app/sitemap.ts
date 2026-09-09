@@ -5,6 +5,7 @@ import { REVIEWS } from '@/lib/reviews'
 import { COMPARISONS } from '@/lib/comparisons'
 import { CHARACTER_CATEGORIES } from '@/lib/character-categories'
 import { ALTERNATIVES } from '@/lib/alternatives'
+import { AUTHORS } from '@/lib/authors'
 import { SITE } from '@/lib/site'
 
 // Single sitemap.xml (Next.js only supports one for this file). Sub-splits
@@ -46,6 +47,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE.url}/best-ai-girlfriend-for-voice/`,      lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${SITE.url}/best-ai-companion-for-memory/`,      lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${SITE.url}/best-ai-character-creator/`,         lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+
+    // Author pages — E-E-A-T anchors
+    { url: `${SITE.url}/authors/`,               lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
 
     // Trust pages
     { url: `${SITE.url}/about/`,                 lastModified: now, changeFrequency: 'yearly',  priority: 0.5 },
@@ -91,5 +95,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now, changeFrequency: 'monthly', priority: 0.7,
   }))
 
-  return [...staticPages, ...chars, ...charCats, ...blog, ...reviews, ...comps, ...alts]
+  const authorPages: MetadataRoute.Sitemap = Object.values(AUTHORS).map((a) => ({
+    url: `${SITE.url}/authors/${a.slug}/`,
+    lastModified: now, changeFrequency: 'monthly', priority: 0.6,
+  }))
+
+  return [...staticPages, ...chars, ...charCats, ...blog, ...reviews, ...comps, ...alts, ...authorPages]
 }

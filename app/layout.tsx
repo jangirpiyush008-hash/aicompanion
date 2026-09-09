@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Playfair_Display, Manrope } from 'next/font/google'
 import Script from 'next/script'
 import { SITE } from '@/lib/site'
+import { organizationLd, websiteLd } from '@/lib/seo'
 import AgeGate from '@/components/AgeGate'
 import MobileStickyCTA from '@/components/MobileStickyCTA'
 import './globals.css'
@@ -74,6 +75,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <AgeGate />
         <MobileStickyCTA />
+
+        {/* Organization + WebSite JSON-LD emitted on every route. Establishes the
+            brand entity for Google + LLMs so it's not tied to any one page's
+            crawlability. WebSite carries the SearchAction that unlocks the
+            Google sitelinks searchbox feature. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd()) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd()) }}
+        />
 
         {/* Google Analytics 4 — loads asynchronously after the page becomes interactive. */}
         <Script

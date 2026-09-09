@@ -1,10 +1,14 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import PageLayout, { H1, Lede, H2, P, UL, Callout } from '@/components/PageLayout'
+import PageLayout, { H1, Lede, H2, H3, P, UL, Callout } from '@/components/PageLayout'
 import SecretDesiresCTA from '@/components/SecretDesiresCTA'
-import { pageMetadata, articleLd, reviewLd, faqLd } from '@/lib/seo'
+import { AuthorByline, AuthorCard } from '@/components/AuthorByline'
+import { ReviewHero } from '@/components/ReviewHero'
+import { RelatedReviews } from '@/components/RelatedReviews'
+import { pageMetadata, articleLd, reviewLd, faqLd, type AuthorRef } from '@/lib/seo'
 import { REVIEWS, getReview, METHODOLOGY_WEIGHTS } from '@/lib/reviews'
+import { getAuthor } from '@/lib/authors'
 
 export function generateStaticParams() {
   return REVIEWS.map((r) => ({ slug: r.slug }))
@@ -23,7 +27,13 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   const desc = isPub
     ? `${r.name} review 2026: full hands-on test of the AI companion platform. Features, pricing, image quality, AI sexting, memory, voice, video, verdict. Scored on our 9-category methodology.`
     : `${r.name} AI companion review coming soon. This page tracks features, pricing and how ${r.name} compares to the best AI girlfriend and AI companion platforms we have tested.`
-  return pageMetadata({ title, description: desc, path, type: 'article' })
+  return pageMetadata({
+    title,
+    description: desc,
+    path,
+    type: 'article',
+    image: r.heroImage,
+  })
 }
 
 export default async function ReviewPage(props: { params: Promise<{ slug: string }> }) {
@@ -40,8 +50,21 @@ export default async function ReviewPage(props: { params: Promise<{ slug: string
     ? `A full hands-on review of ${r.name}, scored on our 9-category methodology.`
     : `We have not yet independently tested ${r.name}.`
 
+  const author = r.authorSlug ? getAuthor(r.authorSlug) : undefined
+  const authorRef: AuthorRef | undefined = author
+    ? { name: author.name, slug: author.slug, jobTitle: author.jobTitle }
+    : undefined
+
   const lds: unknown[] = [
-    articleLd({ headline: title, description: desc, path, datePublished: r.publishedDate, dateModified: r.lastUpdated }),
+    articleLd({
+      headline: title,
+      description: desc,
+      path,
+      image: r.heroImage,
+      datePublished: r.publishedDate,
+      dateModified: r.lastUpdated,
+      author: authorRef,
+    }),
   ]
   if (isPub) {
     lds.push(reviewLd({
@@ -51,6 +74,7 @@ export default async function ReviewPage(props: { params: Promise<{ slug: string
       ratingValue: r.overall,
       bestRating: 10,
       datePublished: r.publishedDate,
+      reviewer: authorRef,
     }))
   }
   if (r.faqs?.length) lds.push(faqLd(r.faqs))
@@ -86,6 +110,24 @@ export default async function ReviewPage(props: { params: Promise<{ slug: string
 
       <H1>{title}</H1>
       <Lede>{r.tagline}</Lede>
+
+      {/* Byline — Person authorship + tested/updated dates. Kept close to the
+          H1 so it is the first trust signal a reader (or crawler) sees. */}
+      {author && (
+        <AuthorByline
+          author={author}
+          testedOn={r.testedOn}
+          updatedOn={r.lastUpdated}
+        />
+      )}
+
+      {/* Hero image — skipped if a review has none yet. Prompts for generating
+          per-review hero images via SDAI live in IMAGES_TO_GENERATE.md. */}
+      <ReviewHero
+        src={r.heroImage}
+        alt={r.heroImageAlt ?? `${r.name} — AI companion platform review 2026`}
+        caption={r.heroImageCaption}
+      />
 
       {/* Verdict + rating strip */}
       <div style={verdictStrip}>
@@ -139,6 +181,22 @@ export default async function ReviewPage(props: { params: Promise<{ slug: string
               </tbody>
             </table>
           </div>
+
+          {/* First-person testing narrative — the human-voice section. Rendered
+              only when the review has genuine hands-on notes. This is the
+              single strongest E-E-A-T signal on the page. */}
+          {r.testingNarrative && (
+            <>
+              <H2>What testing {r.name} was actually like</H2>
+              <P>{r.testingNarrative.intro}</P>
+              {r.testingNarrative.sections.map((s) => (
+                <div key={s.title}>
+                  <H3>{s.title}</H3>
+                  <P>{s.body}</P>
+                </div>
+              ))}
+            </>
+          )}
 
           {r.keyFeatures?.length ? (
             <>
@@ -198,20 +256,52 @@ export default async function ReviewPage(props: { params: Promise<{ slug: string
               </div>
             </>
           ) : null}
+
+          {/* Sources / citations — verifiable references for factual claims. */}
+          {r.sources?.length ? (
+            <>
+              <H2>Sources</H2>
+              <ul style={sourcesList}>
+                {r.sources.map((s) => {
+                  const external = s.url.startsWith('http')
+                  return (
+                    <li key={s.url} style={{ marginBottom: 6 }}>
+                      {external ? (
+                        <a
+                          href={s.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: '#c2185b', fontWeight: 600, textDecoration: 'underline' }}
+                        >
+                          {s.text}
+                        </a>
+                      ) : (
+                        <Link href={s.url} style={{ color: '#c2185b', fontWeight: 600, textDecoration: 'underline' }}>
+                          {s.text}
+                        </Link>
+                      )}
+                    </li>
+                  )
+                })}
+              </ul>
+            </>
+          ) : null}
         </>
       )}
 
-      <H2>Alternatives</H2>
-      <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 20 }}>
-        {REVIEWS.filter((x) => x.slug !== r.slug).slice(0, 6).map((x) => (
-          <Link key={x.slug} href={`/reviews/${x.slug}/`} style={pill}>{x.name}</Link>
-        ))}
-        <Link href="/comparisons/" style={pill}>All comparisons</Link>
-      </div>
+      {/* Related reviews + comparisons — internal-linking block. */}
+      <RelatedReviews current={r} />
+
+      {/* Author card — bottom E-E-A-T anchor. Shown even on planned reviews so
+          the person taking notes / building the queue is credited. */}
+      {author && <AuthorCard author={author} />}
 
       {r.lastUpdated && (
         <div style={{ fontSize: 12.5, color: '#8a6274', marginBottom: 20 }}>
           Last updated: {r.lastUpdated}
+          {r.testedOn && r.testedOn !== r.lastUpdated && (
+            <> · Originally tested: {r.testedOn}</>
+          )}
         </div>
       )}
 
@@ -264,8 +354,10 @@ const faqStyle: React.CSSProperties = {
   background: '#fff', border: '1px solid #f6d3e1',
   borderRadius: 12, padding: '14px 16px',
 }
-const pill: React.CSSProperties = {
-  padding: '8px 14px', borderRadius: 999,
-  background: '#fff', border: '1px solid #f0a3c2',
-  color: '#a61e4d', fontSize: 13, fontWeight: 700, textDecoration: 'none',
+const sourcesList: React.CSSProperties = {
+  fontSize: 14.5,
+  lineHeight: 1.7,
+  color: '#4a3040',
+  margin: '4px 0 22px',
+  paddingLeft: 22,
 }

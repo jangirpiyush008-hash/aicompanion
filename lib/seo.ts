@@ -68,6 +68,40 @@ export function organizationLd() {
     url: SITE.url,
     logo: `${SITE.url}/logos/secret-desires.svg`, // TODO: replace with dedicated brand mark
     description: SITE.descriptionLong,
+    // sameAs strengthens the entity graph: Google + LLMs use this to link
+    // this Organization to its official presence on other platforms. Only
+    // include profiles we actually control — pointing at unclaimed handles
+    // can pollute the entity graph or worse, credit someone else's profile.
+    sameAs: [
+      'https://twitter.com/aicompanionslabs',
+    ],
+  }
+}
+
+// Person schema for author bylines. Passed into reviewLd/articleLd so we get
+// real Person authorship (E-E-A-T) instead of a generic Organization author.
+export function personLd(author: {
+  name: string
+  slug: string
+  jobTitle: string
+  bio: string
+  sameAs?: string[]
+  image?: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: author.name,
+    url: absoluteUrl(`/authors/${author.slug}`),
+    jobTitle: author.jobTitle,
+    description: author.bio,
+    ...(author.image && { image: `${SITE.url}${author.image.startsWith('/') ? '' : '/'}${author.image}` }),
+    ...(author.sameAs?.length && { sameAs: author.sameAs }),
+    worksFor: {
+      '@type': 'Organization',
+      name: SITE.name,
+      url: SITE.url,
+    },
   }
 }
 
@@ -106,6 +140,29 @@ export function breadcrumbLd(crumbs: Crumb[]) {
   }
 }
 
+export type AuthorRef = {
+  name: string
+  slug: string          // maps to /authors/<slug>
+  jobTitle?: string
+}
+
+// Build the Article/Review `author` node from an AuthorRef (Person) or a
+// plain string (Organization). Google prefers Person authorship for E-E-A-T.
+function authorNode(author?: AuthorRef | string) {
+  if (!author) {
+    return { '@type': 'Organization', name: 'AI Companions Labs Editorial Team' }
+  }
+  if (typeof author === 'string') {
+    return { '@type': 'Organization', name: author }
+  }
+  return {
+    '@type': 'Person',
+    name: author.name,
+    url: absoluteUrl(`/authors/${author.slug}`),
+    ...(author.jobTitle && { jobTitle: author.jobTitle }),
+  }
+}
+
 export function articleLd(input: {
   headline: string
   description: string
@@ -113,7 +170,7 @@ export function articleLd(input: {
   image?: string
   datePublished?: string
   dateModified?: string
-  authorName?: string
+  author?: AuthorRef | string
 }) {
   const url = absoluteUrl(input.path)
   // Always emit an `image` — falls back to the default OG image so Article
@@ -131,10 +188,7 @@ export function articleLd(input: {
     image: { '@type': 'ImageObject', url: image, width: 1200, height: 630 },
     ...(input.datePublished && { datePublished: input.datePublished }),
     ...(input.dateModified && { dateModified: input.dateModified }),
-    author: {
-      '@type': 'Organization',
-      name: input.authorName ?? 'AI Companions Labs Editorial Team',
-    },
+    author: authorNode(input.author),
     publisher: {
       '@type': 'Organization',
       name: SITE.name,
@@ -163,7 +217,7 @@ export function reviewLd(input: {
   ratingValue?: number   // omit for un-tested platforms — never fabricate
   bestRating?: number
   worstRating?: number
-  reviewerName?: string
+  reviewer?: AuthorRef | string
   datePublished?: string
 }) {
   const bestRating = input.bestRating ?? 10
@@ -195,10 +249,7 @@ export function reviewLd(input: {
     '@type': 'Review',
     itemReviewed,
     reviewBody: input.reviewBody,
-    author: {
-      '@type': 'Organization',
-      name: input.reviewerName ?? 'AI Companions Labs Editorial Team',
-    },
+    author: authorNode(input.reviewer),
     ...(input.datePublished && { datePublished: input.datePublished }),
   }
   if (input.ratingValue != null) {

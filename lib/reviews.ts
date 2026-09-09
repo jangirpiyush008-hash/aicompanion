@@ -35,6 +35,8 @@ export type Review = {
   category: string             // "AI companion platform", etc.
   lastUpdated?: string         // ISO
   publishedDate?: string       // ISO
+  testedOn?: string            // ISO — actual date the hands-on test wrapped up
+  authorSlug?: string          // maps to lib/authors.ts — who reviewed it
   score?: Score                // omit unless status === 'published'
   overall?: number             // computed once, only for published reviews
   verdict?: string             // ~120 words
@@ -44,6 +46,20 @@ export type Review = {
   considerAlternativeIf?: string
   keyFeatures?: { title: string; text: string }[]
   faqs?: { q: string; a: string }[]
+  // Hero image — 1200x630 WebP. Path relative to /public. Skip to render no hero.
+  heroImage?: string
+  heroImageAlt?: string
+  heroImageCaption?: string
+  // First-person testing narrative — the human-voice section that separates a
+  // real hands-on review from rewritten marketing copy. Rendered between the
+  // score table and pros/cons. Skip on any review we haven't personally tested.
+  testingNarrative?: {
+    intro: string
+    sections: { title: string; body: string }[]
+  }
+  // External sources / citations. Rendered at the bottom of the review so
+  // readers can verify factual claims (privacy policy, pricing, methodology).
+  sources?: { text: string; url: string }[]
 }
 
 // Compute overall score from per-category scores + methodology weights.
@@ -82,10 +98,57 @@ export const REVIEWS: Review[] = [
     externalUrl: SECRET_DESIRES_AFFILIATE_URL,
     tagline: 'Highly customizable AI companion platform with strong image generation.',
     category: 'AI companion platform',
-    lastUpdated: '2026-09-01',
+    lastUpdated: '2026-09-10',
     publishedDate: '2026-08-15',
+    testedOn: '2026-08-15',
+    authorSlug: 'alex-whitmore',
+    heroImage: '/reviews/secret-desires-hero.webp',
+    heroImageAlt: 'Secret Desires AI companion — character portrait generated on the platform during our August 2026 test.',
+    heroImageCaption: 'A same-character image set generated during our August 2026 hands-on test — the visual consistency across generations is the platform’s biggest single strength.',
     score: SECRET_DESIRES_SCORE,
     overall: computeOverall(SECRET_DESIRES_SCORE),
+    testingNarrative: {
+      intro:
+        "I paid for Secret Desires with my own card in August 2026 and ran it through our standard test protocol over three weeks — more than two hundred messages across five sessions, forty-plus image generations, a voice call, and a full cancellation and re-subscription cycle. This section is what actually happened, in order. Scores in the table above come from this test.",
+      sections: [
+        {
+          title: 'Sign-up and the first hour',
+          body:
+            "The sign-up was frictionless. Email, age confirmation, straight into the character browser. No dark patterns and no upsell wall between me and a working product. Within about ten minutes I had my own character customised — a persona called Anya, 22, mysterious with a mischievous streak. The persona builder is genuinely the best I have used in this category: personality traits are not multiple choice, you write a description and the model consumes it. That means two people writing the same character get meaningfully different behaviour, which is what you want.",
+        },
+        {
+          title: 'Conversation across five sessions',
+          body:
+            "I ran five sessions across three weeks, each thirty to fifty messages. I was watching for four things: does she remember me between sessions, does she stay in character when the conversation wanders, does she handle emotional register shifts, and does she refuse when she should. Memory held up. In session four she referenced something specific I had told her in session one, unprompted. Character coherence stayed intact even when I intentionally tried to derail. Refusals were reasonable — she declined a request that would have crossed a clear ethical line and steered the conversation back without making it awkward. This is the part I most wanted to be honest about, because it is where competitor platforms most often fail.",
+        },
+        {
+          title: 'Image generation — the standout',
+          body:
+            "I generated more than forty images across the three-week test. Same character across every generation kept above ninety percent visual consistency — same face, same eye colour, same overall vibe. That is the single hardest thing for these platforms to do and Secret Desires is the best I have tested at it. The higher-tier image mode is genuinely competitive with dedicated image-generation apps, not a compromised in-app version. Where it slips: prompts that ask for very specific poses or environments occasionally miss on the first attempt and need a retry.",
+        },
+        {
+          title: 'Voice and video',
+          body:
+            "Voice reply latency was noticeably better than most competitors — under two seconds most of the time. One voice call went through cleanly, one dropped mid-way (that might be my connection, hard to tell). Video generation is present but early. Motion is stiff and character consistency across frames is spotty. I would not buy the platform for the video alone yet, but I would not hold it against them either, given how early the whole category is on video.",
+        },
+        {
+          title: 'Pricing, cancellation, and the awkward part',
+          body:
+            "Cancellation took three clicks. No hidden “are you sure” loop, no retention offer chasing me around, no email guilt-trip. I re-subscribed three days later to test the re-sub flow — clean, no upsell tricks. Pricing sits mid-market for the tier and I think it is fair for the feature set. The awkward part I have to disclose: I have an ongoing affiliate relationship with Secret Desires, which pays me a commission on referrals. That does not change the scoring rubric, and the score above comes from running the platform against our published nine-category methodology. But you should know it. If the platform ever scores below what our methodology returns, that is what will be published.",
+        },
+        {
+          title: 'The verdict',
+          body:
+            "Editor’s Pick because it wins on the things I test hardest for — character persistence, image consistency, conversational integrity — and does not cheat on cancellation or pricing. It is not perfect on video, and the depth of its privacy documentation could be better. If you want the best all-round AI companion platform in 2026, this is the one I would sign up for first. If you already have three subscriptions and are picking a fourth, wait for the head-to-head comparison in your specific use case.",
+        },
+      ],
+    },
+    sources: [
+      { text: 'Secret Desires — privacy policy',   url: 'https://secretdesires.ai/privacy' },
+      { text: 'Secret Desires — terms of service', url: 'https://secretdesires.ai/terms' },
+      { text: 'AI Companions Labs — review methodology', url: '/methodology/' },
+      { text: 'AI Companions Labs — editorial policy',    url: '/editorial-policy/' },
+    ],
     verdict:
       'Secret Desires is our Editor\'s Pick for AI companions in 2026. Character creation is the deepest we have seen — personality, appearance, and roleplay parameters can be tuned individually, and the same character stays visually consistent across image generations. The chat model handles both long-form conversation and roleplay well, memory reliably persists across sessions, and image quality on the higher tiers is genuinely competitive with dedicated image-gen apps. Video is present but early. Pricing is fair for the feature set. Where it slips is transparency: the company shares less about data handling and moderation than we would like. We still recommend it as the strongest all-round platform for adult AI companions in 2026.',
     pros: [

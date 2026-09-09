@@ -14,7 +14,6 @@ import {
   CATEGORIES, FAQS, LAB_TESTS, PLATFORMS, PLATFORM_STATUS_LABELS,
   SECRET_DESIRES_AFFILIATE_URL, SITE,
 } from '@/lib/site'
-import { organizationLd, websiteLd } from '@/lib/seo'
 
 // Small typed inline-style helpers to keep JSX below readable.
 const primaryCta: React.CSSProperties = {
@@ -629,17 +628,8 @@ export default function Home() {
         }}
       />
 
-      {/* Organization + WebSite JSON-LD — sourced from lib/seo so schema shape
-          stays consistent across the site. WebSite carries SearchAction, which
-          is what unlocks the Google sitelinks searchbox feature. */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd()) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd()) }}
-      />
+      {/* Organization + WebSite JSON-LD is now emitted globally from
+          app/layout.tsx — every route carries it, not just this page. */}
 
       {/* ─────────── FINAL CTA ─────────── */}
       <section style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '80px 40px 90px' }}>
