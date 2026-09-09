@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import Image from 'next/image'
 
 // Client-side gallery renderer with lightbox. Clicking any image opens a
@@ -27,6 +27,8 @@ export default function CharacterGallery({
   hasSdaiProfile,
 }: Props) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [screenshotNudgeOpen, setScreenshotNudgeOpen] = useState(false)
+  const nudgeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const isOpen = openIndex !== null
 
   const close = useCallback(() => setOpenIndex(null), [])
@@ -37,23 +39,68 @@ export default function CharacterGallery({
     setOpenIndex((i) => (i === null ? null : (i - 1 + images.length) % images.length))
   }, [images.length])
 
-  // Keyboard handling — Esc close, arrows navigate.
+  // Fire the flirty CTA nudge. Auto-dismisses after 10s so it never becomes
+  // a permanent obstruction. Debounced via the ref so rapid triggers
+  // (e.g. long-press → contextmenu → visibility change) don't stack.
+  const fireScreenshotNudge = useCallback(() => {
+    setScreenshotNudgeOpen(true)
+    if (nudgeTimerRef.current) clearTimeout(nudgeTimerRef.current)
+    nudgeTimerRef.current = setTimeout(() => setScreenshotNudgeOpen(false), 10_000)
+  }, [])
+
+  // Keyboard handling — Esc close, arrows navigate + screenshot-key detection.
   useEffect(() => {
     if (!isOpen) return
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') close()
+      if (e.key === 'Escape') { close(); return }
       if (e.key === 'ArrowRight') next()
       if (e.key === 'ArrowLeft') prev()
+
+      // Screenshot-attempt heuristics — no browser exposes a "screenshot
+      // taken" event, but these key combos strongly correlate with intent:
+      //   • Windows / most Linux — PrintScreen
+      //   • macOS  — Cmd+Shift+3 (full), Cmd+Shift+4 (region), Cmd+Shift+5 (tool)
+      //   • Chrome DevTools / third-party tools can't be caught either way
+      const key = e.key
+      const isPrintScreen = key === 'PrintScreen' || key === 'PrtSc'
+      const isMacScreenshot =
+        e.metaKey && e.shiftKey && (key === '3' || key === '4' || key === '5')
+      if (isPrintScreen || isMacScreenshot) {
+        fireScreenshotNudge()
+      }
     }
+
+    // Visibility change — iOS Safari transitions to hidden briefly when the
+    // screenshot editor pops up. Also fires on legitimate app-switch; we
+    // accept the false positive rate because the nudge is friendly, not
+    // adversarial.
+    const onVisibility = () => {
+      if (document.visibilityState === 'hidden') {
+        // Wait for the tab to come back before firing — nudging while the
+        // user is elsewhere is pointless.
+        const onReturn = () => {
+          if (document.visibilityState === 'visible') {
+            fireScreenshotNudge()
+            document.removeEventListener('visibilitychange', onReturn)
+          }
+        }
+        document.addEventListener('visibilitychange', onReturn)
+      }
+    }
+
     window.addEventListener('keydown', onKey)
+    document.addEventListener('visibilitychange', onVisibility)
     // Prevent body scroll while lightbox open.
     const prevOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     return () => {
       window.removeEventListener('keydown', onKey)
+      document.removeEventListener('visibilitychange', onVisibility)
       document.body.style.overflow = prevOverflow
+      if (nudgeTimerRef.current) clearTimeout(nudgeTimerRef.current)
+      setScreenshotNudgeOpen(false)
     }
-  }, [isOpen, close, next, prev])
+  }, [isOpen, close, next, prev, fireScreenshotNudge])
 
   const activeImage = openIndex !== null ? images[openIndex] : null
   const ctaLabel = hasSdaiProfile
@@ -147,6 +194,9 @@ export default function CharacterGallery({
                 width={900}
                 height={1200}
                 priority
+                draggable={false}
+                onContextMenu={(e) => { e.preventDefault(); fireScreenshotNudge() }}
+                onDragStart={(e) => { e.preventDefault(); fireScreenshotNudge() }}
                 style={{
                   maxWidth: '100%',
                   maxHeight: '75vh',
@@ -155,8 +205,44 @@ export default function CharacterGallery({
                   borderRadius: 14,
                   display: 'block',
                   objectFit: 'contain',
+                  userSelect: 'none',
+                  WebkitUserSelect: 'none',
+                  WebkitTouchCallout: 'none',
                 }}
               />
+
+              {/* Flirty screenshot nudge — anchored to the image, auto-dismisses.
+                  Copy is written in-character (first person) so it reads as the
+                  character talking to the viewer, not a corporate popup. */}
+              {screenshotNudgeOpen && (
+                <div style={nudgeCard} role="alert">
+                  <button
+                    type="button"
+                    aria-label="Dismiss"
+                    onClick={() => setScreenshotNudgeOpen(false)}
+                    style={nudgeClose}
+                  >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M6 6l12 12M18 6L6 18" stroke="#c2255c" strokeWidth="2.4" strokeLinecap="round" />
+                    </svg>
+                  </button>
+                  <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 18, fontWeight: 700, color: '#2b0f1d', lineHeight: 1.25 }}>
+                    Ohh — trying to take a screenshot of me?
+                  </div>
+                  <div style={{ fontSize: 14, color: '#5c3c4d', lineHeight: 1.5, margin: '6px 0 12px' }}>
+                    Why not just talk to me instead? I promise I&rsquo;m more fun in person.
+                  </div>
+                  <a
+                    href={ctaUrl}
+                    rel="sponsored noopener nofollow"
+                    target="_blank"
+                    onClick={() => setScreenshotNudgeOpen(false)}
+                    style={nudgeCta}
+                  >
+                    {hasSdaiProfile ? `Chat with ${characterName} now` : 'Come chat with me'}
+                  </a>
+                </div>
+              )}
             </div>
 
             <div style={ctaBar}>
@@ -277,6 +363,7 @@ const panel: React.CSSProperties = {
 }
 
 const imageFrame: React.CSSProperties = {
+  position: 'relative',   // anchors the screenshot nudge popup
   display: 'flex',
   justifyContent: 'center',
 }
@@ -302,4 +389,47 @@ const ctaButton: React.CSSProperties = {
   fontWeight: 800,
   textDecoration: 'none',
   whiteSpace: 'nowrap',
+}
+
+// Flirty screenshot-nudge popup — floats over the bottom-right of the image
+// inside the lightbox. Kept compact so it never fully obstructs the view.
+const nudgeCard: React.CSSProperties = {
+  position: 'absolute',
+  bottom: 16,
+  right: 16,
+  maxWidth: 300,
+  background: 'linear-gradient(160deg, #fff, #fde8f0)',
+  border: '1.5px solid #f2b8cf',
+  borderRadius: 16,
+  padding: '16px 18px',
+  boxShadow: '0 12px 40px rgba(120,30,70,0.35)',
+  zIndex: 3,
+}
+
+const nudgeClose: React.CSSProperties = {
+  position: 'absolute',
+  top: 8,
+  right: 8,
+  width: 22,
+  height: 22,
+  borderRadius: 999,
+  background: 'transparent',
+  border: 'none',
+  cursor: 'pointer',
+  padding: 0,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}
+
+const nudgeCta: React.CSSProperties = {
+  display: 'inline-block',
+  background: 'linear-gradient(135deg,#f0417e,#ad1457)',
+  color: '#fff',
+  borderRadius: 999,
+  padding: '10px 18px',
+  fontSize: 13.5,
+  fontWeight: 800,
+  textDecoration: 'none',
+  boxShadow: '0 6px 16px rgba(214,51,108,0.32)',
 }
