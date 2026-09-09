@@ -300,7 +300,6 @@ export default async function BlogPostPage(props: {
             }}
           >
             Try Secret Desires          </a>
-          <div style={{ fontSize: 11.5, color: '#ffc2da' }}>Affiliate link · 18+ only.</div>
         </div>
       </section>
 
