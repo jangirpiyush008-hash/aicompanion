@@ -106,36 +106,6 @@ export default async function BlogPostPage(props: {
       <FloatingBackground density={8} />
       <Nav />
 
-      {/* Affiliate disclosure banner — every blog post carries at least one
-          affiliate CTA to Secret Desires, so FTC + Google trust guidelines
-          require point-of-recommendation disclosure, not just a footer link. */}
-      <div
-        style={{
-          maxWidth: 900,
-          margin: '0 auto',
-          padding: '18px 40px 0',
-        }}
-      >
-        <div
-          style={{
-            background: 'linear-gradient(160deg,#fde8f0,#fbd0e0)',
-            border: '1px solid #f6d3e1',
-            borderRadius: 10,
-            padding: '10px 14px',
-            fontSize: 12.5,
-            color: '#5c1f36',
-            lineHeight: 1.5,
-          }}
-        >
-          <strong>Disclosure:</strong> This post contains affiliate links to Secret
-          Desires. We may earn a commission if you sign up through them, at no
-          extra cost to you. See our{' '}
-          <Link href="/affiliate-disclosure/" style={{ color: '#7c1236', fontWeight: 700 }}>
-            affiliate disclosure
-          </Link>.
-        </div>
-      </div>
-
       {/* Breadcrumb */}
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '20px 40px 0', fontSize: 13, color: '#a3818f' }}>
         <Link href="/" style={{ color: '#8a6274', textDecoration: 'none' }}>Home</Link>
@@ -420,9 +390,41 @@ const relPill: React.CSSProperties = {
   color: '#a61e4d', fontSize: 13, fontWeight: 700, textDecoration: 'none',
 }
 
+// Parse [label](url) markdown-link syntax inside plain-text blocks so that
+// authored copy can drop clickable Secret Desires (or any external) links
+// without hand-rolling JSX. Any link whose host is secretdesires.ai gets
+// rel="sponsored noopener nofollow" per site policy; other external links
+// get rel="noopener noreferrer".
+function renderInline(text: string): React.ReactNode {
+  const parts: React.ReactNode[] = []
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g
+  let last = 0
+  let match: RegExpExecArray | null
+  let key = 0
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > last) parts.push(text.slice(last, match.index))
+    const [, label, url] = match
+    const isSdai = /secretdesires\.ai/i.test(url)
+    parts.push(
+      <a
+        key={`link-${key++}`}
+        href={url}
+        target="_blank"
+        rel={isSdai ? 'sponsored noopener nofollow' : 'noopener noreferrer'}
+        style={{ color: '#c2185b', textDecoration: 'underline', fontWeight: 600 }}
+      >
+        {label}
+      </a>
+    )
+    last = regex.lastIndex
+  }
+  if (last < text.length) parts.push(text.slice(last))
+  return parts.length > 0 ? parts : text
+}
+
 function BlockRender({ b }: { b: Block }) {
   if (b.kind === 'p') {
-    return <p style={{ fontSize: 17, lineHeight: 1.75, color: '#331523', margin: '0 0 18px' }}>{b.text}</p>
+    return <p style={{ fontSize: 17, lineHeight: 1.75, color: '#331523', margin: '0 0 18px' }}>{renderInline(b.text)}</p>
   }
   if (b.kind === 'h2') {
     return <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 26, fontWeight: 700, color: '#2b0f1d', margin: '36px 0 12px' }}>{b.text}</h2>
@@ -434,7 +436,7 @@ function BlockRender({ b }: { b: Block }) {
     return (
       <ul style={{ margin: '0 0 20px', paddingLeft: 22, listStyleType: 'disc' }}>
         {b.items.map((it, i) => (
-          <li key={i} style={{ fontSize: 17, lineHeight: 1.7, color: '#331523', marginBottom: 8 }}>{it}</li>
+          <li key={i} style={{ fontSize: 17, lineHeight: 1.7, color: '#331523', marginBottom: 8 }}>{renderInline(it)}</li>
         ))}
       </ul>
     )
@@ -443,7 +445,7 @@ function BlockRender({ b }: { b: Block }) {
     return (
       <ol style={{ margin: '0 0 20px', paddingLeft: 22, listStyleType: 'decimal' }}>
         {b.items.map((it, i) => (
-          <li key={i} style={{ fontSize: 17, lineHeight: 1.7, color: '#331523', marginBottom: 8 }}>{it}</li>
+          <li key={i} style={{ fontSize: 17, lineHeight: 1.7, color: '#331523', marginBottom: 8 }}>{renderInline(it)}</li>
         ))}
       </ol>
     )
