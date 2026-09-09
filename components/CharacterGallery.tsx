@@ -398,12 +398,13 @@ const imageWrap: React.CSSProperties = {
   maxWidth: '100%',
 }
 
-// Screenshot-nudge popup — vertical card at top-center of the image.
-// Dark glass so it never fully covers the character. Only overlay on the
-// image; there is no persistent bottom CTA bar so the image stays clean.
+// Screenshot-nudge popup — anchored to the BOTTOM of the image so it never
+// covers the character's face (portrait 3/4 images put the face in the upper
+// third, so top-anchored overlays land on it). Bottom-center still catches
+// the eye at the moment of the screenshot attempt.
 const nudgeCard: React.CSSProperties = {
   position: 'absolute',
-  top: 16,
+  bottom: 16,
   left: '50%',
   transform: 'translateX(-50%)',
   width: 'min(360px, calc(100% - 32px))',
