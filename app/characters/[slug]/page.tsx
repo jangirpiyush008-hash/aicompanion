@@ -9,6 +9,7 @@ import { characters, getCharacter, characterCover } from '@/lib/characters'
 import { CHARACTER_CATEGORIES, getCharacterCategory, charactersForCategory } from '@/lib/character-categories'
 import { SECRET_DESIRES_AFFILIATE_URL, SITE } from '@/lib/site'
 import CategoryPage from './CategoryPage'
+import CharacterGallery from '@/components/CharacterGallery'
 
 // Static-generate BOTH character pages AND character-category pages under
 // /characters/[slug]/. Slugs are disjoint by construction (categories use
@@ -288,23 +289,13 @@ export default async function CharacterPage(props: {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(240px,1fr))', gap: 14 }}>
-          {/* Unlocked previews (first 2) */}
-          {unlockedImages.map((g, i) => (
-            <Image
-              key={g.src}
-              src={g.src}
-              alt={g.alt}
-              width={600} height={800}
-              loading={i > 1 ? 'lazy' : undefined}
-              style={{
-                width: '100%', aspectRatio: '3/4',
-                objectFit: 'cover', objectPosition: 'top',
-                borderRadius: 16, border: '3px solid #fff',
-                boxShadow: '0 6px 24px rgba(120,30,70,0.14)',
-                display: 'block',
-              }}
-            />
-          ))}
+          {/* Unlocked previews — click to open the lightbox with CTA. */}
+          <CharacterGallery
+            images={unlockedImages}
+            characterName={c.name}
+            ctaUrl={ctaUrl}
+            hasSdaiProfile={hasSdaiProfile}
+          />
 
           {/* Locked previews from the rest of the gallery */}
           {lockedImages.map((g) => (
