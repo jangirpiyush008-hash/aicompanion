@@ -103,8 +103,8 @@ export const REVIEWS: Review[] = [
     testedOn: '2026-08-15',
     authorSlug: 'alex-whitmore',
     heroImage: '/reviews/secret-desires-hero.webp',
-    heroImageAlt: 'Secret Desires AI companion — character portrait generated on the platform during our August 2026 test.',
-    heroImageCaption: 'A same-character image set generated during our August 2026 hands-on test — the visual consistency across generations is the platform’s biggest single strength.',
+    heroImageAlt: 'Two generations of the same Secret Desires character — Anya — showing the platform’s visual consistency across image prompts.',
+    heroImageCaption: 'Two generations of the same character (Anya) on Secret Desires. Consistency across image prompts is the single strongest thing this platform does — the face, features and vibe stay put.',
     score: SECRET_DESIRES_SCORE,
     overall: computeOverall(SECRET_DESIRES_SCORE),
     testingNarrative: {
@@ -114,7 +114,7 @@ export const REVIEWS: Review[] = [
         {
           title: 'Sign-up and the first hour',
           body:
-            "The sign-up was frictionless. Email, age confirmation, straight into the character browser. No dark patterns and no upsell wall between me and a working product. Within about ten minutes I had my own character customised — a persona called Anya, 22, mysterious with a mischievous streak. The persona builder is genuinely the best I have used in this category: personality traits are not multiple choice, you write a description and the model consumes it. That means two people writing the same character get meaningfully different behaviour, which is what you want.",
+            "The sign-up was frictionless. Email, age confirmation, straight into the character browser. No dark patterns and no upsell wall between me and a working product. Within about ten minutes I was chatting with Anya, one of the platform's own characters — nineteen, described as mysterious with a mischievous streak, which turned out to be an accurate summary once we actually started talking. The persona builder is also worth calling out: personality traits are not multiple choice, you write a description and the model consumes it. Two people writing the same character get meaningfully different behaviour, which is what you want.",
         },
         {
           title: 'Conversation across five sessions',
