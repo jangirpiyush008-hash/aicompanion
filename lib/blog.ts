@@ -1966,6 +1966,7 @@ import { NEW_POSTS_01 } from './blog-posts-01'
 import { NEW_POSTS_02 } from './blog-posts-02'
 import { NEW_POSTS_03 } from './blog-posts-03'
 import { NEW_POSTS_04 } from './blog-posts-04'
+import { NEW_POSTS_05 } from './blog-posts-05'
 
 const ALL_POSTS: BlogPost[] = [
   ...POSTS,
@@ -1973,6 +1974,7 @@ const ALL_POSTS: BlogPost[] = [
   ...NEW_POSTS_02,
   ...NEW_POSTS_03,
   ...NEW_POSTS_04,
+  ...NEW_POSTS_05,
 ]
 
 // Only published posts appear in the public index / sitemap / detail routes.
