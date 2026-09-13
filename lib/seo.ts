@@ -65,15 +65,15 @@ export function organizationLd() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: SITE.name,
+    alternateName: 'AI Adult Directory',
     url: SITE.url,
-    logo: `${SITE.url}/logos/secret-desires.svg`, // TODO: replace with dedicated brand mark
+    // Use the site's own brand icon, not a partner's logo — Organization
+    // schema logos feed entity disambiguation in AI answer engines.
+    logo: `${SITE.url}/brand/mascot-face.jpg`,
     description: SITE.descriptionLong,
-    // sameAs strengthens the entity graph: Google + LLMs use this to link
-    // this Organization to its official presence on other platforms. Only
-    // include profiles we actually control — pointing at unclaimed handles
-    // can pollute the entity graph or worse, credit someone else's profile.
     sameAs: [
       'https://twitter.com/aicompanionslabs',
+      'https://x.com/aicompanionslabs',
     ],
   }
 }
@@ -150,7 +150,7 @@ export type AuthorRef = {
 // plain string (Organization). Google prefers Person authorship for E-E-A-T.
 function authorNode(author?: AuthorRef | string) {
   if (!author) {
-    return { '@type': 'Organization', name: 'AI Companions Labs Editorial Team' }
+    return { '@type': 'Organization', name: 'AI Adult Directory Editorial Team' }
   }
   if (typeof author === 'string') {
     return { '@type': 'Organization', name: author }

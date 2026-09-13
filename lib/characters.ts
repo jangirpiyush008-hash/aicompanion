@@ -242,7 +242,7 @@ const CHARACTERS: Character[] = [
       { src: '/characters/agnieszka-kolczyk/1.webp', alt: 'Agnieszka Kolczyk AI companion — soft European portrait' },
       { src: '/characters/agnieszka-kolczyk/2.webp', alt: 'Agnieszka Kolczyk AI companion — tailored basics portrait' },
     ],
-    sdaiProfileUrl: 'https://secretdesires.ai/?via=saddam-299148&profile=agnieszka-kolczyk-OwrmCw',
+    sdaiProfileUrl: 'https://secretdesires.ai/?via=piyush32&profile=agnieszka-kolczyk-OwrmCw',
     seo: {
       title: 'Agnieszka Kolczyk — AI Girlfriend Character',
       description:
@@ -268,7 +268,7 @@ const CHARACTERS: Character[] = [
       { src: '/characters/anna-lewis/1.webp', alt: 'Anna Lewis AI companion — warm daylight portrait' },
       { src: '/characters/anna-lewis/2.webp', alt: 'Anna Lewis AI companion — soft neutrals portrait' },
     ],
-    sdaiProfileUrl: 'https://secretdesires.ai/?via=saddam-299148&profile=anna-lewis-G94Htw',
+    sdaiProfileUrl: 'https://secretdesires.ai/?via=piyush32&profile=anna-lewis-G94Htw',
     seo: {
       title: 'Anna Lewis — AI Girlfriend Character',
       description:
@@ -295,7 +295,7 @@ const CHARACTERS: Character[] = [
       { src: '/characters/eleanor-turner/2.webp', alt: 'Eleanor Turner AI companion — warm interior portrait' },
       { src: '/characters/eleanor-turner/3.webp', alt: 'Eleanor Turner AI companion — classic tailoring portrait' },
     ],
-    sdaiProfileUrl: 'https://secretdesires.ai/?via=saddam-299148&profile=eleanor-turner-wAxZag',
+    sdaiProfileUrl: 'https://secretdesires.ai/?via=piyush32&profile=eleanor-turner-wAxZag',
     seo: {
       title: 'Eleanor Turner — AI Girlfriend Character',
       description:
@@ -322,7 +322,7 @@ const CHARACTERS: Character[] = [
       { src: '/characters/jenny-tanaka/2.webp', alt: 'Jenny Tanaka AI companion — natural light portrait' },
       { src: '/characters/jenny-tanaka/3.webp', alt: 'Jenny Tanaka AI companion — modern city look' },
     ],
-    sdaiProfileUrl: 'https://secretdesires.ai/?via=saddam-299148&profile=jenny-tanaka-b7OU-g',
+    sdaiProfileUrl: 'https://secretdesires.ai/?via=piyush32&profile=jenny-tanaka-b7OU-g',
     seo: {
       title: 'Jenny Tanaka — AI Girlfriend Character',
       description:
@@ -351,7 +351,7 @@ const CHARACTERS: Character[] = [
       { src: '/characters/jules-jordan/4.webp', alt: 'Jules Jordan AI companion — black-on-black wardrobe portrait' },
       { src: '/characters/jules-jordan/5.webp', alt: 'Jules Jordan AI companion — sharp confident portrait' },
     ],
-    sdaiProfileUrl: 'https://secretdesires.ai/?via=saddam-299148&profile=jules-jordan-3sXElQ',
+    sdaiProfileUrl: 'https://secretdesires.ai/?via=piyush32&profile=jules-jordan-3sXElQ',
     seo: {
       title: 'Jules Jordan — AI Girlfriend Character',
       description:
@@ -376,7 +376,7 @@ const CHARACTERS: Character[] = [
     gallery: [
       { src: '/characters/lina-white/1.webp', alt: 'Lina White AI companion — minimalist portrait' },
     ],
-    sdaiProfileUrl: 'https://secretdesires.ai/?via=saddam-299148&profile=lina-white-K0m9pw',
+    sdaiProfileUrl: 'https://secretdesires.ai/?via=piyush32&profile=lina-white-K0m9pw',
     seo: {
       title: 'Lina White — AI Girlfriend Character',
       description:
@@ -405,7 +405,7 @@ const CHARACTERS: Character[] = [
       { src: '/characters/natalie-craven/4.webp', alt: 'Natalie Craven AI companion — warm easy layers portrait' },
       { src: '/characters/natalie-craven/5.webp', alt: 'Natalie Craven AI companion — hair-in-the-wind portrait' },
     ],
-    sdaiProfileUrl: 'https://secretdesires.ai/?via=saddam-299148&profile=natalie-craven-CUyGZQ',
+    sdaiProfileUrl: 'https://secretdesires.ai/?via=piyush32&profile=natalie-craven-CUyGZQ',
     seo: {
       title: 'Natalie Craven — AI Girlfriend Character',
       description:
@@ -434,7 +434,7 @@ const CHARACTERS: Character[] = [
       { src: '/characters/sova-briarley/4.webp', alt: 'Sova Briarley AI companion — thoughtful portrait' },
       { src: '/characters/sova-briarley/5.webp', alt: 'Sova Briarley AI companion — dusk palette portrait' },
     ],
-    sdaiProfileUrl: 'https://secretdesires.ai/?via=saddam-299148&profile=sova-briarley-Jl0OkA',
+    sdaiProfileUrl: 'https://secretdesires.ai/?via=piyush32&profile=sova-briarley-Jl0OkA',
     seo: {
       title: 'Sova Briarley — AI Girlfriend Character',
       description:
@@ -463,7 +463,7 @@ const CHARACTERS: Character[] = [
       { src: '/characters/yumiko-fujii/4.webp', alt: 'Yumiko Fujii AI companion — natural-materials portrait' },
       { src: '/characters/yumiko-fujii/5.webp', alt: 'Yumiko Fujii AI companion — gentle portrait' },
     ],
-    sdaiProfileUrl: 'https://secretdesires.ai/?via=saddam-299148&profile=yumiko-fujii-H9QtcQ',
+    sdaiProfileUrl: 'https://secretdesires.ai/?via=piyush32&profile=yumiko-fujii-H9QtcQ',
     seo: {
       title: 'Yumiko Fujii — AI Girlfriend Character',
       description:

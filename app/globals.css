@@ -2,20 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Design tokens — Dark Warm Orange v2 (per prototype handoff Sept 2026). */
+:root {
+  --bg:            #2A1810;
+  --bg-deep:       #201008;
+  --surface:       #3A2418;
+  --surface-hover: #4A2E1F;
+  --surface-sdai:  #42250f;
+  --accent:        #FF7A2E;
+  --accent-2:      #FFB366;
+  --accent-grad:   linear-gradient(135deg, #FF9A4D, #E8590C);
+  --text:          #FFF5EC;
+  --text-muted:    #B8A090;
+  --text-subtle:   #8f7a6a;
+  --border:        rgba(255,180,120,.14);
+  --border-mid:    rgba(255,180,120,.18);
+  --border-strong: rgba(255,180,120,.30);
+  --border-glow:   rgba(255,122,46,.55);
+  --pick-bg:       rgba(255,122,46,.18);
+  --pick-fg:       #FFB366;
+  --shadow-card:   0 8px 24px rgba(0,0,0,.35);
+  --shadow-pop:    0 20px 48px rgba(0,0,0,.5);
+  --glow-orange:   0 8px 24px rgba(255,122,46,.15);
+}
+
 @layer base {
-  html { color-scheme: light; }
+  html { color-scheme: dark; }
   body {
-    background: #fcecf4;
-    color: #331523;
+    background: var(--bg);
+    color: var(--text);
     -webkit-font-smoothing: antialiased;
     font-family: var(--font-manrope), Manrope, ui-sans-serif, system-ui, sans-serif;
   }
-  a { color: #d6336c; text-decoration: none; }
-  a:hover { color: #a61e4d; }
-  ::selection { background: #f783ac; color: #fff; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-2); }
+  ::selection { background: var(--accent); color: #201008; }
   details summary::-webkit-details-marker { display: none; }
   :focus-visible {
-    outline: 2px solid #c2255c;
+    outline: 2px solid var(--accent);
     outline-offset: 3px;
     border-radius: 6px;
   }

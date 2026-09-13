@@ -3,14 +3,14 @@
 // elsewhere. Override at build time with env var of the same name.
 
 export const SITE = {
-  name: 'AI Companions Labs',
+  name: 'AI Adult Directory',
   domain: 'aicompanionslabs.com',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://aicompanionslabs.com',
-  tagline: 'AI Companion Discovery Platform',
+  tagline: '18+ · Updated weekly',
   descriptionShort:
-    'Reviews of the best AI girlfriend apps, AI companions, AI boyfriend and AI sex chat platforms. 18+.',
+    '60+ AI girlfriend, AI porn, AI sexting and NSFW AI sites, ranked. Hands-on ratings, verified weekly. 18+.',
   descriptionLong:
-    'Hands-on reviews of the best AI girlfriend apps, AI companions, AI boyfriend platforms, AI sex chat, AI sexting and AI roleplay tools. Original AI-generated characters, honest comparisons and lab tests. 18+.',
+    'AI Adult Directory ranks every AI girlfriend, AI porn generator, AI sexting app, AI video generator and uncensored AI chatbot in 12 categories. Hands-on testing, verified weekly, honest scoring. Secret Desires is our Editor’s Pick across the directory. 18+.',
 }
 
 // Real Secret Desires affiliate URL (provided by site owner). Env var override
@@ -18,7 +18,7 @@ export const SITE = {
 // a code deploy.
 export const SECRET_DESIRES_AFFILIATE_URL =
   process.env.NEXT_PUBLIC_SECRET_DESIRES_AFFILIATE_URL ||
-  'https://secretdesires.ai/create-partner?via=saddam-299148'
+  'https://secretdesires.ai/create-partner?via=piyush32'
 
 // Top nav links. Every entry is a real route (no #anchors) so the nav works
 // from any page on the site.
@@ -50,7 +50,7 @@ export const CATEGORIES = [
 
 // SDAI Showcase — hand-picked characters from Secret Desires, grouped by
 // category. Each card deep-links to the character-specific SDAI URL with
-// ?via=saddam-299148 appended so affiliate tracking is preserved. The bottom
+// ?via=piyush32 appended so affiliate tracking is preserved. The bottom
 // "Try Secret Desires" button still uses SECRET_DESIRES_AFFILIATE_URL.
 // Images live at /public/sdai-showcase/{slug}/{1..imageCount}.webp.
 // Kept intentionally separate from `/public/characters/` (site's original set)
@@ -93,11 +93,11 @@ export const SDAI_SHOWCASE: {
   { slug: 'ella-ando',          name: 'Ella Ando',       age: 28, category: 'anime', imageCount: 2, teaser: 'Confident onee-san — knowing smile, no games.',                  sdaiPath: '/?profile=ella-ando-gjJSlA' },
 ]
 
-// Build a deep-link URL that preserves the ?via=saddam-299148 affiliate param.
+// Build a deep-link URL that preserves the ?via=piyush32 affiliate param.
 // SDAI's affiliate tracking sets its cookie from `?via=` on any URL, so this
 // still counts as a tracked referral even though we're not hitting /create-partner.
 export function sdaiCharUrl(char: { sdaiPath: string }): string {
-  const AFFILIATE_PARAM = 'via=saddam-299148'
+  const AFFILIATE_PARAM = 'via=piyush32'
   const sep = char.sdaiPath.includes('?') ? '&' : '?'
   return `https://secretdesires.ai${char.sdaiPath}${sep}${AFFILIATE_PARAM}`
 }
@@ -175,5 +175,5 @@ export const FAQS = [
   { q: 'What is the best free AI girlfriend?', a: 'Most AI girlfriend apps offer a free tier, but limits are strict — fewer daily messages, no image generation, no voice. The best free AI girlfriend depends on whether you value message volume, character customisation or image generation. See our comparison for tested free-tier picks.' },
   { q: 'Can I do AI roleplay with a custom character?', a: 'Yes. AI roleplay platforms let you create characters from scratch — appearance, personality, backstory, speaking style — then chat with them in scenarios you define. Some platforms specialise in NSFW AI chat with uncensored roleplay; others focus on family-friendly character creation.' },
   { q: 'What is Secret Desires?', a: 'Secret Desires is our editor\'s pick AI companion platform where adults create and interact with customisable virtual companions through conversation, AI-generated images and immersive chat.' },
-  { q: 'Is AI Companions Labs 18+?', a: 'Yes. AI Companions Labs is an 18+ AI companion discovery platform, and every character on this site is a fictional, clearly adult, AI-generated persona.' },
+  { q: 'Is AI Adult Directory 18+?', a: 'Yes. AI Adult Directory is an 18+ discovery platform for AI girlfriend, AI porn, AI sexting and NSFW AI sites. Every listing is a real adult platform; every character shown is fictional and clearly adult.' },
 ] as const

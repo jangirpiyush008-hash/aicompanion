@@ -29,18 +29,17 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: 'AI Girlfriends, AI Companions & Reviews 2026 | AI Companions Labs',
-    template: '%s | AI Companions Labs',
+    default: 'AI Adult Directory · 60+ AI Girlfriend & NSFW AI Sites Ranked',
+    template: '%s · AI Adult Directory',
   },
-  description:
-    'Reviews of the best AI girlfriend apps, AI companions, AI boyfriend platforms, AI sex chat and AI roleplay tools. Original AI-generated characters, hands-on tests, honest comparisons. 18+.',
+  description: SITE.descriptionShort,
   applicationName: SITE.name,
   category: 'entertainment',
   // Root canonical — homepage self-canonicalises to SITE.url. Nested routes
   // override this via pageMetadata() in lib/seo.ts.
   alternates: { canonical: SITE.url },
   openGraph: {
-    title: 'AI Girlfriends, AI Companions & Virtual Partners — Reviewed 2026',
+    title: 'AI Adult Directory · Every AI Girlfriend, Sexting & NSFW AI Site, Ranked',
     description: SITE.descriptionLong,
     url: SITE.url,
     siteName: SITE.name,
@@ -48,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Girlfriends, AI Companions & Reviews 2026',
+    title: 'AI Adult Directory · 60+ NSFW AI Sites, Ranked',
     description: SITE.descriptionShort,
   },
   robots: {
@@ -100,6 +99,32 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${GA_ID}');
+
+            // Outbound-click tracking. Delegates to a single document listener
+            // so every SDAI link, character card, sticky CTA, header button and
+            // future component fires 'affiliate_click' without per-component
+            // wiring. Marks the event with the target URL + link text so we can
+            // see which surface drives paid conversions.
+            document.addEventListener('click', function(e) {
+              var a = e.target && e.target.closest ? e.target.closest('a') : null;
+              if (!a || !a.href) return;
+              var isAffiliate = a.href.indexOf('secretdesires.ai') !== -1;
+              var isOutbound = a.hostname && a.hostname !== window.location.hostname;
+              if (isAffiliate) {
+                gtag('event', 'affiliate_click', {
+                  destination: 'secret_desires',
+                  link_url: a.href,
+                  link_text: (a.innerText || '').trim().slice(0, 80),
+                  page_path: window.location.pathname,
+                });
+              } else if (isOutbound) {
+                gtag('event', 'outbound_click', {
+                  link_url: a.href,
+                  link_domain: a.hostname,
+                  page_path: window.location.pathname,
+                });
+              }
+            }, { capture: true });
           `}
         </Script>
       </body>
