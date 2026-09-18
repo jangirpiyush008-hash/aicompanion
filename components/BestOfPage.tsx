@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 import PageLayout, { H1, Lede, H2, P } from './PageLayout'
 import SecretDesiresCTA from './SecretDesiresCTA'
 import { REVIEWS } from '@/lib/reviews'
-import { articleLd, faqLd, itemListLd, absoluteUrl } from '@/lib/seo'
+import { articleLd, faqLd } from '@/lib/seo'
 
 export type BestOfEntry = {
   rank: number
@@ -31,28 +31,7 @@ export default function BestOfPage({
   entries: BestOfEntry[]
   faqs?: { q: string; a: string }[]
 }) {
-  const now = new Date().toISOString().slice(0, 10)
-  const lds: unknown[] = [
-    articleLd({
-      headline: metaTitle,
-      description: metaDescription,
-      path,
-      datePublished: now,
-      dateModified: now,
-    }),
-    // ItemList is the schema AI Overviews look for when citing "best X" queries.
-    // Every ranked entry becomes a ListItem so extractors know this is a curated list.
-    itemListLd({
-      name: metaTitle,
-      items: entries
-        .map((e) => {
-          const r = REVIEWS.find((x) => x.slug === e.reviewSlug)
-          if (!r) return null
-          return { name: r.name, url: absoluteUrl(`/reviews/${r.slug}`), description: e.note }
-        })
-        .filter((x): x is { name: string; url: string; description: string } => x !== null),
-    }),
-  ]
+  const lds: unknown[] = [articleLd({ headline: metaTitle, description: metaDescription, path })]
   if (faqs?.length) lds.push(faqLd(faqs))
 
   return (

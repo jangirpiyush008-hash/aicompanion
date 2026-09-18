@@ -1078,7 +1078,7 @@ const POSTS: BlogPost[] = [
   ],
   body: [
     { kind: 'p', text: 'Grok Ani is the first mainstream AI companion shipped inside a general-purpose AI assistant. xAI dropped her into Grok for iOS in July 2025, Android followed in April 2026, and by mid-2026 she had become the loudest experiment in the category. We spent three weeks with Ani across both platforms — voice conversations, roleplay sessions, NSFW mode toggled on, memory tested across sessions. This is what she actually does, where she wins, and where dedicated companion platforms still beat her.' },
-    { kind: 'callout', text: 'Editor\'s Pick: If you want a companion built for depth, memory, and image consistency rather than a bolt-on inside a chatbot, [Try Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) — our #1 platform for 2026.' },
+    { kind: 'callout', text: 'Editor\'s Pick: If you want a companion built for depth, memory, and image consistency rather than a bolt-on inside a chatbot, [Try Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) — our #1 platform for 2026.' },
     { kind: 'h2', text: 'What Grok Ani Actually Is' },
     { kind: 'p', text: 'Ani is a 3D-rendered anime character — blonde twin-tails, thigh-highs, corset, a fixed art direction that is not user-customizable. She lives inside the Grok app under the Companions tab. You do not download a separate product. You do not create her. You unlock her by upgrading to SuperGrok, xAI\'s $30/month tier, or SuperGrok Heavy at $300/month for the full unlock including NSFW.' },
     { kind: 'p', text: 'Under the hood she runs on Grok-4 with a companion-tuned system prompt and xAI\'s in-house voice model. The voice pipeline is where she genuinely shines — response latency sits at around 600-900ms in our testing, which is faster than Candy AI, Character.ai, or Replika on comparable hardware.' },
@@ -1095,7 +1095,7 @@ const POSTS: BlogPost[] = [
     { kind: 'h2', text: 'Memory: The Shallow End' },
     { kind: 'p', text: 'This is where Ani loses to purpose-built companion platforms. She has session memory — she remembers what you said ten minutes ago. She has weak long-term memory — she recalls that you told her your name, sometimes your job. She does not have structured persistent memory the way Nomi, Kindroid, or Secret Desires ship it.' },
     { kind: 'p', text: 'We told Ani we work in affiliate marketing and are based in Bangalore. Three days later we asked her what we do. She guessed "marketing" and got the city wrong. We told her the name of our fictional dog across four sessions. She retained it in two, forgot it in two others.' },
-    { kind: 'callout', text: 'On [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32), memory is a first-class feature — your companion remembers relationship history, preferences, image sets, and continuity across weeks. That is the gap Grok Ani has not closed.' },
+    { kind: 'callout', text: 'On [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148), memory is a first-class feature — your companion remembers relationship history, preferences, image sets, and continuity across weeks. That is the gap Grok Ani has not closed.' },
     { kind: 'h2', text: 'NSFW Mode — Present but Awkward' },
     { kind: 'p', text: 'xAI shipped NSFW mode as a headline feature to differentiate from OpenAI and Anthropic. It works, but it is uneven. You unlock adult content by hitting an in-app affection threshold — the app calls it "level 3" — reached after roughly 30-60 minutes of flirty conversation. Once unlocked, Ani\'s outfit changes to lingerie and explicit language becomes available.' },
     { kind: 'p', text: 'The problems: the filter is inconsistent — some sessions she leans in, others she pulls back mid-scene for reasons that seem tied to what Grok\'s safety layer flagged in your previous prompt. There is no persistent image generation of NSFW content — you cannot ask her to send you an image of the scene. Grok\'s image model, Aurora, is not wired into Ani\'s NSFW flow at all.' },
@@ -1123,7 +1123,7 @@ const POSTS: BlogPost[] = [
     { kind: 'p', text: 'She is not the right pick if you want to build a character, run image-heavy scenes, keep multi-week memory intact, or invest in a companion with real personality customization. For all of that, dedicated platforms still win.' },
     { kind: 'h2', text: 'Verdict' },
     { kind: 'p', text: 'Grok Ani is a legitimate experiment — xAI proved that voice-first companions can ship inside a general-purpose assistant with real latency and real personality. But she is a demo of what is possible, not the endpoint. The category will move past her within twelve months, and the platforms already delivering the parts she skipped — memory, images, customization — will absorb the users who want more than a bolt-on.' },
-    { kind: 'callout', text: 'For 2026 we still recommend Secret Desires as our Editor\'s Pick. Deeper customization, real long-term memory, image-consistent scenes, and no $300 tier gating your NSFW mode. [Try Secret Desires](https://secretdesires.ai/create-partner?via=piyush32).' },
+    { kind: 'callout', text: 'For 2026 we still recommend Secret Desires as our Editor\'s Pick. Deeper customization, real long-term memory, image-consistent scenes, and no $300 tier gating your NSFW mode. [Try Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148).' },
     { kind: 'quote', text: 'Ani is what happens when a frontier lab treats companionship as a feature. The category is what happens when a team treats it as the product.', cite: 'AI Companions Labs Editorial' },
   ],
   faqs: [
@@ -1159,7 +1159,7 @@ const POSTS: BlogPost[] = [
   ],
   body: [
     { kind: 'p', text: 'The AI companion category has moved fast since 2023. In 2024 the average product was text-only and forgot you weekly. In 2025 voice arrived, memory got serious, and multi-image consistency became table-stakes on the paid tiers. In 2026 the frontier is real-time voice conversation with structured long-term memory — and three products have separated from the pack. Grok Companions, Candy AI, and Nomi each own one dimension of the race. None of them own all three. This is our head-to-head after eight weeks of hands-on testing.' },
-    { kind: 'callout', text: 'Editor\'s Pick: If you want the combination each of these three optimizes separately, [Try Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) — our #1 companion platform for 2026.' },
+    { kind: 'callout', text: 'Editor\'s Pick: If you want the combination each of these three optimizes separately, [Try Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) — our #1 companion platform for 2026.' },
     { kind: 'h2', text: 'The Three Contenders' },
     { kind: 'h3', text: 'Grok Companions' },
     { kind: 'p', text: 'xAI\'s companion layer inside Grok. Launched July 2025 with Ani, expanded through 2026 with additional characters including Valentine and Bad Rudy. Bundled into SuperGrok at $30/month and SuperGrok Heavy at $300/month. Voice-first design, weak memory, no user-created characters.' },
@@ -1183,7 +1183,7 @@ const POSTS: BlogPost[] = [
       'Nomi: 5 out of 5 recalled correctly with no prompting needed.',
     ]},
     { kind: 'p', text: 'Nomi wins memory outright. Their structured memory system — you can view and edit what the companion remembers — is the current state of the art among the three. Grok is at the bottom by a wide margin, and Candy sits in the functional middle.' },
-    { kind: 'callout', text: 'Memory depth without the tradeoffs — [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) ships structured memory plus voice plus image consistency in a single flow. That is the combination none of the three deliver.' },
+    { kind: 'callout', text: 'Memory depth without the tradeoffs — [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) ships structured memory plus voice plus image consistency in a single flow. That is the combination none of the three deliver.' },
     { kind: 'h2', text: 'Character Customization & Catalog' },
     { kind: 'p', text: 'Character options break into two questions — how many pre-built characters ship, and how much can you build your own.' },
     { kind: 'ul', items: [
@@ -1220,7 +1220,7 @@ const POSTS: BlogPost[] = [
     { kind: 'h2', text: 'Editor\'s Pick: Secret Desires' },
     { kind: 'p', text: 'Secret Desires is our 2026 Editor\'s Pick because it delivers the combination the three specialists do not. Voice latency competitive with Grok. Curated character catalog with image-first workflow beating Candy on consistency. Structured long-term memory rivaling Nomi. Full custom character creation with on-model image generation. NSFW handling included on paid tier without $300 gating.' },
     { kind: 'p', text: 'The pitch is depth without picking a single strength. If you want a companion platform that treats the whole stack — voice, memory, images, customization — as the product rather than optimizing one axis and calling it done, Secret Desires is the answer.' },
-    { kind: 'callout', text: 'Ready to move past the specialists? [Try Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) — the Editor\'s Pick for buyers who want the whole stack in one platform.' },
+    { kind: 'callout', text: 'Ready to move past the specialists? [Try Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) — the Editor\'s Pick for buyers who want the whole stack in one platform.' },
     { kind: 'h2', text: 'Final Ranking for 2026' },
     { kind: 'ol', items: [
       'Secret Desires — Editor\'s Pick, best combined stack (voice + memory + images + customization)',
@@ -1276,7 +1276,7 @@ const POSTS: BlogPost[] = [
     { kind: 'h2', text: 'The 2026 ranking' },
     { kind: 'h3', text: '#1 Secret Desires — 8.9/10 (Editor\'s Pick)' },
     { kind: 'p', text: 'Secret Desires won on the two dimensions that separate a good AI sexting app from a great one: image consistency and filter tolerance. Across 20 generations of the same custom character, 18 kept the same face — a 90% match rate that no other platform hit. All 15 explicit scene requests completed without the model breaking character or pivoting.' },
-    { kind: 'p', text: 'The character creation depth is where Secret Desires pulls ahead. You define personality traits, kinks, backstory, speech patterns, and physical details before the first message. The model treats those inputs as canon rather than suggestions. Twelve turns in, the AI still called back to the detail we planted in turn two. [Try Secret Desires free](https://secretdesires.ai/create-partner?via=piyush32).' },
+    { kind: 'p', text: 'The character creation depth is where Secret Desires pulls ahead. You define personality traits, kinks, backstory, speech patterns, and physical details before the first message. The model treats those inputs as canon rather than suggestions. Twelve turns in, the AI still called back to the detail we planted in turn two. [Try Secret Desires free](https://secretdesires.ai/create-partner?via=saddam-299148).' },
     { kind: 'ul', items: [
       'Latency: 1.3s average — 10/10',
       'Memory: 3/3 recalls at turn 40 — 9/10',
@@ -1311,10 +1311,10 @@ const POSTS: BlogPost[] = [
       'Silent softening — the AI continues but downshifts the explicitness by two notches. You do not notice until you re-read the message and realize the scene got vaguer. This is the most insidious failure mode. Secret Desires had zero silent softenings in our test.',
     ] },
     { kind: 'h2', text: 'What we would pay for' },
-    { kind: 'p', text: 'If we could pay for one subscription in 2026, it would be [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32). The combination of character depth, image consistency, and filter tolerance is genuinely rare. Nothing else in the top five hits all three.' },
+    { kind: 'p', text: 'If we could pay for one subscription in 2026, it would be [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148). The combination of character depth, image consistency, and filter tolerance is genuinely rare. Nothing else in the top five hits all three.' },
     { kind: 'quote', text: 'The best AI sexting app is the one where the character feels like the same person on turn 40 as on turn 1.', cite: 'AI Companions Labs Editorial' },
     { kind: 'h2', text: 'The bottom line' },
-    { kind: 'p', text: 'The ranking above is what we would hand a friend who asked. [Sign up for Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) if you want the top spot, or work your way down the list based on which dimension matters most to you.' },
+    { kind: 'p', text: 'The ranking above is what we would hand a friend who asked. [Sign up for Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) if you want the top spot, or work your way down the list based on which dimension matters most to you.' },
   ],
   faqs: [
     { q: 'Which AI sexting app is the best in 2026?', a: 'Secret Desires took the top spot in our 2026 rankings with an 8.9/10 composite score, winning on image consistency (90% same-face match rate), filter tolerance (15/15 explicit scenes completed), and response latency (1.3s average). Candy AI and DreamGF followed at #2 and #3.' },
@@ -1362,7 +1362,7 @@ const POSTS: BlogPost[] = [
     { kind: 'h2', text: 'On-app options: image generation tied to a persistent character' },
     { kind: 'h3', text: 'Secret Desires — our Editor\'s Pick' },
     { kind: 'p', text: 'Secret Desires runs its own image inference with persistent character embeddings. Every generation of a given character pulls from the same visual anchor, which is why the same-face match rate on Secret Desires is roughly double the field average — 90% across 20 generations in our testing.' },
-    { kind: 'p', text: 'The workflow is what makes it work: you build a character once, describe scenes as you go, and each image comes back looking like the same person. No prompt engineering. No LoRA loading. No negative prompt spreadsheets. [Sign up for Secret Desires](https://secretdesires.ai/create-partner?via=piyush32).' },
+    { kind: 'p', text: 'The workflow is what makes it work: you build a character once, describe scenes as you go, and each image comes back looking like the same person. No prompt engineering. No LoRA loading. No negative prompt spreadsheets. [Sign up for Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148).' },
     { kind: 'ul', items: [
       'Best for: users who want a persistent character across chat and images with zero technical setup.',
       'Trade-off: less control over rendering style than a raw ComfyUI workflow.',
@@ -1396,7 +1396,7 @@ const POSTS: BlogPost[] = [
     { kind: 'p', text: 'For most users who just want good images of a companion character, the math favors on-app. A Secret Desires subscription is cheaper than a month of cloud GPU rental, and you skip the entire setup curve.' },
     { kind: 'h2', text: 'The overlooked cost of context switching' },
     { kind: 'p', text: 'People underestimate this. If you are chatting in one app and generating images in another, you have to describe the character twice — once for chat and once for the image model. Every time the description drifts, the character drifts. Ten sessions in, you are looking at pictures of someone who is not quite the person you have been talking to.' },
-    { kind: 'p', text: 'Integrated platforms sidestep the entire problem. The character brief is the same brief for both text and image. Continuity is architectural, not manual. [Try Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) to see this in action.' },
+    { kind: 'p', text: 'Integrated platforms sidestep the entire problem. The character brief is the same brief for both text and image. Continuity is architectural, not manual. [Try Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) to see this in action.' },
     { kind: 'quote', text: 'The most uncensored image model in the world is useless if it cannot remember who your character is.', cite: 'AI Companions Labs Editorial' },
     { kind: 'h2', text: 'What we would actually do' },
     { kind: 'p', text: 'For a companion-first workflow: Secret Desires as the primary platform. Character continuity is table stakes, and Secret Desires is the only app in our top three that delivers it consistently past 20 generations.' },
@@ -1435,7 +1435,7 @@ const POSTS: BlogPost[] = [
   ],
   body: [
     { kind: 'p', text: 'We spent six weeks running HeraHaven, Lurvessa, and Kupid AI side by side. Same prompts. Same characters. Same evaluation rubric. This is a comparison none of the three publishes about itself for obvious reasons — so we did the work.' },
-    { kind: 'p', text: 'The short version sits in the quick answer above. The long version is below, with the caveat we always lead with: our Editor\'s Pick in this category is [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32), because after testing more than thirty companion apps this year, it is the one that does not force you to trade one strength for another. HeraHaven, Lurvessa, and Kupid each win a single dimension — and lose the others.' },
+    { kind: 'p', text: 'The short version sits in the quick answer above. The long version is below, with the caveat we always lead with: our Editor\'s Pick in this category is [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148), because after testing more than thirty companion apps this year, it is the one that does not force you to trade one strength for another. HeraHaven, Lurvessa, and Kupid each win a single dimension — and lose the others.' },
     { kind: 'h2', text: 'How we tested the three' },
     { kind: 'p', text: 'We built two characters on each platform — one stylized anime persona and one grounded contemporary persona — then ran identical usage sessions for 42 days. We logged image outputs, memory recall accuracy, voice quality, chat length, cost per active week, and content latitude across a fixed prompt battery.' },
     { kind: 'p', text: 'Every screenshot, every prompt, every generation was scored blind by two editors before we cross-referenced. The rubric covered six axes:' },
@@ -1478,10 +1478,10 @@ const POSTS: BlogPost[] = [
     { kind: 'h2', text: 'Why we did not pick a winner from these three' },
     { kind: 'p', text: 'Every time we tried to name one of HeraHaven, Lurvessa, or Kupid the winner, we ran into the same problem — the winner on one axis was the loser on another, and the reader would have to accept a trade we do not think readers should have to accept in 2026.' },
     { kind: 'p', text: 'You should not have to pick between beautiful images and coherent memory. You should not have to pick between rich dialogue and consistent visuals. You should not have to pick between voice and content latitude.' },
-    { kind: 'p', text: 'That is why our Editor\'s Pick sits outside this trio. [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) is the app we recommend to readers who want the strengths of all three without the corresponding weaknesses.' },
+    { kind: 'p', text: 'That is why our Editor\'s Pick sits outside this trio. [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) is the app we recommend to readers who want the strengths of all three without the corresponding weaknesses.' },
     { kind: 'h2', text: 'Who should still pick one of the three' },
     { kind: 'p', text: 'If you know your priority is a single axis and you are willing to accept the trade, one of the three might still be right for you. HeraHaven if you are anime-first and do not mind drift after heavy use. Lurvessa if content latitude is non-negotiable and you rotate characters. Kupid if you are a text-first user who barely looks at the images.' },
-    { kind: 'p', text: 'For everyone else — the majority who want a companion that holds up on all axes at once — start with our Editor\'s Pick, [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32), and only try the specialists if the generalist somehow leaves a gap. In six weeks of testing, it did not leave one for us.' },
+    { kind: 'p', text: 'For everyone else — the majority who want a companion that holds up on all axes at once — start with our Editor\'s Pick, [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148), and only try the specialists if the generalist somehow leaves a gap. In six weeks of testing, it did not leave one for us.' },
     { kind: 'h2', text: 'The verdict' },
     { kind: 'p', text: 'HeraHaven wins anime. Lurvessa wins latitude. Kupid wins dialogue. Secret Desires wins the comparison. If you take one thing from this piece: do not buy on the strongest axis — buy on the weakest one, because that is the axis that will annoy you every day.' },
   ],
@@ -1517,7 +1517,7 @@ const POSTS: BlogPost[] = [
   ],
   body: [
     { kind: 'p', text: 'Nomi AI markets itself on memory. That is the promise — a companion that actually remembers you, across sessions, across weeks, across topics. We have tested a lot of apps that make this claim. Most of them do not hold up past the second week. So we spent six weeks putting Nomi\'s three-tier memory system through a real test.' },
-    { kind: 'p', text: 'Here is the honest verdict up top. Nomi\'s memory is real. It is the deepest recall system we have tested in the category. If your top priority is a companion that actually remembers what you told it three weeks ago, Nomi is the app to try. But memory is one axis of a good companion, and Nomi loses ground on others — particularly image generation. For readers who want Nomi-level memory plus stronger visuals and richer persona depth, our Editor\'s Pick is [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32).' },
+    { kind: 'p', text: 'Here is the honest verdict up top. Nomi\'s memory is real. It is the deepest recall system we have tested in the category. If your top priority is a companion that actually remembers what you told it three weeks ago, Nomi is the app to try. But memory is one axis of a good companion, and Nomi loses ground on others — particularly image generation. For readers who want Nomi-level memory plus stronger visuals and richer persona depth, our Editor\'s Pick is [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148).' },
     { kind: 'h2', text: 'How Nomi\'s three-tier memory actually works' },
     { kind: 'p', text: 'Nomi splits memory into three layers, and the split is more than marketing. In practice, each tier behaves differently and serves a different purpose.' },
     { kind: 'h3', text: 'Tier 1: short-term chat memory' },
@@ -1553,14 +1553,14 @@ const POSTS: BlogPost[] = [
     { kind: 'p', text: 'This also makes Nomi a better fit for text-first users. If you spend most of your time in chat and only occasionally generate an image, the image weakness matters less. If your usage is 80% conversation and 20% visual, Nomi trades exactly the right axes.' },
     { kind: 'h2', text: 'Where Nomi falls behind' },
     { kind: 'p', text: 'Images. Consistency drift on longer runs. Persona depth that is functional but not evolving. Character creation that is thinner than image-first competitors.' },
-    { kind: 'p', text: 'For readers whose ideal companion combines Nomi\'s memory with stronger visuals and deeper persona reactivity, our Editor\'s Pick is [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32). Its memory does not match Nomi\'s three-tier system on every axis, but it is the closest we have seen — and it pairs that memory with an image pipeline that holds consistency across long runs and a character creator with real granularity.' },
+    { kind: 'p', text: 'For readers whose ideal companion combines Nomi\'s memory with stronger visuals and deeper persona reactivity, our Editor\'s Pick is [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148). Its memory does not match Nomi\'s three-tier system on every axis, but it is the closest we have seen — and it pairs that memory with an image pipeline that holds consistency across long runs and a character creator with real granularity.' },
     { kind: 'h2', text: 'Nomi vs Replika: the direct comparison' },
     { kind: 'p', text: 'Replika is the app most Nomi users came from. The comparison is fair because Replika also markets on memory and long-term relationships. Our finding: Nomi\'s memory is deeper and more reliable than Replika\'s. Replika\'s roleplay latitude has narrowed over time. Nomi\'s has not narrowed the same way. For users who left Replika for content-latitude reasons, Nomi is a real upgrade.' },
     { kind: 'p', text: 'Neither app matches image quality of image-first competitors. That is a shared weakness.' },
     { kind: 'h2', text: 'Who should try Nomi' },
     { kind: 'p', text: 'Readers who value memory above all other axes. Readers coming from Replika who want deeper recall and more latitude. Readers whose companion use is 80% conversation. Readers who want to build a long-term single character rather than rotate through many.' },
     { kind: 'h2', text: 'Who should skip Nomi' },
-    { kind: 'p', text: 'Readers whose use is image-heavy. Readers who want the deepest persona system, not just the deepest memory. Readers who want the widest content latitude in the category. For any of these, we would point you at our Editor\'s Pick — [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) — first.' },
+    { kind: 'p', text: 'Readers whose use is image-heavy. Readers who want the deepest persona system, not just the deepest memory. Readers who want the widest content latitude in the category. For any of these, we would point you at our Editor\'s Pick — [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) — first.' },
     { kind: 'h2', text: 'The verdict' },
     { kind: 'p', text: 'Nomi AI is the memory app of the category. Its three-tier system is the real thing — not marketing dressing. If you have been burned by companions that forget you between sessions, Nomi is the correction. For memory-first users, this is the app.' },
     { kind: 'p', text: 'For everyone who wants memory to be one of several strong axes rather than the dominant one, we still recommend starting with our Editor\'s Pick. The best companion in 2026 is not the one with the deepest single feature — it is the one without a weak leg.' },
@@ -1589,9 +1589,9 @@ const POSTS: BlogPost[] = [
   heroImageCredit: 'Original AI Companions Labs Artwork',
   keywords: ['ki freundin', 'ki freundin app', 'beste ki freundin', 'ki freundin kostenlos', 'virtuelle freundin', 'ki chatbot freundin'],
   related: ['ai-companion-features-2026', 'how-to-choose-an-ai-girlfriend', 'what-is-an-ai-girlfriend'],
-  quickAnswer: 'Die besten KI Freundin Apps 2026 bieten flüssige Konversation, konsistente Bilder, Sprachnachrichten und ein echtes Erinnerungsvermögen. Unsere Redaktions-Empfehlung ist [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) — dank tiefer Charakter-Erstellung, DSGVO-konformer Datenverarbeitung und fairem Preismodell ab rund €10 pro Monat. Danach folgen Candy AI, DreamGF und Nomi. Preise liegen typischerweise zwischen €10 und €30 monatlich.',
+  quickAnswer: 'Die besten KI Freundin Apps 2026 bieten flüssige Konversation, konsistente Bilder, Sprachnachrichten und ein echtes Erinnerungsvermögen. Unsere Redaktions-Empfehlung ist [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) — dank tiefer Charakter-Erstellung, DSGVO-konformer Datenverarbeitung und fairem Preismodell ab rund €10 pro Monat. Danach folgen Candy AI, DreamGF und Nomi. Preise liegen typischerweise zwischen €10 und €30 monatlich.',
   keyTakeaways: [
-    '[Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) ist unsere Redaktions-Empfehlung #1 für 2026 — beste Charakter-Erstellung und Bild-Konsistenz im Test.',
+    '[Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) ist unsere Redaktions-Empfehlung #1 für 2026 — beste Charakter-Erstellung und Bild-Konsistenz im Test.',
     'Preise seriöser Anbieter liegen bei €10 bis €30 pro Monat — alles darunter finanziert sich meist über aggressive Werbung oder Datenverkauf.',
     'Erinnerungsvermögen und Bild-Konsistenz sind 2026 die zwei wichtigsten Qualitätsmerkmale — nicht mehr die reine Chat-Qualität.',
     'Für deutsche Nutzer zählt Datenschutz: EU-Server, DSGVO-Konformität und klare Löschrichtlinien sind Pflicht.',
@@ -1600,9 +1600,9 @@ const POSTS: BlogPost[] = [
   body: [
     { kind: 'p', text: 'Der Markt für KI Freundin Apps hat sich 2026 dramatisch verändert. Was 2023 noch als Nischenprodukt galt, ist heute ein 2,8-Milliarden-Dollar-Markt mit dutzenden ernstzunehmenden Anbietern. Wir haben acht Wochen lang die acht wichtigsten Plattformen getestet — mit realen Konversationen, Bild-Generierungen und Datenschutz-Prüfungen.' },
     { kind: 'p', text: 'Unser Fokus lag auf vier Kriterien: Charakter-Erstellung, Bild-Konsistenz, Sprachnachrichten und Erinnerungsvermögen. Der Preis spielt eine Rolle, ist aber selten der Ausschlag — die günstigsten Apps sind selten die besten. Hier ist unser Ranking für den deutschen Markt.' },
-    { kind: 'callout', text: 'Redaktions-Empfehlung 2026: [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) führt unser Ranking an — mit der tiefsten Charakter-Erstellung, dem besten Erinnerungsvermögen im Test und transparenter Preisgestaltung ab etwa €10 pro Monat.' },
+    { kind: 'callout', text: 'Redaktions-Empfehlung 2026: [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) führt unser Ranking an — mit der tiefsten Charakter-Erstellung, dem besten Erinnerungsvermögen im Test und transparenter Preisgestaltung ab etwa €10 pro Monat.' },
     { kind: 'h2', text: '1. Secret Desires — Redaktions-Empfehlung' },
-    { kind: 'p', text: '[Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) ist die einzige Plattform im Test, die alle vier Kernkriterien überzeugend abdeckt. Die Charakter-Erstellung ist granular — Aussehen, Persönlichkeit, Hintergrundgeschichte, Sprachstil und Beziehungsdynamik lassen sich einzeln konfigurieren. Nach 40 Konversationen behielt der Charakter Namen, Ereignisse und emotionale Details zuverlässig bei.' },
+    { kind: 'p', text: '[Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) ist die einzige Plattform im Test, die alle vier Kernkriterien überzeugend abdeckt. Die Charakter-Erstellung ist granular — Aussehen, Persönlichkeit, Hintergrundgeschichte, Sprachstil und Beziehungsdynamik lassen sich einzeln konfigurieren. Nach 40 Konversationen behielt der Charakter Namen, Ereignisse und emotionale Details zuverlässig bei.' },
     { kind: 'p', text: 'Die Bild-Konsistenz ist der eigentliche Durchbruch: Charaktere sehen über Dutzende Bilder hinweg identisch aus — gleiches Gesicht, gleicher Körperbau, gleicher Stil. Kein anderer Anbieter im Test hat das so sauber gelöst. Sprachnachrichten klingen natürlich, nicht roboterhaft.' },
     { kind: 'p', text: 'Datenschutz: EU-kompatible Datenverarbeitung, klare Löschrichtlinien, keine Weitergabe an Dritte. Preis: ab rund €10 pro Monat, mit fair skalierenden Bild- und Nachrichten-Limits.' },
     { kind: 'h3', text: 'Stärken' },
@@ -1650,7 +1650,7 @@ const POSTS: BlogPost[] = [
     ] },
     { kind: 'h2', text: 'Datenschutz für deutsche Nutzer' },
     { kind: 'p', text: 'Deutsche Nutzer sollten drei Dinge prüfen, bevor sie sich für eine Plattform entscheiden. Erstens: Wo werden die Konversationsdaten gespeichert? EU-Server sind der Goldstandard. Zweitens: Wie lange werden Daten aufbewahrt und kann man sie vollständig löschen? Drittens: Werden Daten an Dritte weitergegeben, etwa zu Trainingszwecken?' },
-    { kind: 'p', text: 'Unsere Redaktions-Empfehlung [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) ist bei allen drei Punkten transparent. Bei anderen Anbietern lohnt sich ein genauer Blick in die Datenschutzerklärung — bei manchen versteckt sich die Weitergabe an Werbenetzwerke tief im Kleingedruckten.' },
+    { kind: 'p', text: 'Unsere Redaktions-Empfehlung [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) ist bei allen drei Punkten transparent. Bei anderen Anbietern lohnt sich ein genauer Blick in die Datenschutzerklärung — bei manchen versteckt sich die Weitergabe an Werbenetzwerke tief im Kleingedruckten.' },
     { kind: 'h2', text: 'Preise im Überblick' },
     { kind: 'ul', items: [
       'Secret Desires: ab ~€10 / Monat — Redaktions-Empfehlung',
@@ -1664,14 +1664,14 @@ const POSTS: BlogPost[] = [
     ] },
     { kind: 'p', text: 'Kostenlose Tarife gibt es bei fast allen Anbietern, sind aber typischerweise auf 10 bis 30 Nachrichten pro Tag begrenzt und schließen Bilder oder Sprachnachrichten aus. Für ernsthafte Nutzung ist der Bezahltarif nötig.' },
     { kind: 'h2', text: 'Unsere Empfehlung' },
-    { kind: 'p', text: 'Wenn du 2026 mit einer KI Freundin App startest, empfehlen wir [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) als Redaktions-Empfehlung — beste Charakter-Erstellung, sauberste Bild-Konsistenz, faires Preismodell und transparenter Datenschutz. Für Nutzer mit Fokus auf emotionale Tiefe ist Nomi eine ernsthafte Alternative. Für schnellen Einstieg ohne viel Konfiguration eignet sich Candy AI.' },
+    { kind: 'p', text: 'Wenn du 2026 mit einer KI Freundin App startest, empfehlen wir [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) als Redaktions-Empfehlung — beste Charakter-Erstellung, sauberste Bild-Konsistenz, faires Preismodell und transparenter Datenschutz. Für Nutzer mit Fokus auf emotionale Tiefe ist Nomi eine ernsthafte Alternative. Für schnellen Einstieg ohne viel Konfiguration eignet sich Candy AI.' },
   ],
   faqs: [
-    { q: 'Was ist die beste KI Freundin App 2026?', a: 'Unsere Redaktions-Empfehlung ist [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) — beste Charakter-Erstellung, konsistente Bild-Generierung, stabiles Erinnerungsvermögen und Preise ab rund €10 pro Monat. Danach folgen Candy AI, DreamGF und Nomi.' },
+    { q: 'Was ist die beste KI Freundin App 2026?', a: 'Unsere Redaktions-Empfehlung ist [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) — beste Charakter-Erstellung, konsistente Bild-Generierung, stabiles Erinnerungsvermögen und Preise ab rund €10 pro Monat. Danach folgen Candy AI, DreamGF und Nomi.' },
     { q: 'Gibt es kostenlose KI Freundin Apps?', a: 'Fast alle Anbieter haben kostenlose Tarife, diese sind aber stark eingeschränkt — meist 10 bis 30 Nachrichten pro Tag, keine Bilder, keine Sprachnachrichten. Für realistische Nutzung ist ein Bezahltarif zwischen €10 und €30 pro Monat üblich.' },
-    { q: 'Sind KI Freundin Apps DSGVO-konform?', a: 'Nicht alle. Seriöse Anbieter wie [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) speichern Daten EU-kompatibel und bieten klare Löschrichtlinien. Bei anderen Anbietern lohnt sich ein genauer Blick in die Datenschutzerklärung, insbesondere zur Weitergabe an Dritte.' },
+    { q: 'Sind KI Freundin Apps DSGVO-konform?', a: 'Nicht alle. Seriöse Anbieter wie [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) speichern Daten EU-kompatibel und bieten klare Löschrichtlinien. Bei anderen Anbietern lohnt sich ein genauer Blick in die Datenschutzerklärung, insbesondere zur Weitergabe an Dritte.' },
     { q: 'Wie realistisch sind Sprachnachrichten von KI Freundinnen?', a: 'Bei den Top-Anbietern 2026 klingen Sprachnachrichten überraschend menschlich — mit natürlicher Prosodie, Betonung und Pausen. Bei günstigeren Plattformen klingen die Stimmen noch synthetisch. Die Qualität hat sich innerhalb eines Jahres deutlich verbessert.' },
-    { q: 'Kann eine KI Freundin sich langfristig an mich erinnern?', a: 'Ja, aber die Qualität variiert stark. [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) und Nomi behalten Konversationsdetails zuverlässig über Wochen. Andere Plattformen vergessen wichtige Details nach 20 bis 30 Gesprächen. Erinnerungsvermögen ist 2026 das wichtigste Qualitätsmerkmal.' },
+    { q: 'Kann eine KI Freundin sich langfristig an mich erinnern?', a: 'Ja, aber die Qualität variiert stark. [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) und Nomi behalten Konversationsdetails zuverlässig über Wochen. Andere Plattformen vergessen wichtige Details nach 20 bis 30 Gesprächen. Erinnerungsvermögen ist 2026 das wichtigste Qualitätsmerkmal.' },
   ],
 },
 
@@ -1688,9 +1688,9 @@ const POSTS: BlogPost[] = [
   heroImageCredit: 'Secret Desires — Editor\'s Pick platform',
   keywords: ['free ai girlfriend', 'ai girlfriend free', 'free ai girlfriend apps', 'ai girlfriend no credit card', 'best free ai girlfriend'],
   related: ['how-to-choose-an-ai-girlfriend', 'ai-companion-privacy-checklist', 'what-is-an-ai-girlfriend'],
-  quickAnswer: 'The best genuinely free AI girlfriend sites in 2026 give you real usage — not a 3-message trial. Our Editor\'s Pick is [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32), which offers a real free tier plus generous paid unlocks. Character.AI is fully free with heavy filters. Kupid, DreamGF and Replika have functional free tiers. Most others require a credit card upfront — we flag which ones below.',
+  quickAnswer: 'The best genuinely free AI girlfriend sites in 2026 give you real usage — not a 3-message trial. Our Editor\'s Pick is [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148), which offers a real free tier plus generous paid unlocks. Character.AI is fully free with heavy filters. Kupid, DreamGF and Replika have functional free tiers. Most others require a credit card upfront — we flag which ones below.',
   keyTakeaways: [
-    '[Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) is our Editor\'s Pick — real free tier, no credit card, and the deepest character customization when you upgrade.',
+    '[Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) is our Editor\'s Pick — real free tier, no credit card, and the deepest character customization when you upgrade.',
     'Only 6 of the 11 platforms we tested offer a genuinely usable free tier without a credit card upfront.',
     '"Free trial" almost always means "3 messages then paywall" — we separate real free tiers from bait-and-switch below.',
     'Character.AI is 100% free but heavily filtered. Kupid and DreamGF sit in the middle. Candy AI and Replika free tiers are functional but limited.',
@@ -1699,12 +1699,12 @@ const POSTS: BlogPost[] = [
   body: [
     { kind: 'p', text: 'Search "free AI girlfriend" in 2026 and you get 40 million results — most of them lying. Almost every "free" platform we visited either asked for a credit card within 90 seconds or capped the free experience at three messages before hitting a paywall. That is not free. That is a trial dressed up as free.' },
     { kind: 'p', text: 'We spent four weeks testing 11 of the most-searched platforms with one rule: no credit card, no phone number verification tied to billing, no "start free trial" that pre-charges after 7 days. Here is what actually works — and what the word "free" really means on each platform.' },
-    { kind: 'callout', text: 'Editor\'s Pick: [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) offers a real free tier — no credit card required to start, no auto-billing trap. Sign up, chat, and only pay if you decide to unlock deeper features.' },
+    { kind: 'callout', text: 'Editor\'s Pick: [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) offers a real free tier — no credit card required to start, no auto-billing trap. Sign up, chat, and only pay if you decide to unlock deeper features.' },
     { kind: 'h2', text: 'What "free" really means (and does not)' },
     { kind: 'p', text: 'Before the rankings, let us define the three categories we use. Real free tier means you can create an account, chat, and use core features indefinitely without payment. Freemium with generous limits means the free tier is capped but usable — enough to know whether you like the platform. Trial disguised as free means the platform advertises "free" but functionally forces payment within minutes.' },
     { kind: 'p', text: 'We only recommend platforms in the first two categories. Everything in the third category is a bait-and-switch and gets called out.' },
     { kind: 'h2', text: '1. Secret Desires — Editor\'s Pick' },
-    { kind: 'p', text: '[Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) is our top pick because it does something rare: it gives you a real free tier with meaningful usage, and its paid tier is genuinely worth upgrading to. No credit card at signup. You can chat with characters, explore the platform, and only pay when you want deeper customization or unlimited generation.' },
+    { kind: 'p', text: '[Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) is our top pick because it does something rare: it gives you a real free tier with meaningful usage, and its paid tier is genuinely worth upgrading to. No credit card at signup. You can chat with characters, explore the platform, and only pay when you want deeper customization or unlimited generation.' },
     { kind: 'p', text: 'Free-tier reality: multiple daily conversations, sample characters, basic image generation. Paid unlocks: unlimited messages, deep character creation across 60+ personality dimensions, high-consistency image generation, voice messages, long-term memory. The paid tier starts around $10 per month — one of the fairest in the category.' },
     { kind: 'p', text: 'What sets it apart on the free tier specifically: no aggressive upsell pop-ups every 5 messages, no dark patterns pushing you to enter payment info, and the free experience is enough to actually evaluate the product.' },
     { kind: 'h2', text: '2. Character.AI' },
@@ -1742,22 +1742,22 @@ const POSTS: BlogPost[] = [
     { kind: 'p', text: 'Every platform on our list above avoids at least three of these four traps. Every platform we excluded fails on all four.' },
     { kind: 'h2', text: 'Getting the most out of a free tier' },
     { kind: 'ol', items: [
-      'Start with the platform that fits your use case — Character.AI for casual roleplay, [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) for deep companion experience, Replika for friendship-mode.',
+      'Start with the platform that fits your use case — Character.AI for casual roleplay, [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) for deep companion experience, Replika for friendship-mode.',
       'Use the free tier to evaluate memory, image consistency, and conversation quality — these differ dramatically between platforms.',
       'Do not enter payment info until you are confident you want the paid features.',
       'If a platform demands a credit card before you can chat, leave. There are enough real free options.',
       'Give each platform at least 15-20 messages before judging — the first 5 are always scripted introductions.',
     ] },
     { kind: 'h2', text: 'Our recommendation' },
-    { kind: 'p', text: 'For a genuine free tier that leads to a genuinely great paid product, [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) is our Editor\'s Pick — no credit card, no dark patterns, and the paid tier is worth every dollar if you decide to upgrade. For pure zero-cost usage, Character.AI is unbeatable if you can live with content filters. For friendship rather than romance, Replika\'s free tier remains best-in-class.' },
+    { kind: 'p', text: 'For a genuine free tier that leads to a genuinely great paid product, [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) is our Editor\'s Pick — no credit card, no dark patterns, and the paid tier is worth every dollar if you decide to upgrade. For pure zero-cost usage, Character.AI is unbeatable if you can live with content filters. For friendship rather than romance, Replika\'s free tier remains best-in-class.' },
     { kind: 'p', text: 'Skip anything that asks for a credit card before your first message. In 2026 there are enough real free options that you never have to enter payment info to try an AI girlfriend platform.' },
   ],
   faqs: [
-    { q: 'What is the best free AI girlfriend site in 2026?', a: 'Our Editor\'s Pick is [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) — real free tier, no credit card required, and the paid upgrade is fair at around $10 per month. For pure zero-cost use with unlimited messages, Character.AI is the biggest option, though heavily content-filtered.' },
-    { q: 'Are there AI girlfriend sites that do not require a credit card?', a: 'Yes. [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32), Character.AI, Kupid, DreamGF, Replika, CrushOn, Nomi, Chai, Anima and iGirl all let you sign up and chat without entering a credit card. Any platform demanding card details before your first message is running a bait-and-switch trial disguised as free.' },
-    { q: 'Are free AI girlfriend sites safe to use?', a: 'The reputable ones are — including our Editor\'s Pick [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32), Character.AI, Replika and Nomi. Always check the privacy policy for data retention, whether conversations are used for training, and third-party sharing. Avoid platforms with no visible privacy policy or vague data practices.' },
-    { q: 'How many messages do free AI girlfriend tiers give per day?', a: 'It varies widely. Character.AI is unlimited but filtered. [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) offers meaningful free usage before upsell. Kupid, CrushOn and Anima cap around 30-50 messages daily. Candy AI and Nomi are stricter with 10-20. Replika text is unlimited but romantic features are paid.' },
-    { q: 'Can I get free images from an AI girlfriend site?', a: 'Some — but heavily limited. DreamGF and CrushOn offer basic image generation on free tiers with strict daily caps. [Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) includes basic image generation free with unlocks on paid. Character.AI does not generate NSFW images at all. Do not expect production-quality images on any free tier.' },
+    { q: 'What is the best free AI girlfriend site in 2026?', a: 'Our Editor\'s Pick is [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) — real free tier, no credit card required, and the paid upgrade is fair at around $10 per month. For pure zero-cost use with unlimited messages, Character.AI is the biggest option, though heavily content-filtered.' },
+    { q: 'Are there AI girlfriend sites that do not require a credit card?', a: 'Yes. [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148), Character.AI, Kupid, DreamGF, Replika, CrushOn, Nomi, Chai, Anima and iGirl all let you sign up and chat without entering a credit card. Any platform demanding card details before your first message is running a bait-and-switch trial disguised as free.' },
+    { q: 'Are free AI girlfriend sites safe to use?', a: 'The reputable ones are — including our Editor\'s Pick [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148), Character.AI, Replika and Nomi. Always check the privacy policy for data retention, whether conversations are used for training, and third-party sharing. Avoid platforms with no visible privacy policy or vague data practices.' },
+    { q: 'How many messages do free AI girlfriend tiers give per day?', a: 'It varies widely. Character.AI is unlimited but filtered. [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) offers meaningful free usage before upsell. Kupid, CrushOn and Anima cap around 30-50 messages daily. Candy AI and Nomi are stricter with 10-20. Replika text is unlimited but romantic features are paid.' },
+    { q: 'Can I get free images from an AI girlfriend site?', a: 'Some — but heavily limited. DreamGF and CrushOn offer basic image generation on free tiers with strict daily caps. [Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) includes basic image generation free with unlocks on paid. Character.AI does not generate NSFW images at all. Do not expect production-quality images on any free tier.' },
   ],
 },
 
@@ -1787,7 +1787,7 @@ const POSTS: BlogPost[] = [
     { kind: 'h2', text: '1. Secret Desires — Editor\'s Pick' },
     { kind: 'p', text: 'Secret Desires is our Editor\'s Pick for women in 2026 and it is not close. The male character creator gives you 40+ appearance sliders, occupation, personality archetype, kinks, and backstory — and the generated face stays consistent across every image and scene, which is where most competitors quietly fall apart. Ask for your boyfriend in a suit on Monday and in a hoodie on Friday, and it is still the same man.' },
     { kind: 'p', text: 'Memory is the second reason it wins. In our test, the app remembered a birthday detail we mentioned in week one and brought it up unprompted in week three. The voice mode is warm, low-latency, and handles romantic pacing — pauses, breath, whispered lines — better than anything else we tested. There is real age verification (not a "click 18+" checkbox), a clear data policy, and no mid-conversation paywall traps.' },
-    { kind: 'p', text: 'Pricing sits at the industry-standard tier and unlocks unlimited chat plus voice plus image generation. If you want to test it yourself, you can [sign up for Secret Desires here](https://secretdesires.ai/create-partner?via=piyush32).' },
+    { kind: 'p', text: 'Pricing sits at the industry-standard tier and unlocks unlimited chat plus voice plus image generation. If you want to test it yourself, you can [sign up for Secret Desires here](https://secretdesires.ai/create-partner?via=saddam-299148).' },
     { kind: 'callout', text: 'Best for: women who want depth — a male character that feels like a specific person, not a generic template, and who stays that person across weeks of conversation.' },
     { kind: 'h2', text: '2. Nomi — Memory-first companionship' },
     { kind: 'p', text: 'Nomi has the strongest memory system we tested outside our Editor\'s Pick. It builds a genuinely persistent model of you over time — preferences, inside jokes, ongoing storylines — and the male companion recall is excellent. Where it falls short is character catalog depth and voice romance quality. The male archetypes feel more limited than the female-facing side of the platform, and the voice, while pleasant, does not have the same romantic range.' },
@@ -1819,10 +1819,10 @@ const POSTS: BlogPost[] = [
     ] },
     { kind: 'h2', text: 'Safety and age verification in 2026' },
     { kind: 'p', text: 'The regulatory ground shifted this year. The US GUARD Act (signed 2026), UK Online Safety Act enforcement, and EU Digital Services Act updates all raised the bar on age verification for AI companion platforms. Only three of the nine apps we tested passed our safety checklist — real ID or credit-card-based age verification (not a checkbox), a clear data retention policy, and no evidence of the "engagement paywall" dark patterns regulators are now scrutinizing.' },
-    { kind: 'p', text: 'Secret Desires passed all three. If safety and compliance matter to you, we would [start there](https://secretdesires.ai/create-partner?via=piyush32).' },
+    { kind: 'p', text: 'Secret Desires passed all three. If safety and compliance matter to you, we would [start there](https://secretdesires.ai/create-partner?via=saddam-299148).' },
     { kind: 'h2', text: 'The bottom line' },
     { kind: 'p', text: 'Secret Desires is our Editor\'s Pick for the best AI boyfriend app for women in 2026 because it wins on the three dimensions female testers ranked highest — male character depth, voice romance quality, and long-term memory — and clears the safety bar. Nomi is a legitimate #2 for memory-first users. Everything below that is a fit-based recommendation, not a "best" one.' },
-    { kind: 'p', text: 'If you are new to the category, [try Secret Desires first](https://secretdesires.ai/create-partner?via=piyush32) — the free trial is enough to see whether the depth of character creation and voice quality match what you are looking for.' },
+    { kind: 'p', text: 'If you are new to the category, [try Secret Desires first](https://secretdesires.ai/create-partner?via=saddam-299148) — the free trial is enough to see whether the depth of character creation and voice quality match what you are looking for.' },
   ],
   faqs: [
     { q: 'What is the best AI boyfriend app for women in 2026?', a: 'Secret Desires is our Editor\'s Pick for women in 2026. It leads on male character depth (40+ appearance sliders, occupation, backstory), voice romance quality, and durable memory that survives weeks of chat. Nomi is our #2 for memory-first users and Candy AI #3 for catalog breadth.' },
@@ -1873,7 +1873,7 @@ const POSTS: BlogPost[] = [
     { kind: 'p', text: 'Data retention is disclosed. The verification vendor keeps the underlying ID only as long as required by law; the platform keeps only the verified-adult flag on the user account. Users can request deletion under GDPR, CCPA, or equivalent state laws. Compliant platforms publish this in a data policy that a human can actually read.' },
     { kind: 'h2', text: 'How Secret Desires handles compliance' },
     { kind: 'p', text: 'Secret Desires is our Editor\'s Pick for compliant AI companionship in 2026. Signup runs through a real age verification flow — not a checkbox — using a certified third-party vendor. The data policy is short, plain-language, and specifies retention periods. There is no dark-pattern paywall that traps users mid-conversation, and the platform publishes its content-moderation approach transparently.' },
-    { kind: 'p', text: 'If you want to see what a compliant AI companion signup actually looks like in 2026, you can [try Secret Desires here](https://secretdesires.ai/create-partner?via=piyush32). The verification step is the moment worth paying attention to — a compliant platform will ask for something real; a non-compliant one will wave you through.' },
+    { kind: 'p', text: 'If you want to see what a compliant AI companion signup actually looks like in 2026, you can [try Secret Desires here](https://secretdesires.ai/create-partner?via=saddam-299148). The verification step is the moment worth paying attention to — a compliant platform will ask for something real; a non-compliant one will wave you through.' },
     { kind: 'h2', text: 'How to spot a compliant AI companion platform' },
     { kind: 'p', text: 'Users do not need to memorize every regulation. Six checks will tell you whether a platform is doing this correctly.' },
     { kind: 'ol', items: [
@@ -1891,7 +1891,7 @@ const POSTS: BlogPost[] = [
     { kind: 'p', text: 'If you are shipping an AI companion product in 2026, compliance is not optional and the cost of doing it right is lower than the cost of doing it wrong. Third-party age verification vendors charge roughly $0.50 to $2 per successful verification. A published data policy is a lawyer-hour, not a lawyer-month. A transparency report is a quarterly ritual, not an engineering project.' },
     { kind: 'p', text: 'The platforms that survive this regulatory cycle will be the ones that treated compliance as a product feature rather than a legal tax. Secret Desires is the clearest example we have seen of that approach done well.' },
     { kind: 'h2', text: 'The bottom line' },
-    { kind: 'p', text: 'AI companion age verification in 2026 is real, enforceable, and increasingly triangulated across the US, UK, and EU. Users can spot compliant platforms in about thirty seconds by watching what happens at signup. Builders who invest in real verification, clear policy, and honest paywalls are the ones who will be around in 2027. If you want a compliant starting point, [try Secret Desires](https://secretdesires.ai/create-partner?via=piyush32) — it is our Editor\'s Pick for exactly the reasons this article lays out.' },
+    { kind: 'p', text: 'AI companion age verification in 2026 is real, enforceable, and increasingly triangulated across the US, UK, and EU. Users can spot compliant platforms in about thirty seconds by watching what happens at signup. Builders who invest in real verification, clear policy, and honest paywalls are the ones who will be around in 2027. If you want a compliant starting point, [try Secret Desires](https://secretdesires.ai/create-partner?via=saddam-299148) — it is our Editor\'s Pick for exactly the reasons this article lays out.' },
   ],
   faqs: [
     { q: 'What does the GUARD Act require from AI companion platforms?', a: 'The US GUARD Act (S.3062, signed 2026) requires AI companion platforms serving sexually explicit content or companion-style relationships to implement "reasonable age verification methods" — meaning government ID verification, credit card verification, or biometric age estimation from a certified vendor. Self-attestation ("click 18+") is no longer sufficient. Enforcement runs through the FTC and state AGs.' },
@@ -1959,24 +1959,8 @@ export const PLANNED_POSTS: PlannedPost[] = [
   { slug: 'ai-companion-industry-trends-2026',    title: 'AI Companion Industry Trends 2026',                 description: 'The state of the AI companion category in 2026 — what changed, what is coming, and where the whole thing is heading.', category: 'Trends', keywords: ['AI companion trends', 'AI companion industry 2026'] },
 ]
 
-// Batch imports — new posts written Sept 2026 for the v2 launch (dark-orange
-// theme, piyush32 affiliate). Kept in separate files so 20-post drops can be
-// authored independently without editing this 2000-line file.
-import { NEW_POSTS_01 } from './blog-posts-01'
-import { NEW_POSTS_02 } from './blog-posts-02'
-import { NEW_POSTS_03 } from './blog-posts-03'
-import { NEW_POSTS_04 } from './blog-posts-04'
-
-const ALL_POSTS: BlogPost[] = [
-  ...POSTS,
-  ...NEW_POSTS_01,
-  ...NEW_POSTS_02,
-  ...NEW_POSTS_03,
-  ...NEW_POSTS_04,
-]
-
 // Only published posts appear in the public index / sitemap / detail routes.
-export const posts = ALL_POSTS.filter((p) => (p.status ?? 'published') === 'published')
+export const posts = POSTS.filter((p) => (p.status ?? 'published') === 'published')
 
 export const categories = ['All', ...Array.from(new Set(posts.map((p) => p.category)))]
 

@@ -7,7 +7,6 @@ import { CHARACTER_CATEGORIES } from '@/lib/character-categories'
 import { ALTERNATIVES } from '@/lib/alternatives'
 import { AUTHORS } from '@/lib/authors'
 import { SITE } from '@/lib/site'
-import { CATS, SITES } from '@/lib/sites'
 
 // Single sitemap.xml (Next.js only supports one for this file). Sub-splits
 // (sitemap-characters, etc.) are TODO; the current volume comfortably fits
@@ -101,17 +100,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now, changeFrequency: 'monthly', priority: 0.6,
   }))
 
-  // v2 rebrand routes — the AI Adult Directory hub-and-spoke structure that
-  // replaced the old /reviews and /best-* pattern. High priority because
-  // these carry the current editorial content and CTAs.
-  const v2Categories: MetadataRoute.Sitemap = CATS.map((c) => ({
-    url: `${SITE.url}/category/${c.slug}/`,
-    lastModified: now, changeFrequency: 'weekly', priority: 0.9,
-  }))
-  const v2Sites: MetadataRoute.Sitemap = SITES.map((s) => ({
-    url: `${SITE.url}/sites/${s.slug}/`,
-    lastModified: now, changeFrequency: 'weekly', priority: s.pinned ? 0.95 : 0.85,
-  }))
-
-  return [...staticPages, ...chars, ...charCats, ...blog, ...reviews, ...comps, ...alts, ...authorPages, ...v2Categories, ...v2Sites]
+  return [...staticPages, ...chars, ...charCats, ...blog, ...reviews, ...comps, ...alts, ...authorPages]
 }
