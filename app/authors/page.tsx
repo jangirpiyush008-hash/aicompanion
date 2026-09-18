@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import PageLayout, { H1, Lede } from '@/components/PageLayout'
+import PageLayout, { H1, Lede } from '@/components/layout/PageLayout'
 import { pageMetadata } from '@/lib/seo'
 import { AUTHORS } from '@/lib/authors'
 import { REVIEWS } from '@/lib/reviews'

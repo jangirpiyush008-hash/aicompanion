@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
-import PageLayout, { H1, Lede, H2, P } from './PageLayout'
-import SecretDesiresCTA from './SecretDesiresCTA'
+import PageLayout, { H1, Lede, H2, P } from '@/components/layout/PageLayout'
+import SecretDesiresCTA from '@/components/cta/SecretDesiresCTA'
 import { REVIEWS } from '@/lib/reviews'
 import { articleLd, faqLd } from '@/lib/seo'
 

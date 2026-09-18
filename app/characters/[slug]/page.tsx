@@ -2,14 +2,14 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import Nav from '@/components/Nav'
-import Footer from '@/components/Footer'
-import FloatingBackground from '@/components/FloatingBackground'
+import Nav from '@/components/layout/Nav'
+import Footer from '@/components/layout/Footer'
+import FloatingBackground from '@/components/layout/FloatingBackground'
 import { characters, getCharacter, characterCover } from '@/lib/characters'
 import { CHARACTER_CATEGORIES, getCharacterCategory, charactersForCategory } from '@/lib/character-categories'
 import { SECRET_DESIRES_AFFILIATE_URL, SITE } from '@/lib/site'
 import CategoryPage from './CategoryPage'
-import CharacterGallery from '@/components/CharacterGallery'
+import CharacterGallery from '@/components/features/character/CharacterGallery'
 
 // Static-generate BOTH character pages AND character-category pages under
 // /characters/[slug]/. Slugs are disjoint by construction (categories use

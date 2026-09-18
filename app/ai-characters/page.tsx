@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import HubPage, { P, H2 } from '@/components/HubPage'
+import HubPage, { P, H2 } from '@/components/features/hub/HubPage'
 import { pageMetadata } from '@/lib/seo'
 
 const PATH = '/ai-characters'

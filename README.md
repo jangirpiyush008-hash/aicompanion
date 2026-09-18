@@ -1,103 +1,98 @@
 # AI Companions Labs
 
-18+ AI companion discovery / review / affiliate site. Built from the
-`design_handoff_aicompanionslabs` bundle (Home + Character-Karley design references).
+18+ AI companion discovery, review, and affiliate platform. Original
+AI-generated characters, honest hands-on reviews, comparisons, and lab tests.
 
-**Stack:** Next.js 15 App Router · TypeScript · Tailwind CSS · Google Fonts (Playfair Display + Manrope).
+**Stack:** Next.js 15 App Router · TypeScript · Tailwind CSS · Static
+generation (no runtime DB). Deploys as a single Next.js app to Railway or
+any Node host.
 
 ## Requirements
 - Node **20.x**
 
-## Setup
+## Local dev
 
 ```bash
 npm install
-cp .env.example .env.local  # set NEXT_PUBLIC_SITE_URL + affiliate link
-npm run dev                 # http://localhost:4200
+cp .env.example .env.local   # set NEXT_PUBLIC_SITE_URL + affiliate link
+npm run dev                  # http://localhost:4200
 ```
 
 ## Scripts
 
 ```bash
-npm run dev     # dev server on :4200
-npm run build   # production build
-npm start       # serve production build on $PORT (default 8080)
+npm run dev        # dev server on :4200
+npm run build      # production build (also generates sitemap/robots)
+npm run start      # serve production build on $PORT (default 8080)
+npm run indexnow   # submit URLs to Bing/IndexNow (post-deploy hook)
 ```
 
 ## Environment variables
 
+See [`.env.example`](.env.example) for the full list.
+
+- `NEXT_PUBLIC_SITE_URL` — production origin (used for canonical URLs,
+  sitemap, OG images).
+- `NEXT_PUBLIC_SECRET_DESIRES_AFFILIATE_URL` — affiliate URL for every
+  Secret Desires CTA. The site has a hard-coded fallback so it builds
+  without any env vars, but always set this in production to make link
+  rotation possible without a code deploy.
+
+Both are baked into the build at compile time (`NEXT_PUBLIC_*` convention).
+
+## Deploy (Railway)
+
+Railway auto-deploys the `main` branch. `npm run build` runs on push;
+`npm run start` runs the container. Set env vars in the Railway service
+before the first deploy.
+
+## Project structure
+
+See [`ARCHITECTURE.md`](ARCHITECTURE.md) for the full folder map. Quick
+overview:
+
 ```
-NEXT_PUBLIC_SITE_URL=https://aicompanionslabs.com
-NEXT_PUBLIC_SECRET_DESIRES_AFFILIATE_URL=https://your-secret-desires-affiliate-link
+app/          Next.js App Router pages (30 routes)
+components/   UI (grouped by ui / layout / features / cta)
+lib/
+  data/       Content collections (blog posts, characters, reviews, ...)
+  types/      Shared TypeScript types
+  utils/      Small helpers (affiliate URL builder, etc.)
+  constants/  Route constants
+  config/     Site config barrel
+  site.ts     Nav + platforms + FAQ + affiliate constant (source of truth)
+  seo.ts      Metadata + JSON-LD helpers
+public/       Character galleries + review hero images (WebP)
+scripts/      Post-build tasks (IndexNow ping, etc.)
 ```
 
-Both are baked into the build at compile time (`NEXT_PUBLIC_*` convention). Set
-them in whatever hosting environment you deploy to.
+## Adding content
 
-## Routes
-
-```
-/                                Home
-/characters/<slug>/              Character detail (statically generated)
-/sitemap.xml                     Auto-generated
-/robots.txt                      Auto-generated
-```
-
-Character slugs currently live (seed 7): `karley`, `aj-parker`, `ami-tan`,
-`barbs-pappas`, `nellie-cronen`, `rebecca`, `tiffany`.
-
-## Adding a character
-
-1. Drop images into `public/characters/<slug>/1.webp, 2.webp, 3.webp, …`
-2. Append an entry to `CHARACTERS` in `lib/characters.ts` (see the existing
-   entries — `slug`, `name`, `tags`, `subtitle`, `about`, `traits`, `gallery`, `seo`)
-3. Rebuild — the character page is statically generated and the sitemap
-   picks it up automatically.
-
-Architecture scales to 40–50+ characters. When the list gets long, move
-`CHARACTERS` into a headless CMS (Sanity, Contentlayer, Payload) — the render
-code stays the same.
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for step-by-step guides to add a
+blog post, character, review, or comparison.
 
 ## Compliance rules baked into the build
 
-- **Age gate** on every route (localStorage `acp_age_ok`). "Exit" redirects to
-  google.com. Denied by default until acknowledged.
-- Every character presented as a **fictional AI-generated adult**. Alt text and
-  captions carry the "AI-generated character" disclosure.
+- **Age gate** on every route (localStorage `acp_age_ok`). "Exit" redirects
+  to google.com. Denied by default until acknowledged.
+- Every character presented as a **fictional AI-generated adult**. Alt text
+  and captions carry the "AI-generated character" disclosure.
 - `<meta name="rating" content="adult">` + RTA label in the site head, so
   SafeSearch / family filters can respect the site's intended audience.
 - **Never fabricate reviews / scores / pricing.** Platforms without a
-  hands-on-test result display `"Score pending hands-on test"` — see
-  `lib/site.ts` → `PLATFORMS`.
+  hands-on-test result display "Score pending hands-on test" — see
+  `lib/site.ts` → `PLATFORMS` and `lib/data/reviews.ts`.
 - **Affiliate disclosure** in the homepage FAQ intro + footer.
-- All Secret Desires CTAs resolve from `SECRET_DESIRES_AFFILIATE_URL` — never
-  hard-coded elsewhere. Outbound uses `rel="sponsored noopener nofollow"` +
-  `target="_blank"`.
+- All Secret Desires CTAs resolve from `SECRET_DESIRES_AFFILIATE_URL` (via
+  `lib/utils/affiliate.ts` helpers) — never hard-coded elsewhere. Outbound
+  uses `rel="sponsored noopener nofollow"` + `target="_blank"`.
 
 ## Google Ads reality check
 
-**Google Ads (and Google AdSense) will not approve this site** regardless of
-how compliant the design is — this is a category-level restriction on adult
-companion content, not something fixable with disclaimers.
+**Google Ads (and Google AdSense) will not approve this site** regardless
+of how compliant the design is — this is a category-level restriction on
+adult companion content, not something fixable with disclaimers.
 
-If ad-network monetization is part of the plan, use adult-friendly networks
-(TrafficJunky, ExoClick, JuicyAds) rather than Google Ads / AdSense. Otherwise
-rely on SEO + the Secret Desires affiliate program as the primary revenue
-channel.
-
-## Deploy
-
-### Vercel (Next.js native)
-- Import repo → framework auto-detected as Next.js
-- Add env vars `NEXT_PUBLIC_SITE_URL` + `NEXT_PUBLIC_SECRET_DESIRES_AFFILIATE_URL`
-- Deploy
-
-### Any Node host
-- Build: `npm run build`
-- Start: `npm start` (respects `$PORT`, defaults to 8080)
-
-### AWS Amplify Hosting
-- Framework: Next.js (SSR)
-- Build command: `npm run build`
-- Add env vars in the Amplify console
-- Amplify's Next.js runtime handles SSR/ISR out of the box
+Use adult-friendly networks (TrafficJunky, ExoClick, JuicyAds) if you need
+display ads. Otherwise rely on SEO + the Secret Desires affiliate program
+as the primary revenue channel.

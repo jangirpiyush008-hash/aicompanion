@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import HubPage, { P, H2 } from '@/components/HubPage'
-import SDAIShowcase from '@/components/SDAIShowcase'
+import HubPage, { P, H2 } from '@/components/features/hub/HubPage'
+import SDAIShowcase from '@/components/cta/SDAIShowcase'
 import { pageMetadata } from '@/lib/seo'
 
 const PATH = '/anime-ai-companions'

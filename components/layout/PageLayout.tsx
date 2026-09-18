@@ -3,7 +3,7 @@ import Nav from './Nav'
 import Footer from './Footer'
 import FloatingBackground from './FloatingBackground'
 import Breadcrumbs from './Breadcrumbs'
-import JsonLd from './JsonLd'
+import JsonLd from '@/components/ui/JsonLd'
 import type { Crumb } from '@/lib/seo'
 
 // Standard content page wrapper — nav, breadcrumbs, prose column, footer.

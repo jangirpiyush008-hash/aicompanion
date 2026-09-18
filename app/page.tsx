@@ -1,15 +1,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import Nav from '@/components/Nav'
-import Footer from '@/components/Footer'
-import FloatingBackground from '@/components/FloatingBackground'
-import HeroShowcase from '@/components/HeroShowcase'
-import CategoryIcon from '@/components/CategoryIcon'
+import Nav from '@/components/layout/Nav'
+import Footer from '@/components/layout/Footer'
+import FloatingBackground from '@/components/layout/FloatingBackground'
+import HeroShowcase from '@/components/features/character/HeroShowcase'
+import CategoryIcon from '@/components/features/character/CategoryIcon'
 import { characters, characterCover } from '@/lib/characters'
 import { posts } from '@/lib/blog'
 import { REVIEWS } from '@/lib/reviews'
 import { COMPARISONS } from '@/lib/comparisons'
-import ImageHubGrid from '@/components/ImageHubGrid'
+import ImageHubGrid from '@/components/features/hub/ImageHubGrid'
 import {
   CATEGORIES, FAQS, LAB_TESTS, PLATFORMS, PLATFORM_STATUS_LABELS,
   SECRET_DESIRES_AFFILIATE_URL, SITE,

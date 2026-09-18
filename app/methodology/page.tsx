@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import PageLayout, { H1, Lede, H2, H3, P, UL, Callout } from '@/components/PageLayout'
+import PageLayout, { H1, Lede, H2, H3, P, UL, Callout } from '@/components/layout/PageLayout'
 import { pageMetadata, articleLd } from '@/lib/seo'
 import { METHODOLOGY_WEIGHTS } from '@/lib/reviews'
 

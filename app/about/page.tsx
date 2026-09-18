@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import PageLayout, { H1, Lede, H2, P, UL } from '@/components/PageLayout'
-import SecretDesiresCTA from '@/components/SecretDesiresCTA'
+import PageLayout, { H1, Lede, H2, P, UL } from '@/components/layout/PageLayout'
+import SecretDesiresCTA from '@/components/cta/SecretDesiresCTA'
 import { pageMetadata, articleLd } from '@/lib/seo'
 import { SITE } from '@/lib/site'
 

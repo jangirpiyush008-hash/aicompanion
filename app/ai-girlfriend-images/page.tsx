@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import PageLayout, { H1, Lede, H2, P } from '@/components/PageLayout'
-import SecretDesiresCTA from '@/components/SecretDesiresCTA'
-import ImageHubGrid, { allImages } from '@/components/ImageHubGrid'
+import PageLayout, { H1, Lede, H2, P } from '@/components/layout/PageLayout'
+import SecretDesiresCTA from '@/components/cta/SecretDesiresCTA'
+import ImageHubGrid, { allImages } from '@/components/features/hub/ImageHubGrid'
 import { pageMetadata, articleLd } from '@/lib/seo'
 import { SITE } from '@/lib/site'
 

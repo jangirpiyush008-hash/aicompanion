@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import PageLayout, { H1, Lede, H2, P } from '@/components/PageLayout'
+import PageLayout, { H1, Lede, H2, P } from '@/components/layout/PageLayout'
 import { pageMetadata, articleLd } from '@/lib/seo'
 
 const PATH = '/contact'

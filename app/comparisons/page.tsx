@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import PageLayout, { H1, Lede, H2 } from '@/components/PageLayout'
-import SecretDesiresCTA from '@/components/SecretDesiresCTA'
+import PageLayout, { H1, Lede, H2 } from '@/components/layout/PageLayout'
+import SecretDesiresCTA from '@/components/cta/SecretDesiresCTA'
 import { pageMetadata, articleLd } from '@/lib/seo'
 import { COMPARISONS } from '@/lib/comparisons'
 

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import BestOfPage, { P, H2 } from '@/components/BestOfPage'
+import BestOfPage, { P, H2 } from '@/components/features/hub/BestOfPage'
 import { pageMetadata } from '@/lib/seo'
 
 const PATH = '/best-ai-girlfriends'

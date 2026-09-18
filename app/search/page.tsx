@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import PageLayout, { H1, Lede } from '@/components/PageLayout'
+import PageLayout, { H1, Lede } from '@/components/layout/PageLayout'
 import SearchClient from './SearchClient'
 import { buildSearchIndex } from '@/lib/search-index'
 import { pageMetadata } from '@/lib/seo'
