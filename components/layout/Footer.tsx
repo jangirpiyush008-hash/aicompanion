@@ -83,6 +83,11 @@ export default function Footer({ variant = 'full' }: { variant?: 'full' | 'compa
           <FL href="/18-plus/">18+ Notice</FL>
           <FL href="/corrections/">Corrections</FL>
         </FooterCol>
+
+        <FooterCol title="Follow">
+          <FLExt href="https://www.facebook.com/aicompanionslabs">Facebook</FLExt>
+          <FLExt href="https://www.instagram.com/aicompanionslabs">Instagram</FLExt>
+        </FooterCol>
       </div>
 
       <div
@@ -121,5 +126,17 @@ function FL({ href, children }: { href: string; children: React.ReactNode }) {
     <Link href={href} style={{ color: '#e8cfdb', textDecoration: 'none' }}>
       {children}
     </Link>
+  )
+}
+function FLExt({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="me noopener"
+      style={{ color: '#e8cfdb', textDecoration: 'none' }}
+    >
+      {children}
+    </a>
   )
 }
