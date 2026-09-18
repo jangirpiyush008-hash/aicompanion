@@ -42,7 +42,7 @@ export const AUTHORS: Record<string, Author> = {
     ],
     reviewsCount: 1,       // updated as new reviews publish
     testingSince: '2024',
-    email: 'editor@aicompanionslabs.com',
+    email: 'aicompanionslabs@gmail.com',
   },
 }
 

@@ -5,7 +5,7 @@ import { pageMetadata, articleLd } from '@/lib/seo'
 const PATH = '/contact'
 const TITLE = 'Contact — AI Companions Labs'
 const DESC = 'Contact AI Companions Labs — support email, Telegram, corrections and partnership enquiries.'
-const SUPPORT_EMAIL = 'stackpicks.dev@gmail.com'
+const SUPPORT_EMAIL = 'aicompanionslabs@gmail.com'
 const TELEGRAM = '@piyush_sdai'
 
 export const metadata: Metadata = pageMetadata({ title: TITLE, description: DESC, path: PATH })
@@ -100,7 +100,7 @@ function ContactCard({ label, value, href, external }: { label: string; value: s
 // This intentionally has no server dependency; wire Formspree/Getform later
 // without changing the visible form.
 function ContactForm() {
-  const SUPPORT_EMAIL = 'stackpicks.dev@gmail.com'
+  const SUPPORT_EMAIL = 'aicompanionslabs@gmail.com'
   return (
     <form
       method="post"

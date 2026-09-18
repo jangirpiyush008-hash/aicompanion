@@ -46,7 +46,7 @@ export default function EighteenPlusPage() {
       <H2>Reporting concerns</H2>
       <P>
         If you believe any content on this site violates the standards above, email
-        <a href="mailto:stackpicks.dev@gmail.com"> stackpicks.dev@gmail.com</a> immediately and we
+        <a href="mailto:aicompanionslabs@gmail.com"> aicompanionslabs@gmail.com</a> immediately and we
         will investigate and remove it if warranted.
       </P>
     </PageLayout>

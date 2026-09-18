@@ -52,7 +52,7 @@ export default function PrivacyPage() {
       <P>
         Because we do not collect personally-identifying data, there is generally nothing to
         request or delete on our side. If you have a specific concern, email
-        <a href="mailto:stackpicks.dev@gmail.com"> stackpicks.dev@gmail.com</a>.
+        <a href="mailto:aicompanionslabs@gmail.com"> aicompanionslabs@gmail.com</a>.
       </P>
 
       <H2>Updates</H2>

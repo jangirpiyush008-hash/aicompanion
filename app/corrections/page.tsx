@@ -5,7 +5,7 @@ import { pageMetadata, articleLd } from '@/lib/seo'
 const PATH = '/corrections'
 const TITLE = 'Corrections — Report an Error on AI Companions Labs'
 const DESC = 'Spotted incorrect pricing, wrong feature information, a broken link or an outdated review? Report it and we will fix it.'
-const SUPPORT_EMAIL = 'stackpicks.dev@gmail.com'
+const SUPPORT_EMAIL = 'aicompanionslabs@gmail.com'
 
 export const metadata: Metadata = pageMetadata({ title: TITLE, description: DESC, path: PATH })
 
