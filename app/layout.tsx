@@ -60,6 +60,7 @@ export const metadata: Metadata = {
   other: {
     rating: 'adult',
     'rating-standard': 'RTA-5042-1996-1400-1577-RTA',
+    'p:domain_verify': '31dc3cc3f3f4418ea44d4e7dcb4c6abb',
   },
 }
 
