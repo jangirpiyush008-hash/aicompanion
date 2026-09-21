@@ -7,6 +7,11 @@ AI-generated characters, honest hands-on reviews, comparisons, and lab tests.
 generation (no runtime DB). Deploys as a single Next.js app to Railway or
 any Node host.
 
+## Community
+
+- [AI Companions Labs community discussions](https://github.com/jangirpiyush008-hash/aicompanion/discussions): questions, app suggestions, and feedback on our reviews
+- [Ask AI Companions Labs for an AI companion recommendation](https://topmate.io/aicompanionslabs) on Topmate
+
 ## Requirements
 - Node **20.x**
 
