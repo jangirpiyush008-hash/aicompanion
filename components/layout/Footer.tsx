@@ -87,6 +87,9 @@ export default function Footer({ variant = 'full' }: { variant?: 'full' | 'compa
         <FooterCol title="Follow">
           <FLExt href="https://www.facebook.com/aicompanionslabs">Facebook</FLExt>
           <FLExt href="https://www.instagram.com/aicompanionslabs">Instagram</FLExt>
+          <FLExt href="https://www.linkedin.com/company/ai-companions-labs/">LinkedIn</FLExt>
+          <FLExt href="https://www.pinterest.com/aicompanionslabs">Pinterest</FLExt>
+          <FLExt href="https://x.com/aicompanionslab">X</FLExt>
         </FooterCol>
       </div>
 
