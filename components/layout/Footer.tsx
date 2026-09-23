@@ -109,6 +109,21 @@ export default function Footer({ variant = 'full' }: { variant?: 'full' | 'compa
       >
         <span>© 2026 aicompanionslabs.com — 18+ only</span>
         <span>All imagery is AI-generated. No real persons depicted.</span>
+        <a
+          href="https://www.toolpilot.ai"
+          target="_blank"
+          rel="nofollow noopener"
+          aria-label="Featured on ToolPilot"
+          style={{ display: 'inline-flex', alignItems: 'center', opacity: 0.85 }}
+        >
+          <img
+            src="/badges/toolpilot-featured-dark.png"
+            alt="Featured on ToolPilot"
+            width={150}
+            height={33}
+            loading="lazy"
+          />
+        </a>
       </div>
     </footer>
   )
