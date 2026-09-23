@@ -128,6 +128,41 @@ export default function LabPage() {
         })}
       </div>
 
+      <section id="tester-panel" style={{ scrollMarginTop: 90 }}>
+        <H2>Join the tester panel</H2>
+        <P>
+          Some Lab tests run faster with more hands. We keep a small panel of testers who trial
+          platforms and send structured feedback against the same protocol we use ourselves — the
+          memory test, the image consistency benchmark, and the voice and video tests as they open.
+        </P>
+        <P>
+          <strong>What it involves:</strong> roughly one to two hours per round, done in a browser
+          or on your phone, with findings written into a short template we supply. You keep your
+          own accounts and we never ask for your login details.
+        </P>
+        <P>
+          <strong>Who can apply:</strong> anyone 18 or over who is comfortable with adult-oriented
+          AI chat apps. No prior testing experience is needed.
+        </P>
+        <P>
+          <strong>What you get:</strong> credit in the published test results if you want it. This
+          is unpaid, and any free access is only offered where a platform provides codes for that
+          round.
+        </P>
+        <P>
+          <strong>To apply:</strong>{' '}
+          <a
+            href="mailto:contact@aicompanionslabs.com?subject=Tester%20panel%20application"
+            style={inlineLink}
+          >
+            email contact@aicompanionslabs.com
+          </a>{' '}
+          with the subject &ldquo;Tester panel application&rdquo;, and tell us which platforms
+          you have used, what devices you test on, and roughly how much time you can give each
+          round. We reply to everyone, and we only get in touch when a round actually opens.
+        </P>
+      </section>
+
       <H2>What we don&apos;t do</H2>
       <P>
         We do not fabricate scores, invent screenshots, or claim to have tested a feature we
